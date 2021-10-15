@@ -7,8 +7,8 @@ const directusPlugin = async (context, inject) => {
 
   if (options.email && options.password) {
     await directus.auth.login({ email: options.email, password: options.password })
-  } else if (options.static) {
-    await directus.auth.static(options.static)
+  } else if (options.staticToken) {
+    await directus.auth.static(options.staticToken)
   }
 
   inject('directus', directus)
