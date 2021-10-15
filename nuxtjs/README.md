@@ -1,69 +1,51 @@
-# nuxtjs
+# Nuxt.js
 
-## Build Setup
+- Official Site: <https://nuxtjs.org/>
+- Official Docs: <https://nuxtjs.org/docs/get-started/>
 
-```bash
-# install dependencies
-$ npm install
+**NOTE:** This is an example for Nuxt 2.
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+## 📌 Prerequisites
 
-# build for production and launch server
-$ npm run build
-$ npm run start
+- A new Directus instance ([Directus installation guide](https://docs.directus.io/getting-started/installation/))
 
-# generate static project
-$ npm run generate
-```
+## 🚀 Getting Started
 
-For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
+1. Move the provided schema snapshot, `example.yaml` to the root of your Directus project
 
-## Special Directories
+    ```
+    .
+    ├── example.yaml
+    └── package.json
+    ```
 
-You can create the following extra directories, some of which have special behaviors. Only `pages` is required; you can delete them if you don't want to use their functionality.
+2. Apply the schema snapshot by running
 
-### `assets`
+    ```
+    npx directus schema apply ./example.yaml
+    ```
+    > Learn more about schema snapshot/apply [over here](https://docs.directus.io/reference/command-line-interface/#migrate-schema-to-a-different-environment)
 
-The assets directory contains your uncompiled assets such as Stylus or Sass files, images, or fonts.
+3. Create a `.env` file based on `.example.env`. You can use either the credentials (email & password) or static token of the admin account.
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/assets).
+    Here's an example using static token:
 
-### `components`
+    ```
+    DIRECTUS_BASE_URL=http://localhost:8055
+    DIRECTUS_STATIC_TOKEN=<static token here>
+    ```
 
-The components directory contains your Vue.js components. Components make up the different parts of your page and can be reused and imported into your pages, layouts and even other components.
+4. Add example data to your Directus instance by running
 
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/components).
+    ```
+    node seed.js
+    ```
 
-### `layouts`
+    We should see the following output in the terminal:
 
-Layouts are a great help when you want to change the look and feel of your Nuxt app, whether you want to include a sidebar or have distinct layouts for mobile and desktop.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/layouts).
-
-
-### `pages`
-
-This directory contains your application views and routes. Nuxt will read all the `*.vue` files inside this directory and setup Vue Router automatically.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/get-started/routing).
-
-### `plugins`
-
-The plugins directory contains JavaScript plugins that you want to run before instantiating the root Vue.js Application. This is the place to add Vue plugins and to inject functions or constants. Every time you need to use `Vue.use()`, you should create a file in `plugins/` and add its path to plugins in `nuxt.config.js`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/plugins).
-
-### `static`
-
-This directory contains your static files. Each file inside this directory is mapped to `/`.
-
-Example: `/static/robots.txt` is mapped as `/robots.txt`.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/static).
-
-### `store`
-
-This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
-
-More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
+    ```
+    Seeding author...
+    Seeding cover images...
+    Seeding posts...
+    Seeding completed.
+    ```

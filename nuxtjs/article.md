@@ -1,49 +1,6 @@
-# Nuxt.js
+# How to integrate Directus with Nuxt.js
 
-## Prerequisites
-
-1. A Directus instance (link to Directus setup guide)
-2. Node.js
-3. Database
-
-## Getting started
-
-1. Create a Directus instance by running:
-
-    ```
-    npm init directus-project directus-demo
-    ```
-
-2. Apply the provided schema snapshot, `demo.yaml` by running:
-
-    ```
-    npx directus schema apply ./demo.yaml
-    ```
-    > Learn more about schema snapshot/apply [over here](https://docs.directus.io/reference/command-line-interface/#migrate-schema-to-a-different-environment)
-
-3. Move the provided custom migration file, `20211014-add-demo-data.js` into the `extensions/migrations` directory in our Directus project:
-
-    ```
-    .
-    ├── extensions
-    │   └── migrations
-    │       └── 20211014-add-demo-data.js <- place the file here
-    └── package.json
-    ```
-
-    We should see the following output in the terminal:
-
-    ```
-    ✨ Running migrations...
-    ✨ Applying Add Demo Data...
-    ✨ Done
-    ```
-
-4. Apply the custom migration by running:  
-    ```
-    npx directus database migrate:*
-    ```
-    > Learn more about custom migrations [over here](https://docs.directus.io/guides/migrations/#custom-migrations)
+🚧 _Article under construction_
 
 ## Adding Directus module to your Nuxt project
 
