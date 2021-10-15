@@ -120,13 +120,10 @@
               </li>
             </ul>
           </div>
-          <div
-            class="order-first mb-4 overflow-hidden sm:mb-0 sm:order-last aspect-w-16 aspect-h-8 bg-background-accent"
-          >
+          <div class="cover-image">
             <img
               :src="`http://localhost:8055/assets/${post.cover_image}`"
               alt=""
-              class="object-cover object-center"
             />
           </div>
         </div>

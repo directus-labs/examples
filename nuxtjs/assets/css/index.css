@@ -667,6 +667,7 @@ footer .socials a {
   display: flex;
   flex-direction: column;
   margin-bottom: 0;
+  overflow: hidden;
 }
 
 @media (min-width: 640px) {
@@ -741,6 +742,31 @@ footer .socials a {
 
 .current-post__detail .socials a {
   color: var(--foreground-subdued);
+}
+
+.current-post__detail .cover-image {
+  position: relative;
+  margin-bottom: 16px;
+  padding-bottom: calc(8 / 16 * 100%);
+  background-color: var(--background-accent);
+  order: -1;
+}
+
+@media (min-width: 640px) {
+  .current-post__detail .cover-image {
+    margin-bottom: 0;
+    order: 0;
+  }
+}
+
+.current-post__detail .cover-image img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .current-post__body {

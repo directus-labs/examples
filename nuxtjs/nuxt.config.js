@@ -29,10 +29,6 @@ export default {
 
   components: true,
 
-  buildModules: [
-    // '@nuxtjs/tailwindcss'
-  ],
-
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '~/modules/directus'
