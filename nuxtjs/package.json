@@ -1,5 +1,5 @@
 {
-  "name": "nuxtjs",
+  "name": "directus-nuxtjs-example",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -9,13 +9,8 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "@directus/sdk": "^9.0.0-rc.96",
+    "@directus/sdk": "^9.0.0-rc.97",
     "core-js": "^3.15.1",
     "nuxt": "^2.15.7"
-  },
-  "devDependencies": {
-    "@nuxtjs/tailwindcss": "^4.2.1",
-    "@tailwindcss/aspect-ratio": "^0.3.0",
-    "nuxt-vite": "0.2.4"
   }
 }

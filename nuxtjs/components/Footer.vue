@@ -1,18 +1,14 @@
 <template>
-  <footer class="px-4 mt-auto bg-foreground-accent">
-    <div
-      class="flex items-center justify-center max-w-6xl py-24 mx-auto text-center sm:py-32 text-foreground-inverted"
-    >
-      <span class="font-serif text-3xl font-normal sm:text-5xl">
+  <footer>
+    <div class="container top-wrapper">
+      <span>
         Generated with <span class="underline">Nuxt</span>, powered by
         <span class="underline">Directus</span>.
       </span>
     </div>
-    <div
-      class="flex flex-col items-center max-w-6xl py-8 mx-auto border-t-2 sm:flex-row sm:justify-between border-opacity-10 text-foreground-subdued"
-    >
-      <span class="order-last text-xs sm:order-none">© 2021 Monospace Inc</span>
-      <ul class="flex items-center mb-8 space-x-10 sm:mb-0">
+    <div class="container bottom-wrapper">
+      <span class="copyright">© 2021 Monospace Inc</span>
+      <ul class="socials">
         <li>
           <a
             href="https://github.com/directus"

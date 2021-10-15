@@ -1,45 +1,41 @@
 <template>
-  <article
-    class="pb-8 mb-4 space-y-4 border-b sm:mb-8 group"
-  >
-    <div class="relative">
-      <div class="overflow-hidden aspect-w-16 aspect-h-8 bg-background-accent">
+  <article class="hero">
+    <div class="top-wrapper">
+      <div class="image-wrapper">
         <img
           :src="`http://localhost:8055/assets/${post.cover_image}`"
           alt=""
           loading="lazy"
-          class="object-cover object-center"
         />
       </div>
       <span
-        aria-hidden="trur"
-        class="absolute px-3 py-2 text-sm font-semibold shadow-md top-4 left-4 bg-foreground-inverted"
+        aria-hidden="true"
+        class="tag"
         >Writing</span
       >
     </div>
-    <nuxt-link :to="`/posts/${post.id}`" class="block">
-      <h1 class="font-serif text-4xl sm:text-6xl">
+    <h1>
+      <nuxt-link :to="`/posts/${post.id}`">
         {{ post.title }}
-      </h1>
-    </nuxt-link>
-    <p class="hidden sm:inline-block sm:w-3/5">{{ post.excerpt }}</p>
-    <div class="flex items-center flex-shrink-0">
+      </nuxt-link>
+    </h1>
+    <p class="excerpt">{{ post.excerpt }}</p>
+    <div class="detail">
       <div
-        class="relative flex-shrink-0 mr-4 overflow-hidden rounded-full w-14 h-14 bg-background-accent"
+        class="author-image-wrapper"
       >
         <img
           :src="`http://localhost:8055/assets/${post.author.avatar}`"
           alt=""
           loading="lazy"
-          class="object-cover object-center w-full h-full"
         />
       </div>
-      <div class="text-foreground-subdued">
-        <div class="font-semibold text-foreground-accent">
+      <div>
+        <div class="author-name">
           {{ `${post.author.first_name} ${post.author.last_name}` }}
         </div>
         <div>3 hours ago</div>
-        <div class="hidden">Writing</div>
+        <div class="category">Writing</div>
       </div>
     </div>
   </article>
