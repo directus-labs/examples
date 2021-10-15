@@ -44,11 +44,11 @@ export default {
   ],
 
   directus: {
-    url: 'http://localhost:8055',
+    url: process.env.DIRECTUS_BASE_URL,
     options: {
-      static: 'superadminsecrettoken',
-      // email: 'superadmin@example.com',
-      // password: 'password',
+      static: process.env.DIRECTUS_STATIC_TOKEN,
+      // email: process.env.DIRECTUS_EMAIL,
+      // password: process.env.DIRECTUS_PASSWORD,
     },
   },
 
