@@ -21,7 +21,7 @@
 
 2. Apply the schema snapshot by running
 
-    ```
+    ```bash
     npx directus schema apply ./example.yaml
     ```
     > Learn more about schema snapshot/apply [over here](https://docs.directus.io/reference/command-line-interface/#migrate-schema-to-a-different-environment)
@@ -37,7 +37,7 @@
 
 4. Add example data to your Directus instance by running
 
-    ```
+    ```bash
     node seed.js
     ```
 
@@ -48,4 +48,30 @@
     Seeding cover images...
     Seeding posts...
     Seeding completed.
+    ```
+
+## ⚙️ Trying out this Nuxt.js example
+
+1. Install dependencies
+
+    ```bash
+    npm install
+    ```
+
+2. Start development with hot reload at localhost:3000
+
+    ```bash
+    npm run dev
+    ```
+
+3. Generate static site
+
+    ```bash
+    npm run generate
+    ```
+
+4. Serve static site
+
+    ```bash
+    npm run start
     ```
