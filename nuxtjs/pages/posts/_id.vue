@@ -1,18 +1,16 @@
 <template>
-  <div>
-    <section class="px-4">
-      <div class="max-w-6xl pb-8 mx-auto">
-        <nuxt-link
-          to="/"
-          class="flex items-center p-4 bg-opacity-50 text-foreground-subdued bg-background-accent"
-        >
+  <div class="current-post">
+    <section>
+      <div class="container">
+        <nuxt-link to="/" class="back-link ">
           <svg
+            aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             height="32px"
             width="32px"
             viewBox="0 0 24 24"
             fill="currentColor"
-            class="w-8 h-8 mr-2"
+            class="icon"
           >
             <path d="M0 0h24v24H0V0z" fill="none" />
             <path
@@ -21,51 +19,40 @@
           </svg>
           <span>Back to Posts</span>
         </nuxt-link>
-        <h1 class="my-4 font-serif text-4xl sm:my-12 sm:text-6xl md:text-8xl">
-          {{ post.title }}
-        </h1>
-        <div class="flex flex-col sm:mb-8">
-          <div
-            class="flex flex-col mb-8 sm:flex-row sm:justify-between sm:mb-12"
-          >
-            <div class="flex">
-              <div
-                class="relative mr-4 overflow-hidden rounded-full w-14 h-14 bg-background-accent"
-              >
+        <h1 class="current-post-title">{{ post.title }}</h1>
+        <div class="current-post__detail">
+          <div class="wrapper-outer">
+            <div class="wrapper-inner">
+              <div class="author-image">
                 <img
                   :src="`http://localhost:8055/assets/${post.author.avatar}`"
                   alt=""
-                  class="absolute object-cover object-center w-full h-full"
+                  loading="lazy"
                 />
               </div>
               <div>
-                <div class="font-semibold">
+                <div class="author-name">
                   {{ `${post.author.first_name} ${post.author.last_name}` }}
                 </div>
-                <div class="text-foreground-subdued">3 hours ago</div>
+                <div class="time">3 hours ago</div>
               </div>
             </div>
-            <ul
-              class="items-center hidden space-x-10 sm:flex text-foreground-subdued"
-            >
+            <ul class="socials">
               <li>
                 <a
                   href="https://github.com/directus"
-                  class="logo"
                   target="_blank"
                   rel="noreferrer noopener"
                 >
                   <svg
                     width="28"
-                    height="28"
-                    viewBox="0 0 28 28"
+                    height="14"
+                    viewBox="0 0 28 14"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M14 0C6.265 0 0 6.265 0 14C0 20.195 4.0075 25.4275 9.5725 27.2825C10.2725 27.405 10.535 26.985 10.535 26.6175C10.535 26.285 10.5175 25.1825 10.5175 24.01C7 24.6575 6.09 23.1525 5.81 22.365C5.6525 21.9625 4.97 20.72 4.375 20.3875C3.885 20.125 3.185 19.4775 4.3575 19.46C5.46 19.4425 6.2475 20.475 6.51 20.895C7.77 23.0125 9.7825 22.4175 10.5875 22.05C10.71 21.14 11.0775 20.5275 11.48 20.1775C8.365 19.8275 5.11 18.62 5.11 13.265C5.11 11.7425 5.6525 10.4825 6.545 9.5025C6.405 9.1525 5.915 7.7175 6.685 5.7925C6.685 5.7925 7.8575 5.425 10.535 7.2275C11.655 6.9125 12.845 6.755 14.035 6.755C15.225 6.755 16.415 6.9125 17.535 7.2275C20.2125 5.4075 21.385 5.7925 21.385 5.7925C22.155 7.7175 21.665 9.1525 21.525 9.5025C22.4175 10.4825 22.96 11.725 22.96 13.265C22.96 18.6375 19.6875 19.8275 16.5725 20.1775C17.08 20.615 17.5175 21.455 17.5175 22.7675C17.5175 24.64 17.5 26.145 17.5 26.6175C17.5 26.985 17.7625 27.4225 18.4625 27.2825C21.2418 26.3443 23.6568 24.5581 25.3677 22.1753C27.0786 19.7926 27.9993 16.9334 28 14C28 6.265 21.735 0 14 0Z"
+                      d="M20.6875 0.3125H15.3125V3H20.6875C22.875 3 24.6875 4.8125 24.6875 7C24.6875 9.1875 22.875 11 20.6875 11H15.3125V13.6875H20.6875C24.375 13.6875 27.3125 10.6875 27.3125 7C27.3125 3.3125 24.375 0.3125 20.6875 0.3125ZM12.6875 11H7.3125C5.125 11 3.3125 9.1875 3.3125 7C3.3125 4.8125 5.125 3 7.3125 3H12.6875V0.3125H7.3125C3.625 0.3125 0.6875 3.3125 0.6875 7C0.6875 10.6875 3.625 13.6875 7.3125 13.6875H12.6875V11ZM8.6875 5.6875H19.3125V8.3125H8.6875V5.6875Z"
                       fill="currentColor"
                     />
                   </svg>
@@ -74,7 +61,6 @@
               <li>
                 <a
                   href="https://www.youtube.com/c/DirectusVideos"
-                  class="logo"
                   target="_blank"
                   rel="noreferrer noopener"
                 >
@@ -95,7 +81,6 @@
               <li>
                 <a
                   href="https://discord.gg/directus"
-                  class="logo"
                   target="_blank"
                   rel="noreferrer noopener"
                 >
@@ -116,7 +101,6 @@
               <li>
                 <a
                   href="https://twitter.com/directus"
-                  class="logo"
                   target="_blank"
                   rel="noreferrer noopener"
                 >
@@ -146,15 +130,12 @@
             />
           </div>
         </div>
-        <div class="flex">
-          <div v-html="post.body" class="post-body sm:mr-24"></div>
-          <ul
-            class="sticky items-center hidden p-4 space-y-8 border top-24 sm:self-start sm:flex sm:flex-col text-foreground-subdued"
-          >
+        <div class="current-post__body">
+          <div v-html="post.body" class="content"></div>
+          <ul class="socials">
             <li>
               <a
                 href="https://github.com/directus"
-                class="logo"
                 target="_blank"
                 rel="noreferrer noopener"
               >
@@ -177,7 +158,6 @@
             <li>
               <a
                 href="https://www.youtube.com/c/DirectusVideos"
-                class="logo"
                 target="_blank"
                 rel="noreferrer noopener"
               >
@@ -198,7 +178,6 @@
             <li>
               <a
                 href="https://discord.gg/directus"
-                class="logo"
                 target="_blank"
                 rel="noreferrer noopener"
               >
@@ -219,7 +198,6 @@
             <li>
               <a
                 href="https://twitter.com/directus"
-                class="logo"
                 target="_blank"
                 rel="noreferrer noopener"
               >
@@ -263,10 +241,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-.post-body >>> p {
-  margin-bottom: 1.5rem;
-  line-height: 1.75rem;
-}
-</style>

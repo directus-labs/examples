@@ -1,9 +1,9 @@
 <template>
   <main>
-    <section class="px-4 mb-24">
-      <div class="max-w-6xl mx-auto">
+    <section class="main-content">
+      <div class="container">
         <Hero :post="hero" />
-        <div class="grid grid-cols-1 gap-4 sm:gap-8 sm:grid-cols-2">
+        <div class="posts-grid">
           <Post v-for="(post, index) in posts" :key="index" :post="post" :bordered="index !== posts.length - 1" />
         </div>
       </div>

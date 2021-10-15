@@ -15,18 +15,22 @@ export default {
     link: [
       { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }
     ],
-    link: [{ rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap' }],
-    link: [{ rel: 'stylesheet', href: 'https://fonts.googleapis.com/icon?family=Material+Icons+Outlined' }]
+    link: [
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/icon?family=Material+Icons+Outlined' }
+    ],
+
   },
 
   css: [
-    '~/assets/css/fonts.css'
+    '~/assets/css/index.css'
   ],
 
   components: true,
 
   buildModules: [
-    '@nuxtjs/tailwindcss'
+    // '@nuxtjs/tailwindcss'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules

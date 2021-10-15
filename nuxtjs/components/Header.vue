@@ -1,6 +1,6 @@
 <template>
-  <header class="sticky top-0 z-50 px-4 bg-foreground-inverted">
-    <div class="flex items-center justify-between max-w-6xl py-6 mx-auto">
+  <header>
+    <nav class="container">
       <a href="/" class="mr-8">
         <svg
           width="35"
@@ -59,10 +59,10 @@
           />
         </svg>
       </a>
-      <span class="text-right sm:text-lg text-foreground-subdued">
-        An example site powered by <span class="text-foreground-accent">Nuxt</span> and
-        <span class="text-foreground-accent">Directus</span>.
+      <span class="description">
+        An example site powered by <span class="accent">Nuxt</span> and
+        <span class="accent">Directus</span>.
       </span>
-    </div>
+    </nav>
   </header>
 </template>
