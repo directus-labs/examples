@@ -428,6 +428,7 @@ article h1 a {
 
 .info {
   position: relative;
+  margin-top: auto;
 }
 
 .info .background {
@@ -540,7 +541,6 @@ article h1 a {
 }
 
 footer {
-  margin-top: auto;
   overflow: hidden;
   background-color: var(--foreground-accent);
 }
@@ -820,4 +820,39 @@ footer .socials a {
 
 .current-article__body .socials a {
   color: var(--foreground-subdued);
+}
+
+/* Error Page */
+.error .container {
+  padding: 240px 0;
+}
+
+@media (min-width: 640px) {
+  .error .container {
+    padding: 400px 0;
+  }
+}
+
+
+.error h1 {
+  margin: 0 64px 0 0;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 40px;
+  font-family: var(--family-serif);
+}
+
+@media (min-width: 640px) {
+  .error h1 {
+    font-size: 64px;
+    line-height: 60px;
+  }
+}
+
+.error p {
+  line-height: 24px;
+}
+
+.error a {
+  color: var(--foreground-accent);
 }
