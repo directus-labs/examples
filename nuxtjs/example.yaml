@@ -1,9 +1,9 @@
 version: 1
-directus: 9.0.0-rc.97
+directus: 9.0.0-rc.98
 collections:
-  - collection: posts
+  - collection: articles
     meta:
-      collection: posts
+      collection: articles
       icon: null
       note: null
       display_template: null
@@ -18,35 +18,47 @@ collections:
       accountability: all
       color: null
       item_duplication_fields: null
+      sort: null
+      group: null
+      collapse: open
     schema:
-      name: posts
-      schema: public
-      comment: null
+      name: articles
+      sql: >-
+        CREATE TABLE "articles" (`id` integer PRIMARY KEY AUTOINCREMENT NOT
+        NULL, `status` varchar(255) NOT NULL DEFAULT 'draft', `sort` integer
+        NULL, `user_created` char(36) NULL, `date_created` datetime NULL,
+        `user_updated` char(36) NULL, `date_updated` datetime NULL, `title`
+        varchar(255) NULL, `cover_image` char(36) NULL, `author` char(36) NULL,
+        `excerpt` varchar(255) NULL, `body` text NULL, CONSTRAINT
+        `articles_user_created_foreign` FOREIGN KEY (`user_created`) REFERENCES
+        `directus_users` (`id`), CONSTRAINT `articles_user_updated_foreign`
+        FOREIGN KEY (`user_updated`) REFERENCES `directus_users` (`id`),
+        CONSTRAINT `articles_cover_image_foreign` FOREIGN KEY (`cover_image`)
+        REFERENCES `directus_files` (`id`), CONSTRAINT `articles_author_foreign`
+        FOREIGN KEY (`author`) REFERENCES `directus_users` (`id`) ON DELETE SET
+        NULL)
 fields:
-  - collection: posts
+  - collection: articles
     field: id
     type: integer
     schema:
       name: id
-      table: posts
+      table: articles
       data_type: integer
-      default_value: nextval('posts_id_seq'::regclass)
-      generation_expression: null
+      default_value: null
       max_length: null
-      numeric_precision: 32
-      numeric_scale: 0
+      numeric_precision: null
+      numeric_scale: null
       is_generated: false
+      generation_expression: null
       is_nullable: false
-      is_unique: true
+      is_unique: false
       is_primary_key: true
       has_auto_increment: true
-      comment: null
-      schema: public
-      foreign_key_schema: null
-      foreign_key_table: null
       foreign_key_column: null
+      foreign_key_table: null
     meta:
-      collection: posts
+      collection: articles
       field: id
       special: null
       interface: input
@@ -55,37 +67,34 @@ fields:
       display_options: null
       readonly: true
       hidden: true
-      sort: 1
+      sort: null
       width: full
       translations: null
       note: null
       conditions: null
       required: false
       group: null
-  - collection: posts
+  - collection: articles
     field: status
     type: string
     schema:
       name: status
-      table: posts
-      data_type: character varying
+      table: articles
+      data_type: varchar
       default_value: draft
-      generation_expression: null
       max_length: 255
       numeric_precision: null
       numeric_scale: null
       is_generated: false
+      generation_expression: null
       is_nullable: false
       is_unique: false
       is_primary_key: false
       has_auto_increment: false
-      comment: null
-      schema: public
-      foreign_key_schema: null
-      foreign_key_table: null
       foreign_key_column: null
+      foreign_key_table: null
     meta:
-      collection: posts
+      collection: articles
       field: status
       special: null
       interface: select-dropdown
@@ -109,37 +118,34 @@ fields:
             value: archived
       readonly: false
       hidden: false
-      sort: 2
+      sort: null
       width: full
       translations: null
       note: null
       conditions: null
       required: false
       group: null
-  - collection: posts
+  - collection: articles
     field: sort
     type: integer
     schema:
       name: sort
-      table: posts
+      table: articles
       data_type: integer
       default_value: null
-      generation_expression: null
       max_length: null
-      numeric_precision: 32
-      numeric_scale: 0
+      numeric_precision: null
+      numeric_scale: null
       is_generated: false
+      generation_expression: null
       is_nullable: true
       is_unique: false
       is_primary_key: false
       has_auto_increment: false
-      comment: null
-      schema: public
-      foreign_key_schema: null
-      foreign_key_table: null
       foreign_key_column: null
+      foreign_key_table: null
     meta:
-      collection: posts
+      collection: articles
       field: sort
       special: null
       interface: input
@@ -148,37 +154,34 @@ fields:
       display_options: null
       readonly: false
       hidden: true
-      sort: 6
+      sort: null
       width: full
       translations: null
       note: null
       conditions: null
       required: false
       group: null
-  - collection: posts
+  - collection: articles
     field: user_created
-    type: uuid
+    type: string
     schema:
       name: user_created
-      table: posts
-      data_type: uuid
+      table: articles
+      data_type: char
       default_value: null
-      generation_expression: null
-      max_length: null
+      max_length: 36
       numeric_precision: null
       numeric_scale: null
       is_generated: false
+      generation_expression: null
       is_nullable: true
       is_unique: false
       is_primary_key: false
       has_auto_increment: false
-      comment: null
-      schema: public
-      foreign_key_schema: public
-      foreign_key_table: directus_users
       foreign_key_column: id
+      foreign_key_table: directus_users
     meta:
-      collection: posts
+      collection: articles
       field: user_created
       special:
         - user-created
@@ -189,37 +192,34 @@ fields:
       display_options: null
       readonly: true
       hidden: true
-      sort: 7
+      sort: null
       width: half
       translations: null
       note: null
       conditions: null
       required: false
       group: null
-  - collection: posts
+  - collection: articles
     field: date_created
-    type: timestamp
+    type: dateTime
     schema:
       name: date_created
-      table: posts
-      data_type: timestamp with time zone
+      table: articles
+      data_type: datetime
       default_value: null
-      generation_expression: null
       max_length: null
       numeric_precision: null
       numeric_scale: null
       is_generated: false
+      generation_expression: null
       is_nullable: true
       is_unique: false
       is_primary_key: false
       has_auto_increment: false
-      comment: null
-      schema: public
-      foreign_key_schema: null
-      foreign_key_table: null
       foreign_key_column: null
+      foreign_key_table: null
     meta:
-      collection: posts
+      collection: articles
       field: date_created
       special:
         - date-created
@@ -230,37 +230,34 @@ fields:
         relative: true
       readonly: true
       hidden: true
-      sort: 8
+      sort: null
       width: half
       translations: null
       note: null
       conditions: null
       required: false
       group: null
-  - collection: posts
+  - collection: articles
     field: user_updated
-    type: uuid
+    type: string
     schema:
       name: user_updated
-      table: posts
-      data_type: uuid
+      table: articles
+      data_type: char
       default_value: null
-      generation_expression: null
-      max_length: null
+      max_length: 36
       numeric_precision: null
       numeric_scale: null
       is_generated: false
+      generation_expression: null
       is_nullable: true
       is_unique: false
       is_primary_key: false
       has_auto_increment: false
-      comment: null
-      schema: public
-      foreign_key_schema: public
-      foreign_key_table: directus_users
       foreign_key_column: id
+      foreign_key_table: directus_users
     meta:
-      collection: posts
+      collection: articles
       field: user_updated
       special:
         - user-updated
@@ -271,37 +268,34 @@ fields:
       display_options: null
       readonly: true
       hidden: true
-      sort: 9
+      sort: null
       width: half
       translations: null
       note: null
       conditions: null
       required: false
       group: null
-  - collection: posts
+  - collection: articles
     field: date_updated
-    type: timestamp
+    type: dateTime
     schema:
       name: date_updated
-      table: posts
-      data_type: timestamp with time zone
+      table: articles
+      data_type: datetime
       default_value: null
-      generation_expression: null
       max_length: null
       numeric_precision: null
       numeric_scale: null
       is_generated: false
+      generation_expression: null
       is_nullable: true
       is_unique: false
       is_primary_key: false
       has_auto_increment: false
-      comment: null
-      schema: public
-      foreign_key_schema: null
-      foreign_key_table: null
       foreign_key_column: null
+      foreign_key_table: null
     meta:
-      collection: posts
+      collection: articles
       field: date_updated
       special:
         - date-updated
@@ -312,160 +306,39 @@ fields:
         relative: true
       readonly: true
       hidden: true
-      sort: 10
+      sort: null
       width: half
       translations: null
       note: null
       conditions: null
       required: false
       group: null
-  - collection: posts
+  - collection: articles
     field: title
     type: string
     schema:
       name: title
-      table: posts
-      data_type: character varying
+      table: articles
+      data_type: varchar
       default_value: null
-      generation_expression: null
       max_length: 255
       numeric_precision: null
       numeric_scale: null
       is_generated: false
-      is_nullable: false
+      generation_expression: null
+      is_nullable: true
       is_unique: false
       is_primary_key: false
       has_auto_increment: false
-      comment: null
-      schema: public
-      foreign_key_schema: null
-      foreign_key_table: null
       foreign_key_column: null
+      foreign_key_table: null
     meta:
-      collection: posts
+      collection: articles
       field: title
       special: null
       interface: null
       options: null
       display: null
-      display_options: null
-      readonly: false
-      hidden: false
-      sort: 3
-      width: full
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-  - collection: posts
-    field: cover_image
-    type: uuid
-    schema:
-      name: cover_image
-      table: posts
-      data_type: uuid
-      default_value: null
-      generation_expression: null
-      max_length: null
-      numeric_precision: null
-      numeric_scale: null
-      is_generated: false
-      is_nullable: true
-      is_unique: false
-      is_primary_key: false
-      has_auto_increment: false
-      comment: null
-      schema: public
-      foreign_key_schema: public
-      foreign_key_table: directus_files
-      foreign_key_column: id
-    meta:
-      collection: posts
-      field: cover_image
-      special: null
-      interface: file-image
-      options: null
-      display: image
-      display_options: null
-      readonly: false
-      hidden: false
-      sort: 4
-      width: full
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-  - collection: posts
-    field: excerpt
-    type: string
-    schema:
-      name: excerpt
-      table: posts
-      data_type: character varying
-      default_value: null
-      generation_expression: null
-      max_length: 255
-      numeric_precision: null
-      numeric_scale: null
-      is_generated: false
-      is_nullable: true
-      is_unique: false
-      is_primary_key: false
-      has_auto_increment: false
-      comment: null
-      schema: public
-      foreign_key_schema: null
-      foreign_key_table: null
-      foreign_key_column: null
-    meta:
-      collection: posts
-      field: excerpt
-      special: null
-      interface: null
-      options: null
-      display: null
-      display_options: null
-      readonly: false
-      hidden: false
-      sort: 5
-      width: full
-      translations: null
-      note: null
-      conditions: null
-      required: false
-      group: null
-  - collection: posts
-    field: author
-    type: uuid
-    schema:
-      name: author
-      table: posts
-      data_type: uuid
-      default_value: null
-      generation_expression: null
-      max_length: null
-      numeric_precision: null
-      numeric_scale: null
-      is_generated: false
-      is_nullable: true
-      is_unique: false
-      is_primary_key: false
-      has_auto_increment: false
-      comment: null
-      schema: public
-      foreign_key_schema: public
-      foreign_key_table: directus_users
-      foreign_key_column: id
-    meta:
-      collection: posts
-      field: author
-      special: null
-      interface: select-dropdown-m2o
-      options:
-        template: '{{email}}'
-      display: user
       display_options: null
       readonly: false
       hidden: false
@@ -476,30 +349,137 @@ fields:
       conditions: null
       required: false
       group: null
-  - collection: posts
-    field: body
-    type: text
+  - collection: articles
+    field: cover_image
+    type: string
     schema:
-      name: body
-      table: posts
-      data_type: text
+      name: cover_image
+      table: articles
+      data_type: char
       default_value: null
-      generation_expression: null
-      max_length: null
+      max_length: 36
       numeric_precision: null
       numeric_scale: null
       is_generated: false
+      generation_expression: null
       is_nullable: true
       is_unique: false
       is_primary_key: false
       has_auto_increment: false
-      comment: null
-      schema: public
-      foreign_key_schema: null
-      foreign_key_table: null
-      foreign_key_column: null
+      foreign_key_column: id
+      foreign_key_table: directus_files
     meta:
-      collection: posts
+      collection: articles
+      field: cover_image
+      special: null
+      interface: file-image
+      options: null
+      display: image
+      display_options: null
+      readonly: false
+      hidden: false
+      sort: null
+      width: full
+      translations: null
+      note: null
+      conditions: null
+      required: false
+      group: null
+  - collection: articles
+    field: author
+    type: string
+    schema:
+      name: author
+      table: articles
+      data_type: char
+      default_value: null
+      max_length: 36
+      numeric_precision: null
+      numeric_scale: null
+      is_generated: false
+      generation_expression: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      has_auto_increment: false
+      foreign_key_column: id
+      foreign_key_table: directus_users
+    meta:
+      collection: articles
+      field: author
+      special: null
+      interface: select-dropdown-m2o
+      options:
+        template: "{{first_name}}\_{{last_name}}"
+      display: related-values
+      display_options:
+        template: "{{first_name}}\_{{last_name}}"
+      readonly: false
+      hidden: false
+      sort: null
+      width: full
+      translations: null
+      note: null
+      conditions: null
+      required: false
+      group: null
+  - collection: articles
+    field: excerpt
+    type: string
+    schema:
+      name: excerpt
+      table: articles
+      data_type: varchar
+      default_value: null
+      max_length: 255
+      numeric_precision: null
+      numeric_scale: null
+      is_generated: false
+      generation_expression: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      has_auto_increment: false
+      foreign_key_column: null
+      foreign_key_table: null
+    meta:
+      collection: articles
+      field: excerpt
+      special: null
+      interface: null
+      options: null
+      display: null
+      display_options: null
+      readonly: false
+      hidden: false
+      sort: null
+      width: full
+      translations: null
+      note: null
+      conditions: null
+      required: false
+      group: null
+  - collection: articles
+    field: body
+    type: text
+    schema:
+      name: body
+      table: articles
+      data_type: text
+      default_value: null
+      max_length: null
+      numeric_precision: null
+      numeric_scale: null
+      is_generated: false
+      generation_expression: null
+      is_nullable: true
+      is_unique: false
+      is_primary_key: false
+      has_auto_increment: false
+      foreign_key_column: null
+      foreign_key_table: null
+    meta:
+      collection: articles
       field: body
       special: null
       interface: input-rich-text-html
@@ -516,20 +496,31 @@ fields:
       required: false
       group: null
 relations:
-  - collection: posts
+  - collection: directus_collections
+    field: group
+    related_collection: directus_collections
+    schema:
+      table: directus_collections
+      column: group
+      foreign_key_table: directus_collections
+      foreign_key_column: collection
+      on_update: NO ACTION
+      on_delete: NO ACTION
+      constraint_name: null
+    meta: null
+  - collection: articles
     field: author
     related_collection: directus_users
     schema:
-      table: posts
+      table: articles
       column: author
       foreign_key_table: directus_users
       foreign_key_column: id
-      foreign_key_schema: public
-      constraint_name: posts_author_foreign
       on_update: NO ACTION
       on_delete: SET NULL
+      constraint_name: null
     meta:
-      many_collection: posts
+      many_collection: articles
       many_field: author
       one_collection: directus_users
       one_field: null
@@ -538,20 +529,19 @@ relations:
       junction_field: null
       sort_field: null
       one_deselect_action: nullify
-  - collection: posts
+  - collection: articles
     field: cover_image
     related_collection: directus_files
     schema:
-      table: posts
+      table: articles
       column: cover_image
       foreign_key_table: directus_files
       foreign_key_column: id
-      foreign_key_schema: public
-      constraint_name: posts_cover_image_foreign
       on_update: NO ACTION
       on_delete: NO ACTION
+      constraint_name: null
     meta:
-      many_collection: posts
+      many_collection: articles
       many_field: cover_image
       one_collection: directus_files
       one_field: null
@@ -560,20 +550,19 @@ relations:
       junction_field: null
       sort_field: null
       one_deselect_action: nullify
-  - collection: posts
+  - collection: articles
     field: user_updated
     related_collection: directus_users
     schema:
-      table: posts
+      table: articles
       column: user_updated
       foreign_key_table: directus_users
       foreign_key_column: id
-      foreign_key_schema: public
-      constraint_name: posts_user_updated_foreign
       on_update: NO ACTION
       on_delete: NO ACTION
+      constraint_name: null
     meta:
-      many_collection: posts
+      many_collection: articles
       many_field: user_updated
       one_collection: directus_users
       one_field: null
@@ -582,20 +571,19 @@ relations:
       junction_field: null
       sort_field: null
       one_deselect_action: nullify
-  - collection: posts
+  - collection: articles
     field: user_created
     related_collection: directus_users
     schema:
-      table: posts
+      table: articles
       column: user_created
       foreign_key_table: directus_users
       foreign_key_column: id
-      foreign_key_schema: public
-      constraint_name: posts_user_created_foreign
       on_update: NO ACTION
       on_delete: NO ACTION
+      constraint_name: null
     meta:
-      many_collection: posts
+      many_collection: articles
       many_field: user_created
       one_collection: directus_users
       one_field: null
