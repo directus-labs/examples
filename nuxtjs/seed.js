@@ -8,6 +8,14 @@ const config = {
   staticToken: process.env.DIRECTUS_STATIC_TOKEN
 }
 
+const seedProject = {
+  foregroundImage: '1o4Z1EwCkaY',
+  data: {
+    project_name: "Directus Nuxt.js Example",
+    public_note: "Directus Integration with Nuxt.js"
+  }
+}
+
 const seedImages = [
   'HXOllTSwrpM',
   'wawEfYdpkag',
@@ -29,7 +37,7 @@ const seedAuthor = {
   }
 }
 
-const seedPost = {
+const seedArticle = {
   status: 'published',
   title: 'What it’s like to work for an amazing company like Monospace?',
   excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra iaculis lectus, ut viverra mi dictum sed. Aliquam id dolor directus et sit amet sem condimentum posuere.',
@@ -52,6 +60,12 @@ async function start() {
     process.exit(1)
   }
 
+  console.log('Seeding project...')
+  const foregroundImageFileResponse = await directus.transport.post(`${config.baseUrl}/files/import`, {
+    url: `https://source.unsplash.com/${seedProject.foregroundImage}`,
+  })
+  await directus.settings.update({ ...seedProject.data, public_foreground: foregroundImageFileResponse.data.id });
+
   console.log('Seeding author...')
   const authorFileResponse = await directus.transport.post(`${config.baseUrl}/files/import`, {
     url: seedAuthor.avatarUrl,
@@ -67,14 +81,14 @@ async function start() {
     coverImages.push(imageFileResponse.data.id)
   }
 
-  console.log('Seeding posts...')
-  const numberOfPosts = 9
-  let posts = []
-  for (let i = 0; i < numberOfPosts; i++) {
-    const post = Object.assign({}, seedPost, { author: author.id, cover_image: coverImages[i] })
-    posts.push(post);
+  console.log('Seeding articles...')
+  const numberOfArticles = coverImages.length
+  let articles = []
+  for (let i = 0; i < numberOfArticles; i++) {
+    const article = Object.assign({}, seedArticle, { author: author.id, cover_image: coverImages[i] })
+    articles.push(article);
   }
-  await directus.items('posts').createMany(posts)
+  await directus.items('articles').createMany(articles)
 
   console.log('Seeding completed.')
 }
