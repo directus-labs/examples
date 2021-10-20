@@ -3,7 +3,7 @@
     <div class="top-wrapper">
       <div class="image-wrapper">
         <img
-          :src="`http://localhost:8055/assets/${post.cover_image}`"
+          :src="`http://localhost:8055/assets/${article.cover_image}`"
           alt=""
           loading="lazy"
         />
@@ -15,24 +15,24 @@
       >
     </div>
     <h1>
-      <nuxt-link :to="`/posts/${post.id}`">
-        {{ post.title }}
+      <nuxt-link :to="`/articles/${article.id}`">
+        {{ article.title }}
       </nuxt-link>
     </h1>
-    <p class="excerpt">{{ post.excerpt }}</p>
+    <p class="excerpt">{{ article.excerpt }}</p>
     <div class="detail">
       <div
         class="author-image-wrapper"
       >
         <img
-          :src="`http://localhost:8055/assets/${post.author.avatar}`"
+          :src="`http://localhost:8055/assets/${article.author.avatar}`"
           alt=""
           loading="lazy"
         />
       </div>
       <div>
         <div class="author-name">
-          {{ `${post.author.first_name} ${post.author.last_name}` }}
+          {{ `${article.author.first_name} ${article.author.last_name}` }}
         </div>
         <div>3 hours ago</div>
         <div class="category">Writing</div>
@@ -44,7 +44,7 @@
 <script>
 export default {
   props: {
-    post: {
+    article: {
       type: Object,
       required: true
     }

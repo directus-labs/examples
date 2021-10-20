@@ -1,5 +1,5 @@
 <template>
-  <div class="current-post">
+  <div class="current-article">
     <section>
       <div class="container">
         <nuxt-link to="/" class="back-link ">
@@ -17,22 +17,22 @@
               d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"
             />
           </svg>
-          <span>Back to Posts</span>
+          <span>Back to Articles</span>
         </nuxt-link>
-        <h1 class="current-post-title">{{ post.title }}</h1>
-        <div class="current-post__detail">
+        <h1 class="current-article-title">{{ article.title }}</h1>
+        <div class="current-article__detail">
           <div class="wrapper-outer">
             <div class="wrapper-inner">
               <div class="author-image">
                 <img
-                  :src="`http://localhost:8055/assets/${post.author.avatar}`"
+                  :src="`http://localhost:8055/assets/${article.author.avatar}`"
                   alt=""
                   loading="lazy"
                 />
               </div>
               <div>
                 <div class="author-name">
-                  {{ `${post.author.first_name} ${post.author.last_name}` }}
+                  {{ `${article.author.first_name} ${article.author.last_name}` }}
                 </div>
                 <div class="time">3 hours ago</div>
               </div>
@@ -122,13 +122,13 @@
           </div>
           <div class="cover-image">
             <img
-              :src="`http://localhost:8055/assets/${post.cover_image}`"
+              :src="`http://localhost:8055/assets/${article.cover_image}`"
               alt=""
             />
           </div>
         </div>
-        <div class="current-post__body">
-          <div v-html="post.body" class="content"></div>
+        <div class="current-article__body">
+          <div v-html="article.body" class="content"></div>
           <ul class="socials">
             <li>
               <a
@@ -216,7 +216,7 @@
         </div>
       </div>
     </section>
-    <MorePosts />
+    <MoreArticles />
   </div>
 </template>
 
@@ -225,16 +225,16 @@ export default {
   async asyncData({ $directus, params, error }) {
     const { id } = params;
 
-    let post;
+    let article;
     try {
-      post = await $directus.items("posts").readOne(id, {
+      article = await $directus.items("articles").readOne(id, {
         fields: ["*", "author.avatar", "author.first_name", "author.last_name"]
       });
     } catch (err) {
-      return error({ statusCode: 404, message: "Post not found" });
+      return error({ statusCode: 404, message: "Article not found" });
     }
 
-    return { post };
+    return { article };
   }
 };
 </script>
