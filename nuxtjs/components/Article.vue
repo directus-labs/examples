@@ -1,9 +1,9 @@
 <template>
-  <article class="post" :class="{ bordered }">
+  <article class="article" :class="{ bordered }">
     <div class="top-wrapper">
       <div class="image-wrapper">
         <img
-          :src="`http://localhost:8055/assets/${post.cover_image}`"
+          :src="`http://localhost:8055/assets/${article.cover_image}`"
           alt=""
           loading="lazy"
         />
@@ -12,14 +12,14 @@
     </div>
     <div class="bottom-wrapper">
       <h1>
-        <nuxt-link :to="`/posts/${post.id}`">
-          {{ post.title }}
+        <nuxt-link :to="`/articles/${article.id}`">
+          {{ article.title }}
         </nuxt-link>
       </h1>
       <div class="detail">
         <div class="author-image-wrapper">
           <img
-            :src="`http://localhost:8055/assets/${post.author.avatar}`"
+            :src="`http://localhost:8055/assets/${article.author.avatar}`"
             alt=""
             loading="lazy"
           />
@@ -28,7 +28,7 @@
           class="detail-inner"
         >
           <div class="author-name">
-            {{ `${post.author.first_name} ${post.author.last_name}` }}
+            {{ `${article.author.first_name} ${article.author.last_name}` }}
           </div>
           <div class="time">3 hours ago</div>
           <div class="category">Writing</div>
@@ -41,7 +41,7 @@
 <script>
 export default {
   props: {
-    post: {
+    article: {
       type: Object,
       required: true
     },
