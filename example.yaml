@@ -1,10 +1,10 @@
 version: 1
-directus: 9.0.0-rc.98
+directus: 9.3.0
 collections:
   - collection: articles
     meta:
       collection: articles
-      icon: null
+      icon: article
       note: null
       display_template: null
       hidden: false
@@ -23,20 +23,8 @@ collections:
       collapse: open
     schema:
       name: articles
-      sql: >-
-        CREATE TABLE "articles" (`id` integer PRIMARY KEY AUTOINCREMENT NOT
-        NULL, `status` varchar(255) NOT NULL DEFAULT 'draft', `sort` integer
-        NULL, `user_created` char(36) NULL, `date_created` datetime NULL,
-        `user_updated` char(36) NULL, `date_updated` datetime NULL, `title`
-        varchar(255) NULL, `cover_image` char(36) NULL, `author` char(36) NULL,
-        `excerpt` varchar(255) NULL, `body` text NULL, CONSTRAINT
-        `articles_user_created_foreign` FOREIGN KEY (`user_created`) REFERENCES
-        `directus_users` (`id`), CONSTRAINT `articles_user_updated_foreign`
-        FOREIGN KEY (`user_updated`) REFERENCES `directus_users` (`id`),
-        CONSTRAINT `articles_cover_image_foreign` FOREIGN KEY (`cover_image`)
-        REFERENCES `directus_files` (`id`), CONSTRAINT `articles_author_foreign`
-        FOREIGN KEY (`author`) REFERENCES `directus_users` (`id`) ON DELETE SET
-        NULL)
+      schema: public
+      comment: null
 fields:
   - collection: articles
     field: id
@@ -45,18 +33,21 @@ fields:
       name: id
       table: articles
       data_type: integer
-      default_value: null
-      max_length: null
-      numeric_precision: null
-      numeric_scale: null
-      is_generated: false
+      default_value: nextval('articles_id_seq'::regclass)
       generation_expression: null
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_generated: false
       is_nullable: false
-      is_unique: false
+      is_unique: true
       is_primary_key: true
       has_auto_increment: true
-      foreign_key_column: null
+      comment: null
+      schema: public
+      foreign_key_schema: null
       foreign_key_table: null
+      foreign_key_column: null
     meta:
       collection: articles
       field: id
@@ -80,19 +71,22 @@ fields:
     schema:
       name: status
       table: articles
-      data_type: varchar
+      data_type: character varying
       default_value: draft
+      generation_expression: null
       max_length: 255
       numeric_precision: null
       numeric_scale: null
       is_generated: false
-      generation_expression: null
       is_nullable: false
       is_unique: false
       is_primary_key: false
       has_auto_increment: false
-      foreign_key_column: null
+      comment: null
+      schema: public
+      foreign_key_schema: null
       foreign_key_table: null
+      foreign_key_column: null
     meta:
       collection: articles
       field: status
@@ -133,17 +127,20 @@ fields:
       table: articles
       data_type: integer
       default_value: null
-      max_length: null
-      numeric_precision: null
-      numeric_scale: null
-      is_generated: false
       generation_expression: null
+      max_length: null
+      numeric_precision: 32
+      numeric_scale: 0
+      is_generated: false
       is_nullable: true
       is_unique: false
       is_primary_key: false
       has_auto_increment: false
-      foreign_key_column: null
+      comment: null
+      schema: public
+      foreign_key_schema: null
       foreign_key_table: null
+      foreign_key_column: null
     meta:
       collection: articles
       field: sort
@@ -163,23 +160,26 @@ fields:
       group: null
   - collection: articles
     field: user_created
-    type: string
+    type: uuid
     schema:
       name: user_created
       table: articles
-      data_type: char
+      data_type: uuid
       default_value: null
-      max_length: 36
+      generation_expression: null
+      max_length: null
       numeric_precision: null
       numeric_scale: null
       is_generated: false
-      generation_expression: null
       is_nullable: true
       is_unique: false
       is_primary_key: false
       has_auto_increment: false
-      foreign_key_column: id
+      comment: null
+      schema: public
+      foreign_key_schema: public
       foreign_key_table: directus_users
+      foreign_key_column: id
     meta:
       collection: articles
       field: user_created
@@ -201,23 +201,26 @@ fields:
       group: null
   - collection: articles
     field: date_created
-    type: dateTime
+    type: timestamp
     schema:
       name: date_created
       table: articles
-      data_type: datetime
+      data_type: timestamp with time zone
       default_value: null
+      generation_expression: null
       max_length: null
       numeric_precision: null
       numeric_scale: null
       is_generated: false
-      generation_expression: null
       is_nullable: true
       is_unique: false
       is_primary_key: false
       has_auto_increment: false
-      foreign_key_column: null
+      comment: null
+      schema: public
+      foreign_key_schema: null
       foreign_key_table: null
+      foreign_key_column: null
     meta:
       collection: articles
       field: date_created
@@ -239,23 +242,26 @@ fields:
       group: null
   - collection: articles
     field: user_updated
-    type: string
+    type: uuid
     schema:
       name: user_updated
       table: articles
-      data_type: char
+      data_type: uuid
       default_value: null
-      max_length: 36
+      generation_expression: null
+      max_length: null
       numeric_precision: null
       numeric_scale: null
       is_generated: false
-      generation_expression: null
       is_nullable: true
       is_unique: false
       is_primary_key: false
       has_auto_increment: false
-      foreign_key_column: id
+      comment: null
+      schema: public
+      foreign_key_schema: public
       foreign_key_table: directus_users
+      foreign_key_column: id
     meta:
       collection: articles
       field: user_updated
@@ -277,23 +283,26 @@ fields:
       group: null
   - collection: articles
     field: date_updated
-    type: dateTime
+    type: timestamp
     schema:
       name: date_updated
       table: articles
-      data_type: datetime
+      data_type: timestamp with time zone
       default_value: null
+      generation_expression: null
       max_length: null
       numeric_precision: null
       numeric_scale: null
       is_generated: false
-      generation_expression: null
       is_nullable: true
       is_unique: false
       is_primary_key: false
       has_auto_increment: false
-      foreign_key_column: null
+      comment: null
+      schema: public
+      foreign_key_schema: null
       foreign_key_table: null
+      foreign_key_column: null
     meta:
       collection: articles
       field: date_updated
@@ -319,27 +328,32 @@ fields:
     schema:
       name: title
       table: articles
-      data_type: varchar
+      data_type: character varying
       default_value: null
+      generation_expression: null
       max_length: 255
       numeric_precision: null
       numeric_scale: null
       is_generated: false
-      generation_expression: null
       is_nullable: true
       is_unique: false
       is_primary_key: false
       has_auto_increment: false
-      foreign_key_column: null
+      comment: null
+      schema: public
+      foreign_key_schema: null
       foreign_key_table: null
+      foreign_key_column: null
     meta:
       collection: articles
       field: title
       special: null
-      interface: null
-      options: null
+      interface: input
+      options:
+        iconLeft: title
       display: null
-      display_options: null
+      display_options:
+        bold: true
       readonly: false
       hidden: false
       sort: null
@@ -351,27 +365,31 @@ fields:
       group: null
   - collection: articles
     field: cover_image
-    type: string
+    type: uuid
     schema:
       name: cover_image
       table: articles
-      data_type: char
+      data_type: uuid
       default_value: null
-      max_length: 36
+      generation_expression: null
+      max_length: null
       numeric_precision: null
       numeric_scale: null
       is_generated: false
-      generation_expression: null
       is_nullable: true
       is_unique: false
       is_primary_key: false
       has_auto_increment: false
-      foreign_key_column: id
+      comment: null
+      schema: public
+      foreign_key_schema: public
       foreign_key_table: directus_files
+      foreign_key_column: id
     meta:
       collection: articles
       field: cover_image
-      special: null
+      special:
+        - file
       interface: file-image
       options: null
       display: image
@@ -387,27 +405,31 @@ fields:
       group: null
   - collection: articles
     field: author
-    type: string
+    type: uuid
     schema:
       name: author
       table: articles
-      data_type: char
+      data_type: uuid
       default_value: null
-      max_length: 36
+      generation_expression: null
+      max_length: null
       numeric_precision: null
       numeric_scale: null
       is_generated: false
-      generation_expression: null
       is_nullable: true
       is_unique: false
       is_primary_key: false
       has_auto_increment: false
-      foreign_key_column: id
+      comment: null
+      schema: public
+      foreign_key_schema: public
       foreign_key_table: directus_users
+      foreign_key_column: id
     meta:
       collection: articles
       field: author
-      special: null
+      special:
+        - m2o
       interface: select-dropdown-m2o
       options:
         template: "{{first_name}}\_{{last_name}}"
@@ -425,29 +447,33 @@ fields:
       group: null
   - collection: articles
     field: excerpt
-    type: string
+    type: text
     schema:
       name: excerpt
       table: articles
-      data_type: varchar
+      data_type: text
       default_value: null
-      max_length: 255
+      generation_expression: null
+      max_length: null
       numeric_precision: null
       numeric_scale: null
       is_generated: false
-      generation_expression: null
       is_nullable: true
       is_unique: false
       is_primary_key: false
       has_auto_increment: false
-      foreign_key_column: null
+      comment: null
+      schema: public
+      foreign_key_schema: null
       foreign_key_table: null
+      foreign_key_column: null
     meta:
       collection: articles
       field: excerpt
       special: null
-      interface: null
-      options: null
+      interface: input-multiline
+      options:
+        trim: true
       display: null
       display_options: null
       readonly: false
@@ -467,23 +493,27 @@ fields:
       table: articles
       data_type: text
       default_value: null
+      generation_expression: null
       max_length: null
       numeric_precision: null
       numeric_scale: null
       is_generated: false
-      generation_expression: null
       is_nullable: true
       is_unique: false
       is_primary_key: false
       has_auto_increment: false
-      foreign_key_column: null
+      comment: null
+      schema: public
+      foreign_key_schema: null
       foreign_key_table: null
+      foreign_key_column: null
     meta:
       collection: articles
       field: body
       special: null
       interface: input-rich-text-html
-      options: null
+      options:
+        imageToken: null
       display: null
       display_options: null
       readonly: false
@@ -496,6 +526,19 @@ fields:
       required: false
       group: null
 relations:
+  # - collection: topology.layer
+  #   field: topology_id
+  #   related_collection: topology
+  #   schema:
+  #     table: topology.layer
+  #     column: topology_id
+  #     foreign_key_table: topology
+  #     foreign_key_column: id
+  #     foreign_key_schema: topology
+  #     constraint_name: layer_topology_id_fkey
+  #     on_update: NO ACTION
+  #     on_delete: NO ACTION
+  #   meta: null
   - collection: directus_collections
     field: group
     related_collection: directus_collections
@@ -504,9 +547,10 @@ relations:
       column: group
       foreign_key_table: directus_collections
       foreign_key_column: collection
+      foreign_key_schema: public
+      constraint_name: directus_collections_group_foreign
       on_update: NO ACTION
       on_delete: NO ACTION
-      constraint_name: null
     meta: null
   - collection: articles
     field: author
@@ -516,9 +560,10 @@ relations:
       column: author
       foreign_key_table: directus_users
       foreign_key_column: id
+      foreign_key_schema: public
+      constraint_name: articles_author_foreign
       on_update: NO ACTION
       on_delete: SET NULL
-      constraint_name: null
     meta:
       many_collection: articles
       many_field: author
@@ -537,9 +582,10 @@ relations:
       column: cover_image
       foreign_key_table: directus_files
       foreign_key_column: id
+      foreign_key_schema: public
+      constraint_name: articles_cover_image_foreign
       on_update: NO ACTION
-      on_delete: NO ACTION
-      constraint_name: null
+      on_delete: SET NULL
     meta:
       many_collection: articles
       many_field: cover_image
@@ -558,9 +604,10 @@ relations:
       column: user_updated
       foreign_key_table: directus_users
       foreign_key_column: id
+      foreign_key_schema: public
+      constraint_name: articles_user_updated_foreign
       on_update: NO ACTION
       on_delete: NO ACTION
-      constraint_name: null
     meta:
       many_collection: articles
       many_field: user_updated
@@ -579,9 +626,10 @@ relations:
       column: user_created
       foreign_key_table: directus_users
       foreign_key_column: id
+      foreign_key_schema: public
+      constraint_name: articles_user_created_foreign
       on_update: NO ACTION
       on_delete: NO ACTION
-      constraint_name: null
     meta:
       many_collection: articles
       many_field: user_created
