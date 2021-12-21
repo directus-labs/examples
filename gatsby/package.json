@@ -1,0 +1,17 @@
+{
+  "name": "directus-gatsby-example",
+  "private": true,
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "@directus/gatsby-source-directus": "^9.3.0",
+    "gatsby": "^4.4.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}
