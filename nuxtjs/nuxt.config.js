@@ -35,7 +35,7 @@ export default {
   ],
 
   directus: {
-    url: process.env.DIRECTUS_BASE_URL,
+    url: process.env.DIRECTUS_URL,
     options: {
       email: process.env.DIRECTUS_EMAIL,
       password: process.env.DIRECTUS_PASSWORD,
