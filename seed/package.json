@@ -4,7 +4,23 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "node -r esbuild-register src/index.ts",
+    "build": "rollup -c"
   },
-  "license": "MIT"
+  "dependencies": {
+    "colorette": "^2.0.16",
+    "dotenv": "^10.0.0",
+    "import-cwd": "^3.0.0",
+    "minimist": "^1.2.5"
+  },
+  "devDependencies": {
+    "@directus/sdk": "^9.3.0",
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-node-resolve": "^13.1.1",
+    "@types/minimist": "^1.2.2",
+    "@types/node": "^17.0.2",
+    "esbuild-register": "^3.2.1",
+    "rollup": "^2.61.1",
+    "rollup-plugin-esbuild": "^4.7.2"
+  }
 }
