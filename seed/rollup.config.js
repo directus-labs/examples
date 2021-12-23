@@ -1,6 +1,6 @@
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
-// import json from '@rollup/plugin-json';
+import json from '@rollup/plugin-json';
 import esbuild from 'rollup-plugin-esbuild';
 
 export default {
@@ -9,5 +9,5 @@ export default {
         file: 'index.js',
         format: 'cjs'
     },
-    plugins: [nodeResolve(), commonjs({ ignoreDynamicRequires: true }), esbuild({ minify: true })],
+    plugins: [nodeResolve(), commonjs({ ignoreDynamicRequires: true }), json(), esbuild({ minify: true })],
 }; 

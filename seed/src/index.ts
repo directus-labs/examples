@@ -1,12 +1,19 @@
 import "dotenv/config";
+import pupa from "pupa";
 import { env } from "./env";
 import { logger } from "./logger";
 import { directus } from "./directus";
+import { seedProject, seedUsers, seedArticles } from "./data";
 import { getArgv } from "./utils";
 
 export async function start() {
-  logger.info("Seeding data for Directus example...");
   const argv = getArgv();
+
+  logger.info(
+    pupa("Seeding data for Directus {project} example...", {
+      project: argv.project,
+    })
+  );
 
   try {
     if (env.staticToken) {
@@ -25,14 +32,19 @@ export async function start() {
     logger.error(err.message);
     process.exit(1);
   }
-  
-  const info = await directus.server.info();
-  console.log(info);
+
+  await seedProject();
+  const user = await seedUsers();
+  await seedArticles(user);
 
   logger.info("Logging out...");
   await directus.auth.logout();
-  
-  logger.info("Seed completed.");
+
+  logger.info(
+    pupa("Directus {project} example seeding completed.", {
+      project: argv.project,
+    })
+  );
 }
 
 start();
