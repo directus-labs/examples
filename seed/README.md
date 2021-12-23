@@ -9,6 +9,7 @@ This project contains the seed data & script used by every examples in tandem wi
 - Project settings with title based on example ran, including a simple background image.
 - One new user as the author of all the seeded articles.
 - Nine articles to be fetched in the examples.
+- ❗ Sets **Read** permission to public role for `directus_files` in order to view the images without access tokens.
 
 ## 🔧 Development
 

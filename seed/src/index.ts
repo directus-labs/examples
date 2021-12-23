@@ -3,7 +3,7 @@ import pupa from "pupa";
 import { env } from "./env";
 import { logger } from "./logger";
 import { directus } from "./directus";
-import { seedProject, seedUsers, seedArticles } from "./data";
+import { seedProject, seedUsers, seedArticles, seedPermissions } from "./data";
 import { getArgv } from "./utils";
 
 export async function start() {
@@ -36,6 +36,7 @@ export async function start() {
   await seedProject();
   const user = await seedUsers();
   await seedArticles(user);
+  await seedPermissions();
 
   logger.info("Logging out...");
   await directus.auth.logout();
