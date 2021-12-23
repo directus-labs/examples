@@ -29,7 +29,10 @@ export default {
 
   components: true,
 
-  // Modules: https://go.nuxtjs.dev/config-modules
+  publicRuntimeConfig: {
+    url: process.env.DIRECTUS_URL
+  },
+
   modules: [
     '~/modules/directus'
   ],

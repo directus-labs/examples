@@ -2,7 +2,7 @@
   <div class="current-article">
     <section>
       <div class="container">
-        <nuxt-link to="/" class="back-link ">
+        <nuxt-link to="/" class="current-article__backlink">
           <svg
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
@@ -19,11 +19,11 @@
           </svg>
           <span>Back to Articles</span>
         </nuxt-link>
-        <h1 class="current-article-title">{{ article.title }}</h1>
+        <h1 class="current-article__title">{{ article.title }}</h1>
         <div class="current-article__detail">
-          <div class="wrapper-outer">
-            <div class="wrapper-inner">
-              <div class="author-image">
+          <div class="current-article__wrapperOuter">
+            <div class="current-article__wrapperInner">
+              <div class="current-article__authorImage">
                 <img
                   :src="`http://localhost:8055/assets/${article.author.avatar}`"
                   alt=""
@@ -31,16 +31,20 @@
                 />
               </div>
               <div>
-                <div class="author-name">
-                  {{ `${article.author.first_name} ${article.author.last_name}` }}
+                <div class="current-article__authorName">
+                  {{
+                    `${article.author.first_name} ${article.author.last_name}`
+                  }}
                 </div>
-                <div class="time">3 hours ago</div>
+                <div class="current-article__time">
+                  {{ article.date_created }}
+                </div>
               </div>
             </div>
-            <ul class="socials">
+            <ul class="current-article__socials">
               <li>
                 <a
-                  href="https://github.com/directus"
+                  :href="$route.path"
                   target="_blank"
                   rel="noreferrer noopener"
                 >
@@ -120,7 +124,7 @@
               </li>
             </ul>
           </div>
-          <div class="cover-image">
+          <div class="current-article_coverImage">
             <img
               :src="`http://localhost:8055/assets/${article.cover_image}`"
               alt=""
@@ -128,8 +132,8 @@
           </div>
         </div>
         <div class="current-article__body">
-          <div v-html="article.body" class="content"></div>
-          <ul class="socials">
+          <div v-html="article.body" class="current-article__bodyContent"></div>
+          <ul class="current-article__bodySocials">
             <li>
               <a
                 href="https://github.com/directus"
