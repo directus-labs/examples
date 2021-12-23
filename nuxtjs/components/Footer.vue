@@ -1,14 +1,14 @@
 <template>
   <footer>
-    <div class="container top-wrapper">
+    <div class="container footer__topWrapper">
       <span>
         Generated with <span class="underline">Nuxt</span>, powered by
         <span class="underline">Directus</span>.
       </span>
     </div>
-    <div class="container bottom-wrapper">
-      <span class="copyright">© 2021 Monospace Inc</span>
-      <ul class="socials">
+    <div class="container footer__bottomWrapper">
+      <span class="footer__copyright">© 2021 Monospace Inc</span>
+      <ul class="footer__socials">
         <li>
           <a
             href="https://github.com/directus"

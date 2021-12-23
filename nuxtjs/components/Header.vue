@@ -59,7 +59,7 @@
           />
         </svg>
       </a>
-      <span class="description">
+      <span class="header__description">
         An example site powered by <span class="accent">Nuxt</span> and
         <span class="accent">Directus</span>.
       </span>

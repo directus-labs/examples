@@ -1,20 +1,20 @@
 <template>
   <section class="info">
-    <div class="background">
-      <div class="left"></div>
-      <div class="right"></div>
+    <div class="info__background">
+      <div class="info__backgroundLeft"></div>
+      <div class="info__backgroundRight"></div>
     </div>
     <div class="container">
-      <div class="wrapper-outer left">
-        <div class="wrapper-inner">
-          <span class="subtitle">Documentation</span>
-          <a href="#" class="title">Read the Tutorial</a>
+      <div class="info__wrapperOuter left">
+        <div class="info_wrapperInner">
+          <span class="info__subtitle">Documentation</span>
+          <a href="#" class="info__title">Read the Tutorial</a>
         </div>
       </div>
-      <div class="wrapper-outer right">
-        <div class="wrapper-inner">
-          <span class="subtitle">Codebase</span>
-          <a href="#" class="title">View on GitHub</a>
+      <div class="info__wrapperOuter right">
+        <div class="info_wrapperInner">
+          <span class="info__subtitle">Codebase</span>
+          <a href="#" class="info__title">View on GitHub</a>
         </div>
       </div>
     </div>
