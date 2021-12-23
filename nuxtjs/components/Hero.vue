@@ -1,41 +1,35 @@
 <template>
   <article class="hero">
-    <div class="top-wrapper">
-      <div class="image-wrapper">
+    <div class="hero__topWrapper">
+      <div class="hero__imageWrapper">
         <img
-          :src="`http://localhost:8055/assets/${article.cover_image}`"
+          :src="`${$config.url}/assets/${article.cover_image}`"
           alt=""
           loading="lazy"
         />
       </div>
-      <span
-        aria-hidden="true"
-        class="tag"
-        >Writing</span
-      >
+      <span aria-hidden="true" class="tag">Writing</span>
     </div>
-    <h1>
+    <h1 class="hero__title">
       <nuxt-link :to="`/articles/${article.id}`">
         {{ article.title }}
       </nuxt-link>
     </h1>
-    <p class="excerpt">{{ article.excerpt }}</p>
-    <div class="detail">
-      <div
-        class="author-image-wrapper"
-      >
+    <p class="hero__excerpt">{{ article.excerpt }}</p>
+    <div class="hero__detail">
+      <div class="hero__detailAuthorImage">
         <img
-          :src="`http://localhost:8055/assets/${article.author.avatar}`"
+          :src="`${$config.url}/assets/${article.author.avatar}`"
           alt=""
           loading="lazy"
         />
       </div>
       <div>
-        <div class="author-name">
+        <div class="hero__detailAuthorName">
           {{ `${article.author.first_name} ${article.author.last_name}` }}
         </div>
-        <div>3 hours ago</div>
-        <div class="category">Writing</div>
+        <div>{{ article.date_created }}</div>
+        <div class="hero__detailCategory">Writing</div>
       </div>
     </div>
   </article>
