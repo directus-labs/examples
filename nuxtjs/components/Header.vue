@@ -1,7 +1,7 @@
 <template>
   <header>
     <nav class="container">
-      <a href="/" class="mr-8">
+      <a href="/">
         <svg
           width="35"
           height="40"

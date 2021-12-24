@@ -4,7 +4,7 @@ const Header = () => {
   return (
     <header>
       <nav className="container">
-        <a href="/" className="mr-8">
+        <a href="/">
           <svg
             width="35"
             height="40"
