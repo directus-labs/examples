@@ -39,10 +39,10 @@ export default {
 
   directus: {
     url: process.env.DIRECTUS_URL,
-    options: {
+    auth: {
       email: process.env.DIRECTUS_EMAIL,
       password: process.env.DIRECTUS_PASSWORD,
-      // staticToken: process.env.DIRECTUS_STATIC_TOKEN,
+      // token: process.env.DIRECTUS_STATIC_TOKEN,
     },
   },
 }
