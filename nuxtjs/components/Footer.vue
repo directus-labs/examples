@@ -7,7 +7,7 @@
       </span>
     </div>
     <div class="container footer__bottomWrapper">
-      <span class="footer__copyright">© 2021 Monospace Inc</span>
+      <span class="footer__copyright">© {{new Date().getFullYear()}} Monospace Inc</span>
       <ul class="footer__socials">
         <li>
           <a
