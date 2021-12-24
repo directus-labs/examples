@@ -17,7 +17,9 @@
    npm install
    ```
 
-3. Start the development server.
+3. Create a `.env.development` file based on the provided `.env.example` file.
+
+4. Start the development server.
 
    ```shell
    npm run develop
