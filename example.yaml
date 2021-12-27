@@ -526,32 +526,6 @@ fields:
       required: false
       group: null
 relations:
-  # - collection: topology.layer
-  #   field: topology_id
-  #   related_collection: topology
-  #   schema:
-  #     table: topology.layer
-  #     column: topology_id
-  #     foreign_key_table: topology
-  #     foreign_key_column: id
-  #     foreign_key_schema: topology
-  #     constraint_name: layer_topology_id_fkey
-  #     on_update: NO ACTION
-  #     on_delete: NO ACTION
-  #   meta: null
-  - collection: directus_collections
-    field: group
-    related_collection: directus_collections
-    schema:
-      table: directus_collections
-      column: group
-      foreign_key_table: directus_collections
-      foreign_key_column: collection
-      foreign_key_schema: public
-      constraint_name: directus_collections_group_foreign
-      on_update: NO ACTION
-      on_delete: NO ACTION
-    meta: null
   - collection: articles
     field: author
     related_collection: directus_users
