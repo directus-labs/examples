@@ -2,7 +2,7 @@
   "name": "directus-examples-seed",
   "description": "Seed data for Directus examples",
   "private": true,
-  "main": "index.js",
+  "main": "bundle/index.js",
   "scripts": {
     "dev": "node -r esbuild-register src/index.ts",
     "build": "rollup -c"

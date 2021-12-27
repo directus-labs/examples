@@ -6,7 +6,7 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "seed": "node ../seed/index.js --project=Nuxt.js"
+    "seed": "node ../seed --project=Nuxt.js"
   },
   "dependencies": {
     "@directus/sdk": "^9.0.0",

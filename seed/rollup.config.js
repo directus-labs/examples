@@ -6,7 +6,7 @@ import esbuild from 'rollup-plugin-esbuild';
 export default {
     input: 'src/index.ts',
     output: {
-        file: 'index.js',
+        file: 'bundle/index.js',
         format: 'cjs'
     },
     plugins: [nodeResolve(), commonjs({ ignoreDynamicRequires: true }), json(), esbuild({ minify: true })],

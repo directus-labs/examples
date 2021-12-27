@@ -7,7 +7,7 @@
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "seed": "node ../seed/index.js --project=Gatsby"
+    "seed": "node ../seed --project=Gatsby"
   },
   "dependencies": {
     "@directus/gatsby-source-directus": "^9.3.0",
