@@ -1,18 +1,18 @@
 import * as React from "react";
-import { Link } from "gatsby";
-import Layout from "../components/layout";
-import MoreArticles from "../components/moreArticles";
+import { Link, graphql } from "gatsby";
+import DefaultLayout from "../layouts/default";
+import MoreArticles from "../components/moreArticles.jsx";
 import { formatRelativeTime } from "../utils/format-relative-time";
 
-const ArticleTemplate = ({ pageContext, path }) => {
-  const { article: originalArticle } = pageContext;
+export default function ArticleTemplate ({ data, path })  {
+  const originalArticle = data.directus.articles_by_id;
   const article = {
     ...originalArticle,
     date_created: formatRelativeTime(new Date(originalArticle.date_created)),
   };
 
   return (
-    <Layout>
+    <DefaultLayout>
       <div className="current-article">
         <section>
           <div className="container">
@@ -231,8 +231,30 @@ const ArticleTemplate = ({ pageContext, path }) => {
         </section>
         <MoreArticles />
       </div>
-    </Layout>
+    </DefaultLayout>
   );
 };
 
-export default ArticleTemplate;
+export const query = graphql`
+	query ($id: ID!) {
+		directus {
+			articles_by_id(id: $id) {
+				id
+        title
+        excerpt
+        body
+        date_created
+        author {
+          first_name
+          last_name
+          avatar {
+            id
+          }
+        }
+        cover_image {
+          id
+        }
+			}
+		}
+	}
+`;

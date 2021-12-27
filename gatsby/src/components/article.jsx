@@ -2,7 +2,7 @@ import * as React from "react";
 import PropTypes from "prop-types";
 import { Link } from "gatsby";
 
-const Article = ({ article, bordered }) => {
+export default function Article({ article, bordered }) {
   return (
     <article className={`article ${bordered}`}>
       <div className="article__topWrapper">
@@ -42,11 +42,9 @@ const Article = ({ article, bordered }) => {
       </div>
     </article>
   );
-};
+}
 
 Article.propTypes = {
   article: PropTypes.object.isRequired,
   bordered: PropTypes.bool.isRequired,
 };
-
-export default Article;

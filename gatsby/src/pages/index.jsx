@@ -1,5 +1,5 @@
 import React from "react";
-import Layout from "../components/layout";
+import DefaultLayout from "../layouts/default";
 import Hero from "../components/hero";
 import Article from "../components/article";
 import { formatRelativeTime } from "../utils/format-relative-time";
@@ -15,7 +15,7 @@ const IndexPage = ({ data }) => {
   const [hero, ...articles] = formattedArticles;
 
   return (
-    <Layout>
+    <DefaultLayout>
       <main>
         <section className="main-content">
           <div className="container">
@@ -32,7 +32,7 @@ const IndexPage = ({ data }) => {
           </div>
         </section>
       </main>
-    </Layout>
+    </DefaultLayout>
   );
 };
 

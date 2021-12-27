@@ -1,9 +1,31 @@
 import * as React from "react";
-import { StaticQuery, graphql } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby";
 import Article from "./article";
 import { formatRelativeTime } from "../utils/format-relative-time";
 
-const renderMoreArticles = (data) => {
+export default function MoreArticles() {
+  const data = useStaticQuery(graphql`
+    query {
+      directus {
+        articles(limit: 2) {
+          id
+          title
+          date_created
+          author {
+            first_name
+            last_name
+            avatar {
+              id
+            }
+          }
+          cover_image {
+            id
+          }
+        }
+      }
+    }
+  `);
+
   const formattedArticles = data.directus.articles.map((article) => {
     return {
       ...article,
@@ -30,35 +52,4 @@ const renderMoreArticles = (data) => {
       </div>
     </section>
   );
-};
-
-const MoreArticles = () => {
-  return (
-    <StaticQuery
-      query={graphql`
-        query {
-          directus {
-            articles(limit: 2) {
-              id
-              title
-              date_created
-              author {
-                first_name
-                last_name
-                avatar {
-                  id
-                }
-              }
-              cover_image {
-                id
-              }
-            }
-          }
-        }
-      `}
-      render={(data) => renderMoreArticles(data)}
-    />
-  );
-};
-
-export default MoreArticles;
+}

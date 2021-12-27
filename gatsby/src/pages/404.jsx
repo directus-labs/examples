@@ -1,10 +1,10 @@
 import * as React from "react";
-import Layout from "../components/layout";
 import { Link } from "gatsby";
+import DefaultLayout from "../layouts/default";
 
 const NotFoundPage = () => {
   return (
-    <Layout>
+    <DefaultLayout>
       <main className="error">
         <section>
           <div className="container">
@@ -16,7 +16,7 @@ const NotFoundPage = () => {
           </div>
         </section>
       </main>
-    </Layout>
+    </DefaultLayout>
   );
 };
 

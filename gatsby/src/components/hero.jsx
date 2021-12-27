@@ -1,8 +1,8 @@
 import * as React from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import { Link } from "gatsby";
 
-const Hero = ({ article }) => {
+export default function Hero({ article }) {
   return (
     <article className="hero">
       <div className="hero__topWrapper">
@@ -39,10 +39,8 @@ const Hero = ({ article }) => {
       </div>
     </article>
   );
-};
+}
 
 Hero.propTypes = {
-  article: PropTypes.object.isRequired
+  article: PropTypes.object.isRequired,
 };
-
-export default Hero;

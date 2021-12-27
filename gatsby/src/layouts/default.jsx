@@ -1,14 +1,15 @@
 import * as React from "react";
 import { Helmet } from "react-helmet";
-import Notice from "./notice";
-import Header from "./header";
-import Info from "./info";
-import Footer from "./footer";
+import Notice from "../components/notice";
+import Header from "../components/header";
+import Info from "../components/info";
+import Footer from "../components/footer";
 
-const Layout = ({ children }) => {
+export default function DefaultLayout({ children }) {
   return (
     <>
       <Helmet>
+        <title>Directus Gatsby Example</title>
         <link rel="icon" type="image/png" href="/favicon.png" />
         <link
           rel="stylesheet"
@@ -32,6 +33,4 @@ const Layout = ({ children }) => {
       </div>
     </>
   );
-};
-
-export default Layout;
+}

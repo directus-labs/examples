@@ -1,6 +1,6 @@
 import * as React from "react";
 
-const Header = () => {
+export default function Header() {
   return (
     <header>
       <nav className="container">
@@ -69,6 +69,4 @@ const Header = () => {
       </nav>
     </header>
   );
-};
-
-export default Header;
+}

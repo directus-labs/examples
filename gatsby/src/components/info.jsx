@@ -1,6 +1,6 @@
 import * as React from "react";
 
-const Info = () => {
+export default function Info() {
   return (
     <section className="info">
       <div className="info__background">
@@ -27,6 +27,4 @@ const Info = () => {
       </div>
     </section>
   );
-};
-
-export default Info;
+}

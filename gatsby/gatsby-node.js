@@ -1,40 +1,24 @@
 const path = require(`path`);
 
-exports.createPages = async ({ graphql, actions }) => {
-  const { createPage } = actions;
-
-  const result = await graphql(
+exports.createPages = async ({ actions, graphql }) => {
+  const { data } = await graphql(
     `
       query {
         directus {
-          articles(limit: -1) {
+          articles(filter: { status: { _eq: "published" } }, limit: -1) {
             id
-            title
-            excerpt
-            body
-            date_created
-            author {
-              first_name
-              last_name
-              avatar {
-                id
-              }
-            }
-            cover_image {
-              id
-            }
           }
         }
       }
     `
   );
 
-  result.data.directus.articles.forEach((article) => {
-    createPage({
+  data.directus.articles.forEach((article) => {
+    actions.createPage({
       path: `/articles/${article.id}`,
-      component: path.resolve(`src/templates/article.js`),
+      component: path.resolve(`src/templates/article.jsx`),
       context: {
-        article,
+        id: article.id,
       },
     });
   });
