@@ -1,5 +1,5 @@
 import { directus } from "../directus";
-import { importFile } from "../utils";
+import { importFile } from "../utils/import-file";
 import { logger } from "../logger";
 
 const articleData = {

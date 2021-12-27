@@ -1,8 +1,18 @@
 import { logger } from "./logger";
+import { getArgv } from "./utils/get-argv";
 
-if (!process.env.DIRECTUS_URL) {
-  logger.error(`DIRECTUS_URL environment variable is missing.`);
-  process.exit(1);
+const argv = getArgv();
+
+if (argv.project === "Gatsby") {
+  if (!process.env.GATSBY_DIRECTUS_URL) {
+    logger.error(`GATSBY_DIRECTUS_URL environment variable is missing.`);
+    process.exit(1);
+  }
+} else {
+  if (!process.env.DIRECTUS_URL) {
+    logger.error(`DIRECTUS_URL environment variable is missing.`);
+    process.exit(1);
+  }
 }
 
 if (
@@ -17,7 +27,10 @@ if (
 }
 
 export const env = {
-  url: process.env.DIRECTUS_URL,
+  url:
+    argv.project === "Gatsby"
+      ? process.env.GATSBY_DIRECTUS_URL
+      : process.env.DIRECTUS_URL,
   email: process.env.DIRECTUS_EMAIL,
   password: process.env.DIRECTUS_PASSWORD,
   staticToken: process.env.DIRECTUS_STATIC_TOKEN,

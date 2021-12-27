@@ -1,6 +1,7 @@
 import pupa from "pupa";
 import { directus } from "../directus";
-import { getArgv, importFile } from "../utils";
+import { importFile } from "../utils/import-file";
+import { getArgv } from "../utils/get-argv";
 import { logger } from "../logger";
 
 const backgroundPath = "./src/assets/background.jpg";

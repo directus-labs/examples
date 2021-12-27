@@ -17,7 +17,7 @@
    npm install
    ```
 
-3. Create a `.env.development` file based on the provided `.env.example` file.
+3. Create a `.env` file based on the provided `.env.example` file.
 
 4. Start the development server.
 

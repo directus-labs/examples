@@ -4,7 +4,7 @@ import { env } from "./env";
 import { logger } from "./logger";
 import { directus } from "./directus";
 import { seedProject, seedUsers, seedArticles, seedPermissions } from "./data";
-import { getArgv } from "./utils";
+import { getArgv } from "./utils/get-argv";
 
 export async function start() {
   const argv = getArgv();
