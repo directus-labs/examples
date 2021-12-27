@@ -1,6 +1,6 @@
 import * as React from "react";
 import { graphql, useStaticQuery } from "gatsby";
-import Article from "./article";
+import Article from "./Article";
 import { formatRelativeTime } from "../utils/format-relative-time";
 
 export default function MoreArticles() {

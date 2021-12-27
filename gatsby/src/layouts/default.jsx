@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 import Notice from "../components/notice";
 import Header from "../components/header";
 import Info from "../components/info";
-import Footer from "../components/footer";
+import Footer from "../components/Footer";
 
 export default function DefaultLayout({ children }) {
   return (
