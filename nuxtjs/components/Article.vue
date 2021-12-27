@@ -3,7 +3,7 @@
     <div class="article__topWrapper">
       <div class="article__imageWrapper">
         <img
-          :src="`${$config.url}/assets/${article.cover_image}`"
+          :src="$assetURL(article.cover_image)"
           alt=""
           loading="lazy"
         />
@@ -19,7 +19,7 @@
       <div class="article__detail">
         <div class="article__detailAuthor">
           <img
-            :src="`${$config.url}/assets/${article.author.avatar}`"
+            :src="$assetURL(article.author.avatar)"
             alt=""
             loading="lazy"
           />

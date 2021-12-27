@@ -1,6 +1,7 @@
 import * as React from "react";
 import PropTypes from "prop-types";
 import { Link } from "gatsby";
+import { getAssetURL } from "../utils/get-asset-url";
 
 export default function Hero({ article }) {
   return (
@@ -8,7 +9,7 @@ export default function Hero({ article }) {
       <div className="hero__topWrapper">
         <div className="hero__imageWrapper">
           <img
-            src={`${process.env.GATSBY_DIRECTUS_URL}/assets/${article.cover_image.id}`}
+            src={getAssetURL(article.cover_image.id)}
             alt=""
             loading="lazy"
           />
@@ -24,7 +25,7 @@ export default function Hero({ article }) {
       <div className="hero__detail">
         <div className="hero__detailAuthorImage">
           <img
-            src={`${process.env.GATSBY_DIRECTUS_URL}/assets/${article.author.avatar.id}`}
+            src={getAssetURL(article.author.avatar.id)}
             alt=""
             loading="lazy"
           />

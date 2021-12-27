@@ -9,6 +9,7 @@ import IconYoutube from "../components/icons/Youtube";
 import IconLinkedin from "../components/icons/Linkedin";
 import IconTwitter from "../components/icons/Twitter";
 import { formatRelativeTime } from "../utils/format-relative-time";
+import { getAssetURL } from "../utils/get-asset-url";
 
 export default function ArticleTemplate({ data, path }) {
   const originalArticle = data.directus.articles_by_id;
@@ -32,7 +33,7 @@ export default function ArticleTemplate({ data, path }) {
                 <div className="current-article__wrapperInner">
                   <div className="current-article__authorImage">
                     <img
-                      src={`${process.env.GATSBY_DIRECTUS_URL}/assets/${article.author.avatar.id}`}
+                      src={getAssetURL(article.author.avatar.id)}
                       alt=""
                       loading="lazy"
                     />
@@ -83,7 +84,7 @@ export default function ArticleTemplate({ data, path }) {
               </div>
               <div className="current-article_coverImage">
                 <img
-                  src={`${process.env.GATSBY_DIRECTUS_URL}/assets/${article.cover_image.id}`}
+                  src={getAssetURL(article.cover_image.id)}
                   alt=""
                 />
               </div>

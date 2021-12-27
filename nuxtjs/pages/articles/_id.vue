@@ -12,7 +12,7 @@
             <div class="current-article__wrapperInner">
               <div class="current-article__authorImage">
                 <img
-                  :src="`http://localhost:8055/assets/${article.author.avatar}`"
+                  :src="$assetURL(article.author.avatar)"
                   alt=""
                   loading="lazy"
                 />
@@ -69,7 +69,7 @@
           </div>
           <div class="current-article_coverImage">
             <img
-              :src="`http://localhost:8055/assets/${article.cover_image}`"
+              :src="$assetURL(article.cover_image)"
               alt=""
             />
           </div>

@@ -30,8 +30,12 @@ export default {
   components: true,
 
   publicRuntimeConfig: {
-    url: process.env.DIRECTUS_URL
+    assetUrl: process.env.DIRECTUS_URL
   },
+
+  plugins: [
+    '~/plugins/asset-url.js'
+  ],
 
   modules: [
     '~/modules/directus'
