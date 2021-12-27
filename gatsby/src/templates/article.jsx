@@ -1,14 +1,14 @@
 import * as React from "react";
 import { Link, graphql } from "gatsby";
 import DefaultLayout from "../layouts/default";
-import MoreArticles from "../components/moreArticles";
-import IconLink from "../components/icons/link";
-import IconGithub from "../components/icons/github";
-import IconYoutube from "../components/icons/youtube";
-import IconLinkedin from "../components/icons/linkedin";
-import IconTwitter from "../components/icons/twitter";
+import MoreArticles from "../components/MoreArticles";
+import IconBack from "../components/icons/Back";
+import IconLink from "../components/icons/Link";
+import IconGithub from "../components/icons/Github";
+import IconYoutube from "../components/icons/Youtube";
+import IconLinkedin from "../components/icons/Linkedin";
+import IconTwitter from "../components/icons/Twitter";
 import { formatRelativeTime } from "../utils/format-relative-time";
-import IconBack from "../components/icons/back";
 
 export default function ArticleTemplate({ data, path }) {
   const originalArticle = data.directus.articles_by_id;

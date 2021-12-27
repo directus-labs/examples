@@ -1,6 +1,6 @@
 import React from "react";
-import DefaultLayout from "../layouts/default";
-import Hero from "../components/hero";
+import DefaultLayout from "../layouts/Default";
+import Hero from "../components/Hero";
 import Article from "../components/Article";
 import { formatRelativeTime } from "../utils/format-relative-time";
 import { graphql } from "gatsby";

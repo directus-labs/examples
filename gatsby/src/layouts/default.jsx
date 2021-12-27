@@ -1,8 +1,8 @@
 import * as React from "react";
 import { Helmet } from "react-helmet";
-import Notice from "../components/notice";
-import Header from "../components/header";
-import Info from "../components/info";
+import Notice from "../components/Notice";
+import Header from "../components/Header";
+import Info from "../components/Info";
 import Footer from "../components/Footer";
 
 export default function DefaultLayout({ children }) {
