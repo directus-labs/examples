@@ -49,7 +49,7 @@
               </li>
               <li>
                 <a
-                  href="https://discord.gg/directus"
+                  href="https://www.linkedin.com/company/directus-io"
                   target="_blank"
                   rel="noreferrer noopener"
                 >
@@ -94,7 +94,7 @@
             </li>
             <li>
               <a
-                href="https://discord.gg/directus"
+                href="https://www.linkedin.com/company/directus-io"
                 target="_blank"
                 rel="noreferrer noopener"
               >

@@ -64,7 +64,7 @@ export default function ArticleTemplate({ data, path }) {
                   </li>
                   <li>
                     <a
-                      href="https://discord.gg/directus"
+                      href="https://www.linkedin.com/company/directus-io"
                       target="_blank"
                       rel="noreferrer noopener"
                     >
@@ -115,7 +115,7 @@ export default function ArticleTemplate({ data, path }) {
                 </li>
                 <li>
                   <a
-                    href="https://discord.gg/directus"
+                    href="https://www.linkedin.com/company/directus-io"
                     target="_blank"
                     rel="noreferrer noopener"
                   >

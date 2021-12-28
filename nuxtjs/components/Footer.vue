@@ -31,7 +31,7 @@
         </li>
         <li>
           <a
-            href="https://discord.gg/directus"
+            href="https://www.linkedin.com/company/directus-io"
             class="logo"
             target="_blank"
             rel="noreferrer noopener"

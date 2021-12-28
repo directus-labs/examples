@@ -40,7 +40,7 @@ export default function Footer() {
           </li>
           <li>
             <a
-              href="https://discord.gg/directus"
+              href="https://www.linkedin.com/company/directus-io"
               className="logo"
               target="_blank"
               rel="noreferrer noopener"
