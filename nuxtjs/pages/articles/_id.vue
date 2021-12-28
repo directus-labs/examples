@@ -68,10 +68,7 @@
             </ul>
           </div>
           <div class="current-article_coverImage">
-            <img
-              :src="$assetURL(article.cover_image)"
-              alt=""
-            />
+            <img :src="$assetURL(article.cover_image)" alt="" />
           </div>
         </div>
         <div class="current-article__body">
@@ -122,6 +119,8 @@
 </template>
 
 <script>
+import { formatRelativeTime } from "@/utils/format-relative-time";
+
 export default {
   async asyncData({ $directus, params, error }) {
     const { id } = params;
@@ -134,6 +133,11 @@ export default {
     } catch (err) {
       return error({ statusCode: 404, message: "Article not found" });
     }
+
+    article = {
+      ...article,
+      date_created: formatRelativeTime(new Date(article.date_created))
+    };
 
     return { article };
   }
