@@ -8,7 +8,7 @@
     "build": "rollup -c"
   },
   "dependencies": {
-    "colorette": "^2.0.16",
+    "consola": "^2.15.3",
     "dotenv": "^10.0.0",
     "form-data": "^4.0.0",
     "fs-extra": "^10.0.0",

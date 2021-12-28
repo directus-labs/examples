@@ -41,7 +41,7 @@ export async function start() {
   logger.info("Logging out...");
   await directus.auth.logout();
 
-  logger.info(
+  logger.success(
     pupa("Directus {project} example seeding completed.", {
       project: argv.project,
     })

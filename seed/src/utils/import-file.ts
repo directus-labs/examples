@@ -37,7 +37,7 @@ export async function importFile(
     getFile(assetPath);
   const formData = getFormData(filename, fileReadStream);
   const headers = formData.getHeaders();
-  logger.info(`Importing file ${filenameWithExtension}...`);
+  logger.debug(`Importing file ${filenameWithExtension}...`);
   const { data: fileResponse }: { data: Record<string, any> } =
     await axios.post(`${env.url}/files`, formData, {
       headers: { ...headers, Authorization: `Bearer ${directus.auth.token}` },
@@ -49,21 +49,21 @@ export async function importFile(
   if (options) {
     let updateData: Record<string, any> = {};
     if (options.uploader) {
-      logger.info(
+      logger.debug(
         `Setting uploader for ${importedFile.filename_download} as ${options.uploader.email}...`
       );
       updateData.uploaded_by = options.uploader.id;
     }
     if (options.title) {
       const title = options.title.toLowerCase();
-      logger.info(
+      logger.debug(
         `Setting title for ${importedFile.filename_download} as ${title}...`
       );
       updateData.title = title;
     }
     await directus.files.updateOne(importedFile.id, updateData);
   }
-  logger.info(`Importing file ${filenameWithExtension} done.`);
+  logger.debug(`Importing file ${filenameWithExtension} done.`);
 
   return importedFile;
 }
