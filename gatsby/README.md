@@ -19,7 +19,9 @@
 
 3. Create a `.env` file based on the provided `.env.example` file.
 
-4. Start the development server.
+4. Apply the provided `example.yaml` schema onto your Directus instance. [Learn more here](https://docs.directus.io/reference/cli/#applying-a-snapshot)
+
+5. Start the development server.
 
    ```shell
    npm run develop
