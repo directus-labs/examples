@@ -28,7 +28,7 @@
         <div class="hero__detailAuthorName">
           {{ `${article.author.first_name} ${article.author.last_name}` }}
         </div>
-        <div>{{ article.date_created }}</div>
+        <div>{{ article.publish_date }}</div>
         <div class="hero__detailCategory">Writing</div>
       </div>
     </div>

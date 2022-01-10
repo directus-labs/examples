@@ -23,12 +23,12 @@ export default {
   async asyncData({ $directus }) {
     const response = await $directus.items("articles").readMany({
       fields: ["*", "author.avatar", "author.first_name", "author.last_name"],
-      sort: "date_created"
+      sort: "publish_date"
     });
     const formattedArticles = response.data.map(article => {
       return {
         ...article,
-        date_created: formatRelativeTime(new Date(article.date_created))
+        publish_date: formatRelativeTime(new Date(article.publish_date))
       };
     });
     const [hero, ...articles] = formattedArticles;

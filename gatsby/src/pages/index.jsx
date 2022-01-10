@@ -9,7 +9,7 @@ const IndexPage = ({ data }) => {
   const formattedArticles = data.directus.articles.map((article) => {
     return {
       ...article,
-      date_created: formatRelativeTime(new Date(article.date_created)),
+      publish_date: formatRelativeTime(new Date(article.publish_date)),
     };
   });
   const [hero, ...articles] = formattedArticles;
@@ -39,11 +39,11 @@ const IndexPage = ({ data }) => {
 export const query = graphql`
   query {
     directus {
-      articles(sort: "date_created") {
+      articles(filter: { status: { _eq: "published" } }, sort: "publish_date") {
         id
         title
         excerpt
-        date_created
+        publish_date
         author {
           first_name
           last_name

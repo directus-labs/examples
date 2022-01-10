@@ -2,9 +2,8 @@ import { directus } from "../directus";
 import { importFile } from "../utils/import-file";
 import { logger } from "../logger";
 
-const articleData = {
+const common = {
   status: "published",
-  title: "What it’s like to work for an amazing company like Monospace?",
   excerpt:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pharetra iaculis lectus, ut viverra mi dictum sed. Aliquam id dolor directus et sit amet sem condimentum posuere.",
   body: `<p>In hac habitasse platea dictumst. Donec ac viverra urna. Proin eleifend placerat malesuada. Etiam lacinia rhoncus iaculis. Aliquam erat volutpat. Cras nec massa ex. Quisque volutpat semper diam, non viverra ligula gravida nec. Fusce ac ante ultricies, placerat dui vel, convallis mauris. Sed efficitur dictum molestie. Cras non mi quis lectus consequat molestie sed placerat purus. Sed malesuada dui porttitor posuere pharetra. Sed in libero ut lectus aliquet hendrerit.</p>
@@ -14,19 +13,37 @@ const articleData = {
     <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent arcu tortor, consectetur ac porttitor at, viverra sed orci. Nunc sit amet lectus mauris. Nullam molestie pretium lobortis. In varius tortor felis, in auctor libero varius at. In non elit aliquam, molestie sem id, fringilla leo. Donec non diam diam. Nulla volutpat mauris sed feugiat cursus. Nam vel mattis felis. Mauris vitae ornare nunc. Duis fermentum auctor diam, nec ornare metus blandit et.</p>`,
 };
 
+const titles = [
+  "What it's like to work for an amazing company like Monospace?",
+  "What is an Open Data Platform?",
+  "How Open Data Platforms Democratize Your Data",
+  "How Directus Unlocks the True Potential of Your Database",
+  "Achieving Data Fluidity Within Your Workflow",
+  "Taking Back Control of Your Data, Your Code, and Your Stack",
+  "Accelerate Your Time to Market and Increase Business Potential with Directus",
+  "Customize, Override, or Extend the Core Platform with Extensions",
+  "Overview of the Powerful Interface for Data Exploration and Content Management",
+];
+
+function getRandomPublishDate() {
+  return new Date(new Date().getTime() - Math.floor(Math.random() * 2629743000));
+}
+
 export async function seedArticles(user) {
   logger.info("Seeding articles...");
 
   const articlesCount = 9;
 
-  for (let i = 1; i <= articlesCount; i++) {
+  for (let i = 0; i < articlesCount; i++) {
     const coverImageFile = await importFile(
-      `./src/assets/articles/article-${i}.jpg`
+      `./src/assets/articles/article-${i + 1}.jpg`
     );
     await directus.items("articles").createOne({
+      title: titles[i],
       author: user.id,
       cover_image: coverImageFile.id,
-      ...articleData,
+      publish_date: getRandomPublishDate(),
+      ...common,
     });
   }
 

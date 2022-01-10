@@ -34,7 +34,7 @@ export default function Hero({ article }) {
           <div className="hero__detailAuthorName">
             {`${article.author.first_name} ${article.author.last_name}`}
           </div>
-          <div>{article.date_created}</div>
+          <div>{article.publish_date}</div>
           <div className="hero__detailCategory">Writing</div>
         </div>
       </div>

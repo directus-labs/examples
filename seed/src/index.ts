@@ -48,4 +48,7 @@ export async function start() {
   );
 }
 
-start();
+start().catch((err) => {
+  logger.error(err.message);
+  process.exit(1);
+});

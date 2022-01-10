@@ -15,7 +15,7 @@ export default function ArticleTemplate({ data, path }) {
   const originalArticle = data.directus.articles_by_id;
   const article = {
     ...originalArticle,
-    date_created: formatRelativeTime(new Date(originalArticle.date_created)),
+    publish_date: formatRelativeTime(new Date(originalArticle.publish_date)),
   };
 
   return (
@@ -43,7 +43,7 @@ export default function ArticleTemplate({ data, path }) {
                       {`${article.author.first_name} ${article.author.last_name}`}
                     </div>
                     <div className="current-article__time">
-                      {article.date_created}
+                      {article.publish_date}
                     </div>
                   </div>
                 </div>
@@ -149,7 +149,7 @@ export const query = graphql`
         title
         excerpt
         body
-        date_created
+        publish_date
         author {
           first_name
           last_name

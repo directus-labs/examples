@@ -28,7 +28,7 @@
           <div class="article__detailInnerAuthor">
             {{ `${article.author.first_name} ${article.author.last_name}` }}
           </div>
-          <div class="article__detailInnerTime">{{ article.date_created }}</div>
+          <div class="article__detailInnerTime">{{ article.publish_date }}</div>
           <div class="article__detailInnerCategory">Writing</div>
         </div>
       </div>

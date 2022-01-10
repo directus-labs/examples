@@ -24,7 +24,7 @@
                   }}
                 </div>
                 <div class="current-article__time">
-                  {{ article.date_created }}
+                  {{ article.publish_date }}
                 </div>
               </div>
             </div>
@@ -136,7 +136,7 @@ export default {
 
     article = {
       ...article,
-      date_created: formatRelativeTime(new Date(article.date_created))
+      publish_date: formatRelativeTime(new Date(article.publish_date))
     };
 
     return { article };

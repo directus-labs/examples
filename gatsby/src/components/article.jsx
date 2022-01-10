@@ -35,7 +35,7 @@ export default function Article({ article, bordered }) {
               {`${article.author.first_name} ${article.author.last_name}`}
             </div>
             <div className="article__detailInnerTime">
-              {article.date_created}
+              {article.publish_date}
             </div>
             <div className="article__detailInnerCategory">Writing</div>
           </div>

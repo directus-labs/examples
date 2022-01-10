@@ -31,7 +31,7 @@ export default {
     const formattedArticles = response.data.map(article => {
       return {
         ...article,
-        date_created: formatRelativeTime(new Date(article.date_created))
+        publish_date: formatRelativeTime(new Date(article.publish_date))
       };
     });
     this.articles = formattedArticles;
