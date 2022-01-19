@@ -1,0 +1,14 @@
+<section class="more-articles">
+  <div class="container">
+    <h1 class="more-articles__title">More Articles</h1>
+    <div class="articles-grid">
+      {% for article in articles %}
+        {% if forloop.last == false %}
+          {% include 'partials/article' article:article %}
+        {% else %}
+          {% include 'partials/article' article:article bordered:true %}
+        {% endif %}
+    {% endfor %}
+    </div>
+  </div>
+</section>
