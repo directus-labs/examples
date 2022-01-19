@@ -1,7 +1,6 @@
 # Nuxt.js
 
-- Official Site: <https://nuxtjs.org/>
-- Official Docs: <https://nuxtjs.org/docs/get-started/>
+> This is a [Nuxt.js](https://nuxtjs.org/) project bootstrapped with [`create-nuxt-app`](https://github.com/nuxt/create-nuxt-app).
 
 **NOTE:** This is an example for Nuxt 2.
 
