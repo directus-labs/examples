@@ -24,6 +24,7 @@ export default {
   },
 
   css: [
+    'modern-normalize',
     '../shared/stylesheet/main.css'
   ],
 

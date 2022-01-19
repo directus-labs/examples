@@ -11,6 +11,7 @@
   "dependencies": {
     "@directus/sdk": "^9.4.3",
     "core-js": "^3.19.3",
+    "modern-normalize": "^1.1.0",
     "nuxt": "^2.15.8"
   }
 }
