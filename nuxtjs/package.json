@@ -9,7 +9,7 @@
     "seed": "node ../shared/seed --project=Nuxt.js"
   },
   "dependencies": {
-    "@directus/sdk": "^9.0.0",
+    "@directus/sdk": "^9.4.3",
     "core-js": "^3.19.3",
     "nuxt": "^2.15.8"
   }
