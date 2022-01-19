@@ -1,7 +1,7 @@
 import * as React from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import Article from "./Article";
-import { formatRelativeTime } from "../utils/format-relative-time";
+import { formatRelativeTime } from "../../../shared/utils/format-relative-time";
 
 export default function MoreArticles() {
   const data = useStaticQuery(graphql`
