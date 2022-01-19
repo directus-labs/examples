@@ -1,6 +1,6 @@
 # Directus Gatsby Example
 
->💡 This is an example for Gatsby 4 and uses [@directus/gatsby-source-directus](https://github.com/directus/directus/tree/main/packages/gatsby-source-directus) plugin.
+>💡 This is a [Gatsby 4](https://www.gatsbyjs.com/) project bootstrapped with [`create-gatsby`](https://github.com/gatsbyjs/gatsby/tree/master/packages/create-gatsby) and uses the official [@directus/gatsby-source-directus](https://github.com/directus/directus/tree/main/packages/gatsby-source-directus) plugin.
 
 ## 📌 Prerequisites
 
