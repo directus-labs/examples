@@ -1,1 +1,1 @@
-import "./src/styles/index.css"
+import "../shared/stylesheet/main.css"

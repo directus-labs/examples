@@ -24,7 +24,7 @@ export default {
   },
 
   css: [
-    '~/assets/css/index.css'
+    '../shared/stylesheet/main.css'
   ],
 
   components: true,

@@ -11,7 +11,7 @@ const axios: AxiosStatic = importCwd("axios") as any;
 
 function getFile(assetPath: string) {
   const fileReadStream = fse.createReadStream(
-    path.resolve(process.cwd(), "../seed", assetPath)
+    path.resolve(process.cwd(), "../shared/seed", assetPath)
   );
   const filename = path.parse(assetPath).name;
   const filenameWithExtension = path.parse(assetPath).base;
