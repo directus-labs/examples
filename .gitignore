@@ -130,6 +130,9 @@ web_modules/
 .cache
 .parcel-cache
 
+# Eleventy build output
+_site
+
 # Next.js build output
 .next
 out
