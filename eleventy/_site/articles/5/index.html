@@ -1,0 +1,548 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Directus Eleventy Example</title>
+    <link rel="shortcut icon" type="image/png" href="/public/favicon.png" />
+    <link rel="stylesheet" href="/css/modern-normalize.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+    />
+  </head>
+
+  <body id="" class="layout">
+    <div class="notice">
+  <div class="container">
+    <span>
+      The source code for this blog is
+      <a href="https://github.com/directus/examples"> available on GitHub. </a>
+    </span>
+    <i class="material-icons-outlined">close</i>
+  </div>
+</div>
+
+    <header>
+  <nav class="container">
+    <a href="/"> <svg
+  width="35"
+  height="40"
+  viewBox="0 0 35 40"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    opacity="0.25"
+    fillRule="evenodd"
+    clipRule="evenodd"
+    d="M16.8587 18.9234C17.2454 18.7002 17.7217 18.7002 18.1084 18.9234L34.3418 28.2958C34.7284 28.519 34.9666 28.9315 34.9666 29.378C34.9666 29.8245 34.7284 30.237 34.3418 30.4602L18.1084 39.8326C17.7217 40.0558 17.2454 40.0558 16.8587 39.8326C16.4721 39.6094 16.2339 39.1968 16.2339 38.7504L16.2339 20.0056C16.2339 19.5592 16.4721 19.1466 16.8587 18.9234ZM18.7332 22.1701L18.7332 36.5859L31.2176 29.378L18.7332 22.1701Z"
+    fill="var(--foreground-accent)"
+  />
+  <path
+    opacity="0.25"
+    fillRule="evenodd"
+    clipRule="evenodd"
+    d="M16.8587 0.178713C17.2454 -0.0445155 17.7217 -0.0445155 18.1084 0.178712L34.3418 9.55107C34.7284 9.77429 34.9666 10.1868 34.9666 10.6333C34.9666 11.0797 34.7284 11.4923 34.3418 11.7155L18.1084 21.0879C17.7217 21.3111 17.2454 21.3111 16.8587 21.0879C16.4721 20.8646 16.2339 20.4521 16.2339 20.0056L16.2339 1.26094C16.2339 0.814483 16.4721 0.401941 16.8587 0.178713ZM18.7332 3.42539L18.7332 17.8412L31.2176 10.6333L18.7332 3.42539Z"
+    fill="var(--foreground-accent)"
+  />
+  <path
+    opacity="0.25"
+    fillRule="evenodd"
+    clipRule="evenodd"
+    d="M0.624824 9.55106C1.01147 9.32783 1.48783 9.32783 1.87447 9.55106L18.1079 18.9234C18.4945 19.1466 18.7327 19.5592 18.7327 20.0056C18.7327 20.4521 18.4945 20.8646 18.1079 21.0879L1.87448 30.4602C1.48783 30.6834 1.01147 30.6834 0.624828 30.4602C0.238186 30.237 4.17115e-06 29.8244 4.09666e-06 29.378L0 10.6333C-1.4897e-07 10.1868 0.238181 9.77429 0.624824 9.55106ZM2.4993 12.7977L2.4993 27.2135L14.9838 20.0056L2.4993 12.7977Z"
+    fill="var(--foreground-accent)"
+  />
+  <path
+    opacity="0.25"
+    fillRule="evenodd"
+    clipRule="evenodd"
+    d="M34.3418 9.55107C34.7284 9.7743 34.9666 10.1868 34.9666 10.6333V29.3771C34.9666 29.8235 34.7284 30.2361 34.3418 30.4593L18.1084 39.8317C17.7217 40.0549 17.2454 40.0549 16.8587 39.8317C16.4721 39.6084 16.2339 39.1959 16.2339 38.7494L16.2339 20.0047C16.2339 19.5583 16.4721 19.1457 16.8588 18.9225L33.0922 9.55103C33.4788 9.32782 33.9551 9.32784 34.3418 9.55107ZM18.7332 20.7262L18.7332 36.585L32.4673 28.6556V12.7976L18.7332 20.7262Z"
+    fill="var(--foreground-accent)"
+  />
+  <path
+    opacity="0.25"
+    fillRule="evenodd"
+    clipRule="evenodd"
+    d="M0.624801 9.55107C1.01143 9.32784 1.48778 9.32782 1.87443 9.55103L18.1078 18.9225C18.4945 19.1457 18.7327 19.5583 18.7327 20.0047L18.7327 38.7494C18.7327 39.1959 18.4945 39.6084 18.1079 39.8317C17.7212 40.0549 17.2449 40.0549 16.8582 39.8317L0.624824 30.4593C0.238181 30.2361 0 29.8235 0 29.3771L7.44848e-08 10.6333C7.44848e-08 10.1868 0.238172 9.7743 0.624801 9.55107ZM2.49929 12.7976V28.6556L16.2334 36.585L16.2334 20.7262L2.49929 12.7976Z"
+    fill="var(--foreground-accent)"
+  />
+  <path
+    opacity="0.25"
+    fillRule="evenodd"
+    clipRule="evenodd"
+    d="M16.8641 0.167421C17.2507 -0.055807 17.7271 -0.0558068 18.1137 0.167421L34.3471 9.53978C34.7337 9.763 34.9719 10.1755 34.9719 10.622C34.9719 11.0685 34.7337 11.481 34.3471 11.7042L18.1137 21.0766C17.7271 21.2998 17.2507 21.2998 16.8641 21.0766L0.630683 11.7042C0.244041 11.481 0.00585923 11.0684 0.00585938 10.622C0.00585952 10.1755 0.244041 9.76298 0.630684 9.53975L16.8641 0.167421ZM3.7548 10.622L17.4889 18.5514L31.223 10.622L17.4889 2.69262L3.7548 10.622Z"
+    fill="var(--foreground-accent)"
+  />
+  <path
+    fillRule="evenodd"
+    clipRule="evenodd"
+    d="M0.63051 9.55116C1.01705 9.3279 1.49333 9.32779 1.87998 9.55086L17.5009 18.5629L33.1219 9.55086C33.5085 9.32779 33.9848 9.3279 34.3713 9.55116C34.7579 9.77441 34.996 10.1869 34.996 10.6333V29.378C34.996 30.0682 34.4365 30.6276 33.7463 30.6276C33.0562 30.6276 32.4967 30.0682 32.4967 29.378V12.7969L18.1254 21.0881C17.7389 21.311 17.2629 21.311 16.8764 21.0881L2.50515 12.7969V29.378C2.50515 30.0682 1.94567 30.6276 1.25551 30.6276C0.565346 30.6276 0.00585938 30.0682 0.00585938 29.378V10.6333C0.00585938 10.1869 0.243965 9.77441 0.63051 9.55116Z"
+    fill="var(--foreground-accent)"
+  />
+</svg>
+ </a>
+    <span class="header__description">
+      An example site powered by <span class="accent">Eleventy</span> and
+      <span class="accent">Directus</span>.
+    </span>
+  </nav>
+</header>
+
+    
+<div class="current-article">
+  <section>
+    <div class="container">
+      <a href="/" class="current-article__backlink">
+        
+
+  
+
+
+<svg
+  aria-hidden="true"
+  xmlns="http://www.w3.org/2000/svg"
+  height="32px"
+  width="32px"
+  viewBox="0 0 24 24"
+  fill="currentColor"
+  class="icon"
+>
+  <path d="M0 0h24v24H0V0z" fill="none" />
+  <path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z" />
+</svg>
+
+        <span>Back to Articles</span>
+      </a>
+      <h1 class="current-article__title">Achieving Data Fluidity Within Your Workflow</h1>
+      <div class="current-article__detail">
+        <div class="current-article__wrapperOuter">
+          <div class="current-article__wrapperInner">
+            <div class="current-article__authorImage">
+              <img
+                src="http://localhost:8055/assets/bbdfb56d-e940-43ae-9583-0fda5a5eb440"
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <div class="current-article__authorName">
+                Benjamin Haynes
+              </div>
+              <div class="current-article__time">
+                last month
+              </div>
+            </div>
+          </div>
+          <ul class="current-article__socials">
+            <li>
+              <a href="/" target="_blank" rel="noreferrer noopener">
+                <svg
+  width="28"
+  height="14"
+  viewBox="0 0 28 14"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M20.6875 0.3125H15.3125V3H20.6875C22.875 3 24.6875 4.8125 24.6875 7C24.6875 9.1875 22.875 11 20.6875 11H15.3125V13.6875H20.6875C24.375 13.6875 27.3125 10.6875 27.3125 7C27.3125 3.3125 24.375 0.3125 20.6875 0.3125ZM12.6875 11H7.3125C5.125 11 3.3125 9.1875 3.3125 7C3.3125 4.8125 5.125 3 7.3125 3H12.6875V0.3125H7.3125C3.625 0.3125 0.6875 3.3125 0.6875 7C0.6875 10.6875 3.625 13.6875 7.3125 13.6875H12.6875V11ZM8.6875 5.6875H19.3125V8.3125H8.6875V5.6875Z"
+    fill="currentColor"
+  />
+</svg>
+
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.youtube.com/c/DirectusVideos"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <svg
+  width="31"
+  height="22"
+  viewBox="0 0 31 22"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M30.5052 4.67598C30.5052 4.67598 30.2043 2.55163 29.2776 1.61884C28.1041 0.39117 26.7921 0.385152 26.1903 0.312936C21.8814 -1.72176e-07 15.4121 0 15.4121 0H15.4001C15.4001 0 8.93071 -1.72176e-07 4.62182 0.312936C4.02002 0.385152 2.7081 0.39117 1.53459 1.61884C0.607818 2.55163 0.312936 4.67598 0.312936 4.67598C0.312936 4.67598 0 7.17345 0 9.66491V11.9999C0 14.4913 0.306918 16.9888 0.306918 16.9888C0.306918 16.9888 0.607818 19.1132 1.52857 20.046C2.70208 21.2736 4.24269 21.2315 4.92874 21.3639C7.39612 21.5986 15.4061 21.6708 15.4061 21.6708C15.4061 21.6708 21.8814 21.6588 26.1903 21.3519C26.7921 21.2796 28.1041 21.2736 29.2776 20.046C30.2043 19.1132 30.5052 16.9888 30.5052 16.9888C30.5052 16.9888 30.8122 14.4974 30.8122 11.9999V9.66491C30.8122 7.17345 30.5052 4.67598 30.5052 4.67598ZM12.2226 14.8344V6.17447L20.5455 10.5195L12.2226 14.8344Z"
+    fill="currentColor"
+  />
+</svg>
+
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/company/directus-io"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <svg
+  width="27"
+  height="27"
+  viewBox="0 0 27 27"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M24.4554 0H1.94983C0.87175 0 0 0.851117 0 1.90341V24.5019C0 25.5541 0.87175 26.4104 1.94983 26.4104H24.4554C25.5335 26.4104 26.4104 25.5541 26.4104 24.507V1.90341C26.4104 0.851117 25.5335 0 24.4554 0ZM7.83544 22.5056H3.91514V9.89875H7.83544V22.5056ZM5.87529 8.18104C4.61667 8.18104 3.60048 7.16486 3.60048 5.9114C3.60048 4.65793 4.61667 3.64175 5.87529 3.64175C7.12875 3.64175 8.14493 4.65793 8.14493 5.9114C8.14493 7.1597 7.12875 8.18104 5.87529 8.18104ZM22.5056 22.5056H18.5905V16.3776C18.5905 14.9178 18.5647 13.035 16.5529 13.035C14.5154 13.035 14.2059 14.6289 14.2059 16.2744V22.5056H10.2959V9.89875H14.0512V11.6216H14.1028C14.6237 10.6312 15.903 9.5841 17.8064 9.5841C21.7731 9.5841 22.5056 12.1942 22.5056 15.5883V22.5056Z"
+    fill="currentColor"
+  />
+</svg>
+
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://twitter.com/directus"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <svg
+  width="27"
+  height="22"
+  viewBox="0 0 27 22"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M8.30556 21.4591C18.2722 21.4591 23.7221 13.2017 23.7221 6.04263C23.7221 5.80832 23.7221 5.57397 23.7074 5.34175C24.7678 4.57445 25.6831 3.62448 26.4104 2.53629C25.4219 2.97472 24.3733 3.26257 23.2995 3.38998C24.4302 2.71217 25.2762 1.64669 25.6803 0.391892C24.6165 1.02338 23.4526 1.46852 22.2388 1.7079C20.5594 -0.0778018 17.8909 -0.514863 15.7297 0.641907C13.5684 1.79868 12.452 4.26156 13.0065 6.64938C8.64964 6.4311 4.59037 4.37328 1.83893 0.988157C0.399309 3.4633 1.13219 6.63127 3.51259 8.22265C2.65623 8.19372 1.8192 7.9606 1.07115 7.54273C1.07115 7.56574 1.07115 7.5887 1.07115 7.61172C1.07084 10.1879 2.88381 12.4084 5.40802 12.9235C4.60988 13.1409 3.77251 13.1724 2.96029 13.0155C3.66925 15.2241 5.70396 16.7376 8.02311 16.7814C6.10257 18.2854 3.73229 19.1003 1.29292 19.0952C0.860844 19.0954 0.429121 19.0703 0 19.0199C2.47759 20.6113 5.3609 21.4559 8.30556 21.4529"
+    fill="currentColor"
+  />
+</svg>
+
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="current-article_coverImage">
+          <img src="http://localhost:8055/assets/766f3706-34ee-4d87-8884-f14705d7ad16" alt="" />
+        </div>
+      </div>
+      <div class="current-article__body">
+        <div class="current-article__bodyContent"><p>In hac habitasse platea dictumst. Donec ac viverra urna. Proin eleifend placerat malesuada. Etiam lacinia rhoncus iaculis. Aliquam erat volutpat. Cras nec massa ex. Quisque volutpat semper diam, non viverra ligula gravida nec. Fusce ac ante ultricies, placerat dui vel, convallis mauris. Sed efficitur dictum molestie. Cras non mi quis lectus consequat molestie sed placerat purus. Sed malesuada dui porttitor posuere pharetra. Sed in libero ut lectus aliquet hendrerit.</p>
+    <p>Donec tincidunt pharetra dapibus. Proin imperdiet accumsan nulla, a auctor nibh consectetur ac. Aenean maximus eros quis nisl interdum, eget consequat neque consectetur. Vivamus id lacinia nunc. Nulla facilisi. Duis et ornare ante. Phasellus id sapien eu nisl hendrerit egestas at sed lorem. Phasellus vehicula felis urna, in mattis ligula vulputate id. Etiam tempor placerat justo, semper aliquam eros efficitur at. Etiam non est leo. Morbi tempor augue id convallis tempor. Aenean in turpis massa. Donec id convallis enim.</p>
+    <p>Praesent enim ex, feugiat et tellus id, euismod feugiat ante. Suspendisse potenti. Aliquam erat volutpat. Suspendisse commodo fringilla facilisis. Cras in sollicitudin ante. Vivamus auctor magna non pretium laoreet. Ut et lobortis turpis, in pharetra turpis. Nullam et fringilla lacus, vel posuere velit. Fusce sagittis ante sed ultricies iaculis. Morbi consectetur ipsum ut sem eleifend, non finibus purus placerat. Donec rhoncus arcu sit amet nibh laoreet blandit. Sed vitae laoreet ipsum. Duis ante velit, egestas imperdiet justo at, venenatis pellentesque leo. Curabitur nulla neque, ultrices vitae ligula vel, faucibus dictum nisl.</p>
+    <p>Proin non congue augue. Nulla molestie neque sed est congue, ut consectetur mauris maximus. Sed fermentum diam elit, non euismod leo suscipit quis. Suspendisse consectetur sollicitudin nulla eget ultrices. Suspendisse urna ante, pretium vel orci quis, tempus ultrices tortor. Ut finibus dignissim fringilla. Aliquam at arcu lectus. Quisque eu dictum orci. Aliquam nec efficitur eros. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Ut a malesuada neque. Sed non tincidunt enim, at sagittis quam.</p>
+    <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Praesent arcu tortor, consectetur ac porttitor at, viverra sed orci. Nunc sit amet lectus mauris. Nullam molestie pretium lobortis. In varius tortor felis, in auctor libero varius at. In non elit aliquam, molestie sem id, fringilla leo. Donec non diam diam. Nulla volutpat mauris sed feugiat cursus. Nam vel mattis felis. Mauris vitae ornare nunc. Duis fermentum auctor diam, nec ornare metus blandit et.</p></div>
+        <ul class="current-article__bodySocials">
+          <li>
+            <a
+              href="https://github.com/directus"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <svg
+  width="28"
+  height="28"
+  viewBox="0 0 28 28"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    fillRule="evenodd"
+    clipRule="evenodd"
+    d="M14 0C6.265 0 0 6.265 0 14C0 20.195 4.0075 25.4275 9.5725 27.2825C10.2725 27.405 10.535 26.985 10.535 26.6175C10.535 26.285 10.5175 25.1825 10.5175 24.01C7 24.6575 6.09 23.1525 5.81 22.365C5.6525 21.9625 4.97 20.72 4.375 20.3875C3.885 20.125 3.185 19.4775 4.3575 19.46C5.46 19.4425 6.2475 20.475 6.51 20.895C7.77 23.0125 9.7825 22.4175 10.5875 22.05C10.71 21.14 11.0775 20.5275 11.48 20.1775C8.365 19.8275 5.11 18.62 5.11 13.265C5.11 11.7425 5.6525 10.4825 6.545 9.5025C6.405 9.1525 5.915 7.7175 6.685 5.7925C6.685 5.7925 7.8575 5.425 10.535 7.2275C11.655 6.9125 12.845 6.755 14.035 6.755C15.225 6.755 16.415 6.9125 17.535 7.2275C20.2125 5.4075 21.385 5.7925 21.385 5.7925C22.155 7.7175 21.665 9.1525 21.525 9.5025C22.4175 10.4825 22.96 11.725 22.96 13.265C22.96 18.6375 19.6875 19.8275 16.5725 20.1775C17.08 20.615 17.5175 21.455 17.5175 22.7675C17.5175 24.64 17.5 26.145 17.5 26.6175C17.5 26.985 17.7625 27.4225 18.4625 27.2825C21.2418 26.3443 23.6568 24.5581 25.3677 22.1753C27.0786 19.7926 27.9993 16.9334 28 14C28 6.265 21.735 0 14 0Z"
+    fill="currentColor"
+  />
+</svg>
+
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.youtube.com/c/DirectusVideos"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <svg
+  width="31"
+  height="22"
+  viewBox="0 0 31 22"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M30.5052 4.67598C30.5052 4.67598 30.2043 2.55163 29.2776 1.61884C28.1041 0.39117 26.7921 0.385152 26.1903 0.312936C21.8814 -1.72176e-07 15.4121 0 15.4121 0H15.4001C15.4001 0 8.93071 -1.72176e-07 4.62182 0.312936C4.02002 0.385152 2.7081 0.39117 1.53459 1.61884C0.607818 2.55163 0.312936 4.67598 0.312936 4.67598C0.312936 4.67598 0 7.17345 0 9.66491V11.9999C0 14.4913 0.306918 16.9888 0.306918 16.9888C0.306918 16.9888 0.607818 19.1132 1.52857 20.046C2.70208 21.2736 4.24269 21.2315 4.92874 21.3639C7.39612 21.5986 15.4061 21.6708 15.4061 21.6708C15.4061 21.6708 21.8814 21.6588 26.1903 21.3519C26.7921 21.2796 28.1041 21.2736 29.2776 20.046C30.2043 19.1132 30.5052 16.9888 30.5052 16.9888C30.5052 16.9888 30.8122 14.4974 30.8122 11.9999V9.66491C30.8122 7.17345 30.5052 4.67598 30.5052 4.67598ZM12.2226 14.8344V6.17447L20.5455 10.5195L12.2226 14.8344Z"
+    fill="currentColor"
+  />
+</svg>
+
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/company/directus-io"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <svg
+  width="27"
+  height="27"
+  viewBox="0 0 27 27"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M24.4554 0H1.94983C0.87175 0 0 0.851117 0 1.90341V24.5019C0 25.5541 0.87175 26.4104 1.94983 26.4104H24.4554C25.5335 26.4104 26.4104 25.5541 26.4104 24.507V1.90341C26.4104 0.851117 25.5335 0 24.4554 0ZM7.83544 22.5056H3.91514V9.89875H7.83544V22.5056ZM5.87529 8.18104C4.61667 8.18104 3.60048 7.16486 3.60048 5.9114C3.60048 4.65793 4.61667 3.64175 5.87529 3.64175C7.12875 3.64175 8.14493 4.65793 8.14493 5.9114C8.14493 7.1597 7.12875 8.18104 5.87529 8.18104ZM22.5056 22.5056H18.5905V16.3776C18.5905 14.9178 18.5647 13.035 16.5529 13.035C14.5154 13.035 14.2059 14.6289 14.2059 16.2744V22.5056H10.2959V9.89875H14.0512V11.6216H14.1028C14.6237 10.6312 15.903 9.5841 17.8064 9.5841C21.7731 9.5841 22.5056 12.1942 22.5056 15.5883V22.5056Z"
+    fill="currentColor"
+  />
+</svg>
+
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://twitter.com/directus"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <svg
+  width="27"
+  height="22"
+  viewBox="0 0 27 22"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M8.30556 21.4591C18.2722 21.4591 23.7221 13.2017 23.7221 6.04263C23.7221 5.80832 23.7221 5.57397 23.7074 5.34175C24.7678 4.57445 25.6831 3.62448 26.4104 2.53629C25.4219 2.97472 24.3733 3.26257 23.2995 3.38998C24.4302 2.71217 25.2762 1.64669 25.6803 0.391892C24.6165 1.02338 23.4526 1.46852 22.2388 1.7079C20.5594 -0.0778018 17.8909 -0.514863 15.7297 0.641907C13.5684 1.79868 12.452 4.26156 13.0065 6.64938C8.64964 6.4311 4.59037 4.37328 1.83893 0.988157C0.399309 3.4633 1.13219 6.63127 3.51259 8.22265C2.65623 8.19372 1.8192 7.9606 1.07115 7.54273C1.07115 7.56574 1.07115 7.5887 1.07115 7.61172C1.07084 10.1879 2.88381 12.4084 5.40802 12.9235C4.60988 13.1409 3.77251 13.1724 2.96029 13.0155C3.66925 15.2241 5.70396 16.7376 8.02311 16.7814C6.10257 18.2854 3.73229 19.1003 1.29292 19.0952C0.860844 19.0954 0.429121 19.0703 0 19.0199C2.47759 20.6113 5.3609 21.4559 8.30556 21.4529"
+    fill="currentColor"
+  />
+</svg>
+
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="more-articles">
+  <div class="container">
+    <h1 class="more-articles__title">More Articles</h1>
+    <div class="articles-grid">
+      
+        
+          
+
+
+<article class="article">
+  <div class="article__topWrapper">
+    <div class="article__imageWrapper">
+      <img src="http://localhost:8055/assets/d0d653d4-a71a-417b-880f-7dcb7996e65e" alt="" loading="lazy" />
+    </div>
+    <span aria-hidden="true" class="tag">Writing</span>
+  </div>
+  <div class="article__bottomWrapper">
+    <h1 class="article__title">
+      <a href="/articles/1">
+        What it's like to work for an amazing company like Monospace?
+      </a>
+    </h1>
+    <div class="article__detail">
+      <div class="article__detailAuthor">
+        <img
+          src="http://localhost:8055/assets/bbdfb56d-e940-43ae-9583-0fda5a5eb440"
+          alt=""
+          loading="lazy"
+        />
+      </div>
+      <div class="article__detailInner">
+        <div class="article__detailInnerAuthor">
+          Benjamin Haynes
+        </div>
+        <div class="article__detailInnerTime">18 days ago</div>
+        <div class="article__detailInnerCategory">Writing</div>
+      </div>
+    </div>
+  </div>
+</article>
+
+        
+    
+        
+          
+
+  
+
+
+<article class="article bordered">
+  <div class="article__topWrapper">
+    <div class="article__imageWrapper">
+      <img src="http://localhost:8055/assets/415c1b85-4a85-4a5d-8456-c6bd4deaa13c" alt="" loading="lazy" />
+    </div>
+    <span aria-hidden="true" class="tag">Writing</span>
+  </div>
+  <div class="article__bottomWrapper">
+    <h1 class="article__title">
+      <a href="/articles/2">
+        What is an Open Data Platform?
+      </a>
+    </h1>
+    <div class="article__detail">
+      <div class="article__detailAuthor">
+        <img
+          src="http://localhost:8055/assets/bbdfb56d-e940-43ae-9583-0fda5a5eb440"
+          alt=""
+          loading="lazy"
+        />
+      </div>
+      <div class="article__detailInner">
+        <div class="article__detailInnerAuthor">
+          Benjamin Haynes
+        </div>
+        <div class="article__detailInnerTime">22 days ago</div>
+        <div class="article__detailInnerCategory">Writing</div>
+      </div>
+    </div>
+  </div>
+</article>
+
+        
+    
+    </div>
+  </div>
+</section>
+
+</div>
+
+    <section class="info">
+  <div class="info__background">
+    <div class="info__backgroundLeft"></div>
+    <div class="info__backgroundRight"></div>
+  </div>
+  <div class="container">
+    <div class="info__wrapperOuter left">
+      <div class="info_wrapperInner">
+        <span class="info__subtitle">Documentation</span>
+        <a href="#" class="info__title"> Read the Tutorial </a>
+      </div>
+    </div>
+    <div class="info__wrapperOuter right">
+      <div class="info_wrapperInner">
+        <span class="info__subtitle">Codebase</span>
+        <a href="#" class="info__title"> View on GitHub </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <footer>
+  <div class="container footer__topWrapper">
+    <span>
+      Generated with <span class="underline">Eleventy</span>, powered by
+      <span class="underline">Directus</span>.
+    </span>
+  </div>
+  <div class="container footer__bottomWrapper">
+    <span class="footer__copyright">
+      © 2022 Monospace Inc
+    </span>
+    <ul class="footer__socials">
+      <li>
+        <a
+          href="https://github.com/directus"
+          class="logo"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          <svg
+  width="28"
+  height="28"
+  viewBox="0 0 28 28"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    fillRule="evenodd"
+    clipRule="evenodd"
+    d="M14 0C6.265 0 0 6.265 0 14C0 20.195 4.0075 25.4275 9.5725 27.2825C10.2725 27.405 10.535 26.985 10.535 26.6175C10.535 26.285 10.5175 25.1825 10.5175 24.01C7 24.6575 6.09 23.1525 5.81 22.365C5.6525 21.9625 4.97 20.72 4.375 20.3875C3.885 20.125 3.185 19.4775 4.3575 19.46C5.46 19.4425 6.2475 20.475 6.51 20.895C7.77 23.0125 9.7825 22.4175 10.5875 22.05C10.71 21.14 11.0775 20.5275 11.48 20.1775C8.365 19.8275 5.11 18.62 5.11 13.265C5.11 11.7425 5.6525 10.4825 6.545 9.5025C6.405 9.1525 5.915 7.7175 6.685 5.7925C6.685 5.7925 7.8575 5.425 10.535 7.2275C11.655 6.9125 12.845 6.755 14.035 6.755C15.225 6.755 16.415 6.9125 17.535 7.2275C20.2125 5.4075 21.385 5.7925 21.385 5.7925C22.155 7.7175 21.665 9.1525 21.525 9.5025C22.4175 10.4825 22.96 11.725 22.96 13.265C22.96 18.6375 19.6875 19.8275 16.5725 20.1775C17.08 20.615 17.5175 21.455 17.5175 22.7675C17.5175 24.64 17.5 26.145 17.5 26.6175C17.5 26.985 17.7625 27.4225 18.4625 27.2825C21.2418 26.3443 23.6568 24.5581 25.3677 22.1753C27.0786 19.7926 27.9993 16.9334 28 14C28 6.265 21.735 0 14 0Z"
+    fill="currentColor"
+  />
+</svg>
+
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://www.youtube.com/c/DirectusVideos"
+          class="logo"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          <svg
+  width="31"
+  height="22"
+  viewBox="0 0 31 22"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M30.5052 4.67598C30.5052 4.67598 30.2043 2.55163 29.2776 1.61884C28.1041 0.39117 26.7921 0.385152 26.1903 0.312936C21.8814 -1.72176e-07 15.4121 0 15.4121 0H15.4001C15.4001 0 8.93071 -1.72176e-07 4.62182 0.312936C4.02002 0.385152 2.7081 0.39117 1.53459 1.61884C0.607818 2.55163 0.312936 4.67598 0.312936 4.67598C0.312936 4.67598 0 7.17345 0 9.66491V11.9999C0 14.4913 0.306918 16.9888 0.306918 16.9888C0.306918 16.9888 0.607818 19.1132 1.52857 20.046C2.70208 21.2736 4.24269 21.2315 4.92874 21.3639C7.39612 21.5986 15.4061 21.6708 15.4061 21.6708C15.4061 21.6708 21.8814 21.6588 26.1903 21.3519C26.7921 21.2796 28.1041 21.2736 29.2776 20.046C30.2043 19.1132 30.5052 16.9888 30.5052 16.9888C30.5052 16.9888 30.8122 14.4974 30.8122 11.9999V9.66491C30.8122 7.17345 30.5052 4.67598 30.5052 4.67598ZM12.2226 14.8344V6.17447L20.5455 10.5195L12.2226 14.8344Z"
+    fill="currentColor"
+  />
+</svg>
+
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://www.linkedin.com/company/directus-io"
+          class="logo"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          <svg
+  width="27"
+  height="27"
+  viewBox="0 0 27 27"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M24.4554 0H1.94983C0.87175 0 0 0.851117 0 1.90341V24.5019C0 25.5541 0.87175 26.4104 1.94983 26.4104H24.4554C25.5335 26.4104 26.4104 25.5541 26.4104 24.507V1.90341C26.4104 0.851117 25.5335 0 24.4554 0ZM7.83544 22.5056H3.91514V9.89875H7.83544V22.5056ZM5.87529 8.18104C4.61667 8.18104 3.60048 7.16486 3.60048 5.9114C3.60048 4.65793 4.61667 3.64175 5.87529 3.64175C7.12875 3.64175 8.14493 4.65793 8.14493 5.9114C8.14493 7.1597 7.12875 8.18104 5.87529 8.18104ZM22.5056 22.5056H18.5905V16.3776C18.5905 14.9178 18.5647 13.035 16.5529 13.035C14.5154 13.035 14.2059 14.6289 14.2059 16.2744V22.5056H10.2959V9.89875H14.0512V11.6216H14.1028C14.6237 10.6312 15.903 9.5841 17.8064 9.5841C21.7731 9.5841 22.5056 12.1942 22.5056 15.5883V22.5056Z"
+    fill="currentColor"
+  />
+</svg>
+
+        </a>
+      </li>
+      <li>
+        <a
+          href="https://twitter.com/directus"
+          class="logo"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          <svg
+  width="27"
+  height="22"
+  viewBox="0 0 27 22"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M8.30556 21.4591C18.2722 21.4591 23.7221 13.2017 23.7221 6.04263C23.7221 5.80832 23.7221 5.57397 23.7074 5.34175C24.7678 4.57445 25.6831 3.62448 26.4104 2.53629C25.4219 2.97472 24.3733 3.26257 23.2995 3.38998C24.4302 2.71217 25.2762 1.64669 25.6803 0.391892C24.6165 1.02338 23.4526 1.46852 22.2388 1.7079C20.5594 -0.0778018 17.8909 -0.514863 15.7297 0.641907C13.5684 1.79868 12.452 4.26156 13.0065 6.64938C8.64964 6.4311 4.59037 4.37328 1.83893 0.988157C0.399309 3.4633 1.13219 6.63127 3.51259 8.22265C2.65623 8.19372 1.8192 7.9606 1.07115 7.54273C1.07115 7.56574 1.07115 7.5887 1.07115 7.61172C1.07084 10.1879 2.88381 12.4084 5.40802 12.9235C4.60988 13.1409 3.77251 13.1724 2.96029 13.0155C3.66925 15.2241 5.70396 16.7376 8.02311 16.7814C6.10257 18.2854 3.73229 19.1003 1.29292 19.0952C0.860844 19.0954 0.429121 19.0703 0 19.0199C2.47759 20.6113 5.3609 21.4559 8.30556 21.4529"
+    fill="currentColor"
+  />
+</svg>
+
+        </a>
+      </li>
+    </ul>
+  </div>
+</footer>
+
+  </body>
+</html>

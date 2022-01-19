@@ -1,0 +1,17 @@
+{
+  "name": "directus-eleventy-example",
+  "private": true,
+  "scripts": {
+    "dev": "eleventy --serve",
+    "build": "eleventy",
+    "seed": "node ../shared/seed --project=Eleventy"
+  },
+  "dependencies": {
+    "@directus/sdk": "9.4.3"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "1.0.0",
+    "dotenv": "14.2.0",
+    "modern-normalize": "1.1.0"
+  }
+}

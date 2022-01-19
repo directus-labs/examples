@@ -1,0 +1,20 @@
+---
+layout: layouts/default.liquid
+---
+
+<main>
+  <section class="main-content">
+    <div class="container">
+      {% include 'partials/hero' article:index.hero %}
+      <div class="articles-grid">
+        {% for article in index.articles %}
+          {% if forloop.last == false %}
+            {% include 'partials/article' article:article %}
+          {% else %}
+            {% include 'partials/article' article:article bordered:true %}
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+</main>

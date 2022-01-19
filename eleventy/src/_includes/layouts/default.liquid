@@ -1,0 +1,35 @@
+---
+title: Directus Eleventy Example
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ title }}</title>
+    <link rel="shortcut icon" type="image/png" href="/public/favicon.png" />
+    <link rel="stylesheet" href="/css/modern-normalize.css" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+    />
+  </head>
+
+  <body id="{{ id }}" class="layout">
+    {% include 'partials/notice' %}
+    {% include 'partials/header' %}
+    {{ content }}
+    {% include 'partials/info' %}
+    {% include 'partials/footer' %}
+  </body>
+</html>
