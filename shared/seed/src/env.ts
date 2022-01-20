@@ -8,10 +8,14 @@ if (argv.project === "Gatsby") {
     logger.error(`GATSBY_DIRECTUS_URL environment variable is missing.`);
     process.exit(1);
   }
-}
-if (argv.project === "Astro") {
+} else if (argv.project === "Astro") {
   if (!process.env.PUBLIC_DIRECTUS_URL) {
     logger.error(`PUBLIC_DIRECTUS_URL environment variable is missing.`);
+    process.exit(1);
+  }
+} else if (argv.project === "SvelteKit") {
+  if (!process.env.VITE_DIRECTUS_URL) {
+    logger.error(`VITE_DIRECTUS_URL environment variable is missing.`);
     process.exit(1);
   }
 } else {
@@ -48,6 +52,8 @@ export const env = {
       ? process.env.GATSBY_DIRECTUS_URL
       : argv.project === "Astro"
       ? process.env.PUBLIC_DIRECTUS_URL
+      : argv.project === "SvelteKit"
+      ? process.env.VITE_DIRECTUS_URL
       : process.env.DIRECTUS_URL,
   email:
     argv.project === "Astro"
