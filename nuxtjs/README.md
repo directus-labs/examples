@@ -10,67 +10,41 @@
 
 ## 🚀 Getting Started
 
-1. Move the provided schema snapshot, `example.yaml` to the root of your Directus project
+1. Clone this repo.
 
-    ```
-    .
-    ├── example.yaml
-    └── package.json
-    ```
+2. Install dependencies for this example.
 
-2. Apply the schema snapshot by running
+   ```shell
+   cd nuxtjs
+   npm install
+   ```
 
-    ```bash
-    npx directus schema apply ./example.yaml
-    ```
-    > Learn more about schema snapshot/apply [over here](https://docs.directus.io/reference/command-line-interface/#migrate-schema-to-a-different-environment)
+3. Create a `.env` file based on the provided `.env.example` file. You can use either the credentials (email & password) or static token of the admin account.
 
-3. Create a `.env` file based on `.example.env`. You can use either the credentials (email & password) or static token of the admin account.
+4. Apply the provided `example.yaml` schema onto your Directus instance. [Learn more here](https://docs.directus.io/reference/cli/#applying-a-snapshot)
 
-    Here's an example using static token:
+5. Insert seed data to your Directus instance.
 
-    ```
-    DIRECTUS_BASE_URL=http://localhost:8055
-    DIRECTUS_STATIC_TOKEN=<static token here>
-    ```
+   ```shell
+   npm run seed
+   ```
 
-4. Add example data to your Directus instance by running
+6. Start the development server.
 
-    ```bash
-    node seed.js
-    ```
+   ```shell
+   npm run dev
+   ```
 
-    We should see the following output in the terminal:
+   Your Directus Nuxt.js example is now running at <http://localhost:3000>.
 
-    ```
-    Seeding author...
-    Seeding cover images...
-    Seeding posts...
-    Seeding completed.
-    ```
+## 🔗 Links
 
-## ⚙️ Trying out this Nuxt.js example
+### Directus
 
-1. Install dependencies
+- [Official Site](https://directus.io/)
+- [Documentation](https://docs.directus.io/)
 
-    ```bash
-    npm install
-    ```
+### Nuxt.js
 
-2. Start development with hot reload at localhost:3000
-
-    ```bash
-    npm run dev
-    ```
-
-3. Generate static site
-
-    ```bash
-    npm run generate
-    ```
-
-4. Serve static site
-
-    ```bash
-    npm run start
-    ```
+- [Official Site](https://nuxtjs.org/)
+- [Documentation](https://nuxtjs.org/docs)

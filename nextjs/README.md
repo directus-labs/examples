@@ -17,11 +17,17 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
    npm install
    ```
 
-3. Create a `.env` file based on the provided `.env.example` file.
+3. Create a `.env` file based on the provided `.env.example` file. You can use either the credentials (email & password) or static token of the admin account.
 
 4. Apply the provided `example.yaml` schema onto your Directus instance. [Learn more here](https://docs.directus.io/reference/cli/#applying-a-snapshot)
 
-5. Start the development server.
+5. Insert seed data to your Directus instance.
+
+   ```shell
+   npm run seed
+   ```
+
+6. Start the development server.
 
    ```shell
    npm run dev
