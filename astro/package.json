@@ -1,0 +1,19 @@
+{
+  "name": "@example/minimal",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "devDependencies": {
+    "astro": "^0.22.14",
+    "dotenv": "^14.2.0",
+    "modern-normalize": "1.1.0"
+  },
+  "dependencies": {
+    "@directus/sdk": "^9.4.3"
+  }
+}

@@ -1,0 +1,173 @@
+---
+import DefaultLayout from '../../layouts/DefaultLayout.astro'
+import MoreArticles from '../../components/MoreArticles.astro'
+import BackIcon from '../../components/icons/Back.astro'
+import LinkIcon from '../../components/icons/Link.astro'
+import YoutubeIcon from '../../components/icons/Youtube.astro'
+import LinkedinIcon from '../../components/icons/Linkedin.astro'
+import TwitterIcon from '../../components/icons/Twitter.astro'
+import GithubIcon from '../../components/icons/Github.astro'
+
+import {getDirectusClient} from '../../utils/get-directus-client'
+import {getAssetURL} from '../../utils/get-asset-url'
+import {formatRelativeTime} from '../../../../shared/utils/format-relative-time'
+
+export async function getStaticPaths() {
+    const directus = await getDirectusClient();
+    const response = await directus.items("articles").readMany({
+        fields: ["*", "author.avatar", "author.first_name", "author.last_name"],
+        filter: { status: { _eq: "published" } },
+        limit: -1,
+    })
+
+    let articles = response.data
+
+    for (const [index, article] of Object.entries(articles)) {
+        const moreArticlesResponse = await directus.items("articles").readMany({
+            fields: ["*", "author.avatar", "author.first_name", "author.last_name"],
+            filter: {
+            _and: [{ id: { _neq: article.id } }, { status: { _eq: "published" } }],
+            },
+            limit: 2,
+        })
+
+        const formattedMoreArticles = moreArticlesResponse.data.map(
+            (formattedMoreArticle) => {
+                return {
+                    ...formattedMoreArticle,
+                    publish_date: formatRelativeTime(
+                        new Date(formattedMoreArticle.publish_date)
+                    ),
+                }
+            }
+        )
+
+        articles[index] = {
+            params: { id: article.id.toString() },
+            props: {
+                article: {
+                    ...article,
+                    publish_date: formatRelativeTime(new Date(article.publish_date)),
+                    moreArticles: formattedMoreArticles,
+                }
+            }
+        }
+    }
+
+    return articles
+}
+const {article} = Astro.props
+---
+    <DefaultLayout>
+<div class="current-article">
+  <section>
+    <div class="container">
+      <a href="/" class="current-article__backlink">
+        <BackIcon />
+        <span>Back to Articles</span>
+      </a>
+      <h1 class="current-article__title">{article.title}</h1>
+      <div class="current-article__detail">
+        <div class="current-article__wrapperOuter">
+          <div class="current-article__wrapperInner">
+            <div class="current-article__authorImage">
+              <img
+                src={getAssetURL(article.author.avatar)}
+                alt=""
+                loading="lazy"
+              />
+            </div>
+            <div>
+              <div class="current-article__authorName">
+                {`${article.author.first_name} ${article.author.last_name}`}
+              </div>
+              <div class="current-article__time">
+                {article.publish_date}
+              </div>
+            </div>
+          </div>
+          <ul class="current-article__socials">
+            <li>
+              <a href="/" target="_blank" rel="noreferrer noopener">
+                <LinkIcon />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.youtube.com/c/DirectusVideos"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <YoutubeIcon />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/company/directus-io"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <LinkedinIcon />
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://twitter.com/directus"
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                <TwitterIcon />
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="current-article_coverImage">
+          <img src={getAssetURL(article.cover_image)} alt="" />
+        </div>
+      </div>
+      <div class="current-article__body">
+        <div class="current-article__bodyContent">{article.body}</div>
+        <ul class="current-article__bodySocials">
+          <li>
+            <a
+              href="https://github.com/directus"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <GithubIcon />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.youtube.com/c/DirectusVideos"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <YoutubeIcon />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/company/directus-io"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <LinkedinIcon />
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://twitter.com/directus"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <TwitterIcon />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <MoreArticles articles={article.moreArticles} />
+</div>
+</DefaultLayout>

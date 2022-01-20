@@ -1,0 +1,36 @@
+---
+import 'modern-normalize'
+import '../../../shared/stylesheet/main.css'
+import Notice from '../components/Notice.astro'
+import Header from '../components/Header.astro'
+import Info from '../components/Info.astro'
+import Footer from '../components/Footer.astro'
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Directus Astro Example</title>
+    <link rel="shortcut icon" href="/public/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+    />
+  </head>
+
+  <body class="layout">
+    <Notice />
+    <Header />
+    <slot />
+    <Info />
+    <Footer />
+  </body>
+</html>
