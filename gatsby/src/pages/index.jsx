@@ -39,7 +39,7 @@ const IndexPage = ({ data }) => {
 export const query = graphql`
   query {
     directus {
-      articles(filter: { status: { _eq: "published" } }, sort: "publish_date") {
+      articles(filter: { status: { _eq: "published" } }, sort: "-publish_date") {
         id
         title
         excerpt

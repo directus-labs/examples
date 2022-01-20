@@ -5,7 +5,7 @@ const {
 module.exports = async function ({ directus }) {
   const response = await directus.items("articles").readMany({
     fields: ["*", "author.avatar", "author.first_name", "author.last_name"],
-    sort: "publish_date",
+    sort: "-publish_date",
   });
   const formattedArticles = response.data.map((article) => {
     return {
