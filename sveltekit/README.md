@@ -1,4 +1,4 @@
-# create-svelte
+# Directus SvelteKit Example
 
 This is a [SvelteKit](https://kit.svelte.dev/) project bootstrapped with [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
 
