@@ -6,14 +6,13 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "seed": "node ../shared/seed --project=Gatsby"
+    "clean": "gatsby clean"
   },
   "dependencies": {
-    "@directus/gatsby-source-directus": "^9.4.3",
+    "@directus/gatsby-source-directus": "9.5.0",
     "gatsby": "^4.5.3",
     "gatsby-plugin-react-helmet": "^5.5.0",
-    "modern-normalize": "^1.1.0",
+    "modern-normalize": "1.1.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0"

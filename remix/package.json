@@ -6,11 +6,10 @@
     "dev": "node -r dotenv/config node_modules/.bin/remix dev",
     "dev:windows": "node -r dotenv/config ./node_modules/@remix-run/dev/cli.js dev",
     "postinstall": "remix setup node",
-    "start": "remix-serve build",
-    "seed": "node ../shared/seed --project=Remix"
+    "start": "remix-serve build"
   },
   "dependencies": {
-    "@directus/sdk": "9.4.3",
+    "@directus/sdk": "9.5.0",
     "@remix-run/react": "^1.1.3",
     "@remix-run/serve": "^1.1.3",
     "dotenv": "14.2.0",

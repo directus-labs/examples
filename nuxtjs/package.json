@@ -5,13 +5,12 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate",
-    "seed": "node ../shared/seed --project=Nuxt.js"
+    "generate": "nuxt generate"
   },
   "dependencies": {
-    "@directus/sdk": "^9.4.3",
+    "@directus/sdk": "9.5.0",
     "core-js": "^3.19.3",
-    "modern-normalize": "^1.1.0",
+    "modern-normalize": "1.1.0",
     "nuxt": "^2.15.8"
   }
 }
