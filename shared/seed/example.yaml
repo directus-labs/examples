@@ -1,5 +1,5 @@
 version: 1
-directus: 9.4.3
+directus: 9.5.0
 collections:
   - collection: articles
     meta:
