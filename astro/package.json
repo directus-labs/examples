@@ -5,11 +5,10 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
-    "seed": "node ../shared/seed --project=Astro"
+    "preview": "astro preview"
   },
   "dependencies": {
-    "@directus/sdk": "9.4.3"
+    "@directus/sdk": "9.5.0"
   },
   "devDependencies": {
     "astro": "0.22.14",

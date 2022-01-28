@@ -1,10 +1,10 @@
 # Directus Eleventy Example
 
-This is an [Eleventy](https://www.11ty.dev/) project.
+This is an [Eleventy](https://www.11ty.dev) project.
 
 ## 📌 Prerequisites
 
-- A new Directus instance ([Installation guide](https://docs.directus.io/getting-started/installation/))
+You will need to have the provided [Directus project](../directus) running first before proceeding with this example.
 
 ## 🚀 Getting Started
 
@@ -17,17 +17,9 @@ This is an [Eleventy](https://www.11ty.dev/) project.
    npm install
    ```
 
-3. Create a `.env` file based on the provided `.env.example` file. You can use either the credentials (email & password) or static token of the admin account.
+3. Create a `.env` file by copying the provided `.env.example` file.
 
-4. Apply the provided `example.yaml` schema onto your Directus instance. [Learn more here](https://docs.directus.io/reference/cli/#applying-a-snapshot)
-
-5. Insert seed data to your Directus instance.
-
-   ```shell
-   npm run seed
-   ```
-
-6. Start the development server.
+4. Start the development server.
 
    ```shell
    npm run dev
@@ -39,8 +31,8 @@ This is an [Eleventy](https://www.11ty.dev/) project.
 
 ### Directus
 
-- [Official Site](https://directus.io/)
-- [Documentation](https://docs.directus.io/)
+- [Official Site](https://directus.io)
+- [Documentation](https://docs.directus.io)
 
 ### Eleventy
 

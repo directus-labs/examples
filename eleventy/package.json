@@ -3,11 +3,10 @@
   "private": true,
   "scripts": {
     "dev": "eleventy --serve",
-    "build": "eleventy",
-    "seed": "node ../shared/seed --project=Eleventy"
+    "build": "eleventy"
   },
   "dependencies": {
-    "@directus/sdk": "9.4.3"
+    "@directus/sdk": "9.5.0"
   },
   "devDependencies": {
     "@11ty/eleventy": "1.0.0",
