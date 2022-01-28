@@ -15,22 +15,22 @@ These examples showcases how to integrate [Directus JavaScript SDK](https://docs
 
 |                                                                      Logo                                                                      | Framework                                               |        Blog Example         |
 | :--------------------------------------------------------------------------------------------------------------------------------------------: | ------------------------------------------------------- | :-------------------------: |
-|  <img height="32" src="./shared/logo/astro.svg#gh-light-mode-only" /><img height="32" src="./shared/logo/astro-dark.svg#gh-dark-mode-only" />  | **[Astro `beta`](https://github.com/withastro/astro)**  |       [view](/astro)        |
-|                                              <img height="32" src="./shared/logo/eleventy.svg" />                                              | **[Eleventy `v1.0`](https://github.com/11ty/eleventy)** |      [view](/eleventy)      |
-|                                               <img height="32" src="./shared/logo/gatsby.svg" />                                               | **[Gatsby `v4`](https://github.com/gatsbyjs/gatsby)**   |       [view](/gatsby)       |
-| <img height="32" src="./shared/logo/nextjs.svg#gh-light-mode-only" /><img height="32" src="./shared/logo/nextjs-dark.svg#gh-dark-mode-only" /> | **[Next.js `v12`](https://github.com/vercel/next.js)**  |       [view](/nextjs)       |
-|                                               <img height="36" src="./shared/logo/nuxtjs.svg" />                                               | **[Nuxt.js `v2`](https://github.com/nuxt/nuxt.js)**     |       [view](/nuxtjs)       |
-|  <img height="32" src="./shared/logo/remix.svg#gh-light-mode-only" /><img height="32" src="./shared/logo/remix-dark.svg#gh-dark-mode-only" />  | **[Remix `v1`](https://github.com/remix-run/remix)**    |       [view](/remix)        |
-|                                               <img height="32" src="./shared/logo/svelte.svg" />                                               | **[SvelteKit `beta`](https://github.com/sveltejs/kit)** |     [view](/sveltekit)      |
-|                                                <img height="32" src="./shared/logo/vue.svg" />                                                 | **[Vue `v3`](https://github.com/vuejs/core)**           | [view](/vue) <sup>[1]</sup> |
+|  <img height="32" src="./shared/logo/astro.svg#gh-light-mode-only" /><img height="32" src="./shared/logo/astro-dark.svg#gh-dark-mode-only" />  | **[Astro `beta`](https://github.com/withastro/astro)**  |       [source](/astro)        |
+|                                              <img height="32" src="./shared/logo/eleventy.svg" />                                              | **[Eleventy `v1.0`](https://github.com/11ty/eleventy)** |      [source](/eleventy)      |
+|                                               <img height="32" src="./shared/logo/gatsby.svg" />                                               | **[Gatsby `v4`](https://github.com/gatsbyjs/gatsby)**   |       [source](/gatsby)       |
+| <img height="32" src="./shared/logo/nextjs.svg#gh-light-mode-only" /><img height="32" src="./shared/logo/nextjs-dark.svg#gh-dark-mode-only" /> | **[Next.js `v12`](https://github.com/vercel/next.js)**  |       [source](/nextjs)       |
+|                                               <img height="36" src="./shared/logo/nuxtjs.svg" />                                               | **[Nuxt.js `v2`](https://github.com/nuxt/nuxt.js)**     |       [source](/nuxtjs)       |
+|  <img height="32" src="./shared/logo/remix.svg#gh-light-mode-only" /><img height="32" src="./shared/logo/remix-dark.svg#gh-dark-mode-only" />  | **[Remix `v1`](https://github.com/remix-run/remix)**    |       [source](/remix)        |
+|                                               <img height="32" src="./shared/logo/svelte.svg" />                                               | **[SvelteKit `beta`](https://github.com/sveltejs/kit)** |     [source](/sveltekit)      |
+|                                                <img height="32" src="./shared/logo/vue.svg" />                                                 | **[Vue `v3`](https://github.com/vuejs/core)**           | [source](/vue) <sup>[1]</sup> |
 
 _[1]: These additionally uses full read permissions on `articles` & `directus_users` in Public role for simplicity sake._
 
 ## 🔗 Links
 
-- ✨ Official Website - [https://directus.io](https://directus.io)
-- 📘 Documentation - [https://docs.directus.io](https://docs.directus.io)
-- 👥 Community - [GitHub discussions](https://github.com/directus/directus/discussions)
-- 🎬 Youtube - [Video tutorials](https://www.youtube.com/c/DirectusVideos)
-- 🐦 Twitter - [@directus](https://twitter.com/directus)
-- 💬 Chat - [Discord server](https://directus.chat)
+- ✨ Official Website — [https://directus.io](https://directus.io)
+- 📘 Documentation — [https://docs.directus.io](https://docs.directus.io)
+- 👥 Community — [GitHub discussions](https://github.com/directus/directus/discussions)
+- 🎬 Youtube — [Video tutorials](https://www.youtube.com/c/DirectusVideos)
+- 🐦 Twitter — [@directus](https://twitter.com/directus)
+- 💬 Chat — [Discord server](https://directus.chat)
