@@ -5,6 +5,7 @@
 ### dotenv ###
 .env
 !.env.example
+!directus/.env
 
 ### Linux ###
 *~
