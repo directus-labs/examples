@@ -1,6 +1,6 @@
 # Directus Angular Example
 
-This is an [Angular 13](https://angular.io) project bootstrapped with [Angular CLI](https://github.com/angular/angular-cli),
+This is an [Angular 13](https://angular.io) project bootstrapped with [Angular CLI](https://github.com/angular/angular-cli).
 
 ## 📌 Prerequisites
 
