@@ -2,6 +2,11 @@
 
 This is a [Directus](https://directus.io) project bootstrapped with [`create-directus-project`](https://github.com/directus/directus/tree/main/packages/create-directus-project).
 
+Admin credentials for this Directus instance:
+
+- **Email** — `admin@example.com`
+- **Password** — `d1r3ctu5`
+  
 ## 📌 Prerequisites
 
 - [Node.js](https://nodejs.dev) v12.20 and above
@@ -24,6 +29,8 @@ This is a [Directus](https://directus.io) project bootstrapped with [`create-dir
    ```
 
    Your Directus example is now running at <http://localhost:8055>.
+
+4. You can login with the admin credentials shown above to explore this Directus example project.
 
 ## 🔗 Links
 
