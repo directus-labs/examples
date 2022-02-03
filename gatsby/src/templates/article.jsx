@@ -8,7 +8,6 @@ import IconGithub from "../components/icons/Github";
 import IconYoutube from "../components/icons/Youtube";
 import IconLinkedin from "../components/icons/Linkedin";
 import IconTwitter from "../components/icons/Twitter";
-import { formatRelativeTime } from "../../../shared/utils/format-relative-time";
 import { getAssetURL } from "../utils/get-asset-url";
 
 export default function ArticleTemplate({ pageContext }) {
