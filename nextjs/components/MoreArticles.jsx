@@ -1,6 +1,4 @@
 import Article from "./Article";
-import { getDirectusClient } from "../lib/directus";
-import { formatRelativeTime } from "../../shared/utils/format-relative-time";
 
 export default function MoreArticles({ articles }) {
   return (
