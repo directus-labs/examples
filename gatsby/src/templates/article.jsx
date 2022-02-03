@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Link, graphql } from "gatsby";
+import { Link } from "gatsby";
 import DefaultLayout from "../layouts/default";
 import MoreArticles from "../components/MoreArticles";
 import IconBack from "../components/icons/Back";
@@ -11,12 +11,9 @@ import IconTwitter from "../components/icons/Twitter";
 import { formatRelativeTime } from "../../../shared/utils/format-relative-time";
 import { getAssetURL } from "../utils/get-asset-url";
 
-export default function ArticleTemplate({ data, path }) {
-  const originalArticle = data.directus.articles_by_id;
-  const article = {
-    ...originalArticle,
-    publish_date: formatRelativeTime(new Date(originalArticle.publish_date)),
-  };
+export default function ArticleTemplate({ pageContext }) {
+  const article = pageContext.article;
+  const moreArticles = pageContext.moreArticles;
 
   return (
     <DefaultLayout>
@@ -49,7 +46,11 @@ export default function ArticleTemplate({ data, path }) {
                 </div>
                 <ul className="current-article__socials">
                   <li>
-                    <a href={path} target="_blank" rel="noreferrer noopener">
+                    <a
+                      href={`/articles/${article.id}`}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                    >
                       <IconLink />
                     </a>
                   </li>
@@ -83,10 +84,7 @@ export default function ArticleTemplate({ data, path }) {
                 </ul>
               </div>
               <div className="current-article_coverImage">
-                <img
-                  src={getAssetURL(article.cover_image.id)}
-                  alt=""
-                />
+                <img src={getAssetURL(article.cover_image.id)} alt="" />
               </div>
             </div>
             <div className="current-article__body">
@@ -135,32 +133,8 @@ export default function ArticleTemplate({ data, path }) {
             </div>
           </div>
         </section>
-        <MoreArticles />
+        <MoreArticles articles={moreArticles} />
       </div>
     </DefaultLayout>
   );
 }
-
-export const query = graphql`
-  query ($id: ID!) {
-    directus {
-      articles_by_id(id: $id) {
-        id
-        title
-        excerpt
-        body
-        publish_date
-        author {
-          first_name
-          last_name
-          avatar {
-            id
-          }
-        }
-        cover_image {
-          id
-        }
-      }
-    }
-  }
-`;
