@@ -1,0 +1,30 @@
+<svg width="500" height="500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g clip-path="url(#a)">
+    <path d="M95.42 249.86H174a95.16 95.16 0 0 1 76.04 37.94l77.5 102.99a6.34 6.34 0 0 1 .57 6.72l-44.68 86.56a6.34 6.34 0 0 1-10.7.9L95.42 249.87Z" fill="url(#b)"/>
+    <g filter="url(#c)">
+      <path d="M404.56 250h-78.57a95.16 95.16 0 0 1-76.03-37.95l-77.5-103a6.34 6.34 0 0 1-.57-6.72l44.67-86.55a6.34 6.34 0 0 1 10.7-.91l177.3 235.12Z" fill="url(#d)"/>
+    </g>
+  </g>
+  <defs>
+    <linearGradient id="b" x1="163.94" y1="392.77" x2="316.43" y2="155.24" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6700EB"/>
+      <stop offset="1" stop-color="#45009D"/>
+    </linearGradient>
+    <linearGradient id="d" x1="336.05" y1="107.07" x2="183.55" y2="344.6" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6700EB"/>
+      <stop offset="1" stop-color="#45009D"/>
+    </linearGradient>
+    <clipPath id="a">
+      <path fill="#fff" d="M0 0h500v500H0z"/>
+    </clipPath>
+    <filter id="c" x="71.18" y="-39.66" width="433.38" height="437.65" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+      <feOffset dy="48"/>
+      <feGaussianBlur stdDeviation="50"/>
+      <feColorMatrix values="0 0 0 0 0.270588 0 0 0 0 0 0 0 0 0 0.615686 0 0 0 0.2 0"/>
+      <feBlend in2="BackgroundImageFix" result="effect1_dropShadow"/>
+      <feBlend in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+    </filter>
+  </defs>
+</svg>
