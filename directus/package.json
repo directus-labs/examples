@@ -2,7 +2,9 @@
   "name": "directus-example",
   "private": true,
   "scripts": {
-    "start": "npx directus start"
+    "start": "npx directus start",
+    "assume-unchanged": "git update-index --assume-unchanged data.db",
+    "postinstall": "npm run assume-unchanged"
   },
   "dependencies": {
     "directus": "9.5.0",
