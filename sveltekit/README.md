@@ -25,7 +25,7 @@ You will need to have the provided [Directus project](../directus) running first
    npm run dev
    ```
 
-   Your Directus SvelteKit example is now running at <http://localhost:8000>.
+   Your Directus SvelteKit example is now running at <http://localhost:3000>.
 
 ## 🔗 Links
 
