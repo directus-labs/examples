@@ -17,7 +17,7 @@ export default function Info() {
         <div className="info__wrapperOuter right">
           <div className="info_wrapperInner">
             <span className="info__subtitle">Codebase</span>
-            <a href="#" className="info__title">
+            <a href="https://github.com/directus/examples" className="info__title">
               View on GitHub
             </a>
           </div>
