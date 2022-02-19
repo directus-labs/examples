@@ -8,7 +8,7 @@
 
 ## Scope and Purpose
 
-The purpose of this article is to focus on the bare basics of linking a Nuxt.js frontend to Directus, then show you where to learn about more robust authentication methods, roles & permissions configurations, and API functionalities. It is important to stress to new users that Directus is a general purpose database wrapper, _which mirrors any linked database_. No matter your data model or use-case, Directus can serve as a backend *(plus no-code admin panel)* for any type of project and also connect to any *(or many)* different front-ends.
+The purpose of this article is to focus on the bare basics of linking a Nuxt 2 frontend to Directus, then show you where to learn about more robust authentication methods, roles & permissions configurations, and API functionalities. It is important to stress to new users that Directus is a general purpose database wrapper, _which mirrors any linked database_. No matter your data model or use-case, Directus can serve as a backend *(plus no-code admin panel)* for any type of project and also connect to any *(or many)* different front-ends.
 
 Please keep in mind that this is not a demo showing _what Directus can be used for_, but rather a low variable entry-point on the path to _understanding how to do anything you want with it_.
 
@@ -50,7 +50,7 @@ npm run dev
 
 Now that you have the frontend and backend linked up, let's touch on what's happening in this project and where to find more sophisticated options.
 
-## Nuxt.js
+## Nuxt 2
 
 Nuxt.js is a Vue framework that enables Static Site Generation (SSG) and Server-side Rendering (SSR). Learn more in the [official Nuxt.js docs](https://nuxtjs.org/docs/get-started/installation).
 
