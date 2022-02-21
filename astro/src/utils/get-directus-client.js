@@ -5,16 +5,13 @@ export const getDirectusClient = async () => {
 
   if (directus.auth.token) return directus;
 
-  if (
-    import.meta.env.PUBLIC_DIRECTUS_EMAIL &&
-    import.meta.env.PUBLIC_DIRECTUS_PASSWORD
-  ) {
+  if (import.meta.env.DIRECTUS_EMAIL && import.meta.env.DIRECTUS_PASSWORD) {
     await directus.auth.login({
-      email: import.meta.env.PUBLIC_DIRECTUS_EMAIL,
-      password: import.meta.env.PUBLIC_DIRECTUS_PASSWORD,
+      email: import.meta.env.DIRECTUS_EMAIL,
+      password: import.meta.env.DIRECTUS_PASSWORD,
     });
-  } else if (import.meta.env.PUBLIC_DIRECTUS_STATIC_TOKEN) {
-    await directus.auth.static(import.meta.env.PUBLIC_DIRECTUS_STATIC_TOKEN);
+  } else if (import.meta.env.DIRECTUS_STATIC_TOKEN) {
+    await directus.auth.static(import.meta.env.DIRECTUS_STATIC_TOKEN);
   }
 
   return directus;

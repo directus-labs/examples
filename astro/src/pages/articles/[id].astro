@@ -126,7 +126,7 @@ const {article} = Astro.props
         </div>
       </div>
       <div class="current-article__body">
-        <div class="current-article__bodyContent">{article.body}</div>
+        <div class="current-article__bodyContent" set:html={article.body}></div>
         <ul class="current-article__bodySocials">
           <li>
             <a
