@@ -21,6 +21,8 @@ export default function Info() {
             <span className="info__subtitle">Codebase</span>
             <a
               href="https://github.com/directus/examples"
+              target="_blank"
+              rel="noreferrer"
               className="info__title"
             >
               View on GitHub

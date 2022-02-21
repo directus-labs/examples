@@ -13,7 +13,14 @@
 		<div class="info__wrapperOuter right">
 			<div class="info_wrapperInner">
 				<span class="info__subtitle">Codebase</span>
-				<a href="https://github.com/directus/examples" class="info__title"> View on GitHub </a>
+				<a
+					href="https://github.com/directus/examples"
+					target="_blank"
+					rel="noreferrer"
+					class="info__title"
+				>
+					View on GitHub
+				</a>
 			</div>
 		</div>
 	</div>
