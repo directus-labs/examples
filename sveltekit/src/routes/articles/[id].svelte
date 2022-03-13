@@ -1,27 +1,3 @@
-<script context="module">
-	/** @type {import('@sveltejs/kit').Load} */
-	export async function load({ fetch, params }) {
-		const { id } = params;
-		const url = `/articles/${id}.json`;
-		const response = await fetch(url);
-
-		if (!response.ok) {
-			return {
-				status: 404
-			};
-		}
-
-		const data = await response.json();
-
-		return {
-			props: {
-				article: data.article,
-				moreArticles: data.moreArticles
-			}
-		};
-	}
-</script>
-
 <script>
 	import { getAssetURL } from '$lib/get-asset-url';
 	import BackIcon from '$lib/components/icons/Back.svelte';

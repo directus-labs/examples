@@ -2,6 +2,8 @@
 
 This is a [SvelteKit](https://kit.svelte.dev) project bootstrapped with [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
 
+> ℹ This example uses @sveltejs/kit version `1.0.0-next.295`.
+
 ## 📌 Prerequisites
 
 You will need to have the provided [Directus project](../directus) running first before proceeding with this example.
