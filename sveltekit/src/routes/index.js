@@ -12,11 +12,6 @@ export async function get() {
 			sort: '-publish_date'
 		});
 	} catch (err) {
-		if (err.parent.code === 'ECONNREFUSED') {
-			console.error(
-				'Unable to connect to the Directus instance. Make sure the .env file is present and the VITE_DIRECTUS_URL variable is pointing the correct URL.'
-			);
-		}
 		return {
 			status: 404
 		};

@@ -9,15 +9,10 @@ export async function get({ params }) {
 
 	let article;
 	try {
-		 article = await directus.items('articles').readOne(id, {
+		article = await directus.items('articles').readOne(id, {
 			fields: ['*', 'author.avatar', 'author.first_name', 'author.last_name']
 		});
 	} catch (err) {
-		if (err.parent.code === 'ECONNREFUSED') {
-			console.error(
-				'Unable to connect to the Directus instance. Make sure the .env file is present and the VITE_DIRECTUS_URL variable is pointing the correct URL.'
-			);
-		}
 		return {
 			status: 404
 		};
