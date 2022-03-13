@@ -3,6 +3,13 @@
 	export async function load({ fetch }) {
 		const url = `/index.json`;
 		const response = await fetch(url);
+
+		if (!response.ok) {
+			return {
+				status: 404
+			};
+		}
+
 		const data = await response.json();
 
 		return {
