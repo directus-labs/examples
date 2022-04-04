@@ -4,9 +4,8 @@ import { useArticles, Article as ArticleType } from '~/logic/article'
 const { for: article } = defineProps<{ for: ArticleType }>()
 
 const articles = await useArticles({
-  fields: ["*", "author.avatar", "author.first_name", "author.last_name"],
   filter: {
-  _and: [{ id: { _neq: article.id } }, { status: { _eq: "published" } }],
+    _and: [{ id: { _neq: article.id } }, { status: { _eq: "published" } }],
   },
   limit: 2,
 })

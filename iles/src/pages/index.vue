@@ -1,10 +1,7 @@
 <script setup lang="ts">
 import { useArticles } from '~/logic/article'
 
-const [hero, ...articles] = await useArticles({
-  fields: ['*', 'author.avatar', 'author.first_name', 'author.last_name'],
-  sort: '-publish_date',
-})
+const [hero, ...articles] = await useArticles({ sort: '-publish_date' })
 </script>
 
 <template>

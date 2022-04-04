@@ -4,7 +4,6 @@ import { useArticles } from '~/logic/article'
 export default definePageComponent({
   async getStaticPaths () {
     const articles = await useArticles({
-      fields: ['*', 'author.avatar', 'author.first_name', 'author.last_name'],
       filter: { status: { _eq: 'published' } },
       limit: -1,
     })
