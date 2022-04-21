@@ -1,4 +1,4 @@
-import { Link } from "remix";
+import { Link } from "@remix-run/react";
 import { getAssetURL } from "~/utils/get-asset-url";
 
 export default function Article({ article, bordered }) {

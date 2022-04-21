@@ -6,7 +6,7 @@ import {
   Scripts,
   ScrollRestoration,
   useLoaderData,
-} from "remix";
+} from "@remix-run/react";
 import modernNormalizeStyle from "modern-normalize/modern-normalize.css";
 import mainStyle from "../../shared/stylesheet/main.css";
 

@@ -23,10 +23,6 @@ You will need to have the provided [Directus project](../directus) running first
 
    ```shell
    npm run dev
-
-   # Run this if you are on Windows instead
-   # This is currently a known bug and it is tracked here: https://github.com/remix-run/remix/issues/914
-   npm run dev:windows
    ```
 
    Your Directus Remix example is now running at <http://localhost:3000>.

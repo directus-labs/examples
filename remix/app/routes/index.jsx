@@ -1,4 +1,5 @@
-import { json, useLoaderData } from "remix";
+import { useLoaderData } from "@remix-run/react";
+import { json } from "@remix-run/node";
 import Hero from "~/components/Hero";
 import Article from "~/components/Article";
 import { getDirectusClient } from "~/lib/directus";

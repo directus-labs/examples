@@ -1,4 +1,5 @@
-import { Link, json, useLoaderData } from "remix";
+import { Link, useLoaderData } from "@remix-run/react";
+import { json } from "@remix-run/node";
 import { getDirectusClient } from "~/lib/directus";
 import MoreArticles from "~/components/MoreArticles";
 import IconBack from "~/components/icons/Back";
