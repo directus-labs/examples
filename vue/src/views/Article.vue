@@ -34,7 +34,7 @@ async function fetchData() {
       publish_date: formatRelativeTime(new Date(articleResponse.publish_date)),
     };
 
-    const moreArticlesResponse = await directus.items("articles").readMany({
+    const moreArticlesResponse = await directus.items("articles").readByQuery({
       fields: ["*", "author.avatar", "author.first_name", "author.last_name"],
       filter: {
         _and: [
