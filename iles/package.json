@@ -10,7 +10,7 @@
     "node": "^14.18 || >= 16.0.0"
   },
   "dependencies": {
-    "@directus/sdk": "9.5.0"
+    "@directus/sdk": "9.10.0"
   },
   "devDependencies": {
     "@islands/icons": "^0.1.1",

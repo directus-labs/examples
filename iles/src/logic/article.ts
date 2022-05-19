@@ -22,7 +22,7 @@ export interface Article {
 
 export async function useArticles (query: QueryMany<Article>) {
   const directus = await useDirectus()
-  const { data } = await directus.items<'articles', Article>('articles').readMany({
+  const { data } = await directus.items<'articles', Article>('articles').readByQuery({
     fields: ["*", "author.avatar", "author.first_name", "author.last_name"],
     ...query
   })
