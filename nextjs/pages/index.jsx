@@ -28,7 +28,7 @@ export default function Home({ hero, articles }) {
 
 export async function getStaticProps() {
   const directus = await getDirectusClient();
-  const response = await directus.items("articles").readMany({
+  const response = await directus.items("articles").readByQuery({
     fields: ["*", "author.avatar", "author.first_name", "author.last_name"],
     sort: "-publish_date",
   });
