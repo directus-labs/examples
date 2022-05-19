@@ -43,7 +43,7 @@ export class ArticlePage implements OnInit {
         ),
       };
 
-      const moreArticlesResponse = await directus.items('articles').readMany({
+      const moreArticlesResponse = await directus.items('articles').readByQuery({
         fields: ['*', 'author.avatar', 'author.first_name', 'author.last_name'],
         filter: {
           _and: [
