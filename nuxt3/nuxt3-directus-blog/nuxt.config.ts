@@ -1,8 +1,8 @@
-import { defineNuxtConfig } from "nuxt3";
+import { defineNuxtConfig } from "nuxt";
 
 export default defineNuxtConfig({
 	modules: ["nuxt-directus", "@nuxtjs/tailwindcss"],
 	directus: {
-		url: "-",
+		url: "http://localhost:8055/",
 	},
 });
