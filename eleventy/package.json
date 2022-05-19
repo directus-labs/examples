@@ -6,7 +6,7 @@
     "build": "eleventy"
   },
   "dependencies": {
-    "@directus/sdk": "9.5.0"
+    "@directus/sdk": "9.10.0"
   },
   "devDependencies": {
     "@11ty/eleventy": "1.0.0",
