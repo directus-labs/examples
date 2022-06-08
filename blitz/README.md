@@ -27,6 +27,13 @@ You will need to have the provided [Directus project](../directus) running first
 
    Your Directus Blitz example is now running at <http://localhost:3000>.
 
+## Aside
+
+Usually a blitz project will live on its own and have a dedicated `.git`
+directory, not in a sub-directory as this example. Because of that the `prepare`
+script, which runs after `npm install`, is "disabled", since `husky` will try to
+setup its git hooks.
+
 ## 🔗 Links
 
 ### Directus

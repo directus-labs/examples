@@ -24,7 +24,7 @@ export default {
     };
   },
   async fetch() {
-    const response = await this.$directus.items("articles").readMany({
+    const response = await this.$directus.items("articles").readByQuery({
       fields: ["*", "author.avatar", "author.first_name", "author.last_name"],
       limit: 2
     });

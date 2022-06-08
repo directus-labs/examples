@@ -8,7 +8,7 @@
     "lint": "eslint --ignore-path .gitignore --ext .js .",
     "test": "jest",
     "test:watch": "jest --watch",
-    "prepare": "husky install"
+    "#prepare": "husky install"
   },
   "prettier": {
     "semi": false,
@@ -20,7 +20,7 @@
     ]
   },
   "dependencies": {
-    "@directus/sdk": "9.5.0",
+    "@directus/sdk": "9.10.0",
     "blitz": "0.45.3",
     "modern-normalize": "1.1.0",
     "react": "18.0.0-beta-149b420f6-20211119",

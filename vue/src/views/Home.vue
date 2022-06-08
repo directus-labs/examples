@@ -11,7 +11,7 @@ const articles = ref(null);
 fetchData();
 
 async function fetchData() {
-  const response = await directus.items("articles").readMany({
+  const response = await directus.items("articles").readByQuery({
     fields: ["*", "author.avatar", "author.first_name", "author.last_name"],
     sort: "-publish_date",
   });

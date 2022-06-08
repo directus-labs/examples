@@ -137,7 +137,7 @@ export default function ArticlePage({ article, moreArticles }) {
 
 export async function getStaticPaths() {
   const directus = await getDirectusClient();
-  const { data } = await directus.items("articles").readMany({
+  const { data } = await directus.items("articles").readByQuery({
     fields: "id",
     filter: { status: { _eq: "published" } },
     limit: -1,
@@ -166,7 +166,7 @@ export async function getStaticProps({ params }) {
     publish_date: formatRelativeTime(new Date(article.publish_date)),
   };
 
-  const moreArticlesResponse = await directus.items("articles").readMany({
+  const moreArticlesResponse = await directus.items("articles").readByQuery({
     fields: ["*", "author.avatar", "author.first_name", "author.last_name"],
     filter: {
       _and: [{ id: { _neq: article.id } }, { status: { _eq: "published" } }],

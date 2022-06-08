@@ -43,7 +43,7 @@ export default function Article() {
           ),
         };
 
-        const moreArticlesResponse = await directus.items("articles").readMany({
+        const moreArticlesResponse = await directus.items("articles").readByQuery({
           fields: [
             "*",
             "author.avatar",
