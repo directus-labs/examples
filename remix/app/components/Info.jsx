@@ -9,7 +9,10 @@ export default function Info() {
         <div className="info__wrapperOuter left">
           <div className="info_wrapperInner">
             <span className="info__subtitle">Documentation</span>
-            <a href="#" className="info__title">
+            <a
+              href="https://directus.io/guides/get-started-building-a-remix-website-with-directus/"
+              className="info__title"
+            >
               Read the Tutorial
             </a>
           </div>

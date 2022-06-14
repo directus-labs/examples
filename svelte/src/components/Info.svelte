@@ -7,7 +7,7 @@
     <div class="info__wrapperOuter left">
       <div class="info_wrapperInner">
         <span class="info__subtitle">Documentation</span>
-        <a href="#" class="info__title"> Read the Tutorial </a>
+        <a href="https://directus.io/guides/get-started-building-a-svelte-website-with-directus/" class="info__title"> Read the Tutorial </a>
       </div>
     </div>
     <div class="info__wrapperOuter right">
