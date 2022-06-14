@@ -2,6 +2,7 @@
 import { getAssetURL } from '../utils/get-asset-url'
 const { article } = Astro.props
 ---
+
 <article class="hero">
   <div class="hero__topWrapper">
     <div class="hero__imageWrapper">
@@ -15,11 +16,7 @@ const { article } = Astro.props
   <p class="hero__excerpt">{article.excerpt}</p>
   <div class="hero__detail">
     <div class="hero__detailAuthorImage">
-      <img
-        src={getAssetURL(article.author.avatar)}
-        alt=""
-        loading="lazy"
-      />
+      <img src={getAssetURL(article.author.avatar)} alt="" loading="lazy" />
     </div>
     <div>
       <div class="hero__detailAuthorName">

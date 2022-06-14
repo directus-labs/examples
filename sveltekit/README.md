@@ -2,7 +2,7 @@
 
 This is a [SvelteKit](https://kit.svelte.dev) project bootstrapped with [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
 
-> ℹ This example uses @sveltejs/kit version `1.0.0-next.295`.
+> ℹ This example uses @sveltejs/kit version `1.0.0-next.350`.
 
 ## 📌 Prerequisites
 

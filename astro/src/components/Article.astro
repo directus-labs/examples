@@ -2,7 +2,8 @@
 import { getAssetURL } from '../utils/get-asset-url'
 const { article, bordered } = Astro.props
 ---
-<article class={bordered ? 'article bordered' : 'article'}>
+
+<article class={bordered ? 'article bordered' : 'article' }>
   <div class="article__topWrapper">
     <div class="article__imageWrapper">
       <img src={getAssetURL(article.cover_image)} alt="" loading="lazy" />
@@ -17,11 +18,7 @@ const { article, bordered } = Astro.props
     </h1>
     <div class="article__detail">
       <div class="article__detailAuthor">
-        <img
-          src={getAssetURL(article.author.avatar)}
-          alt=""
-          loading="lazy"
-        />
+        <img src={getAssetURL(article.author.avatar)} alt="" loading="lazy" />
       </div>
       <div class="article__detailInner">
         <div class="article__detailInnerAuthor">

@@ -8,9 +8,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@directus/sdk": "9.10.0",
+    "@directus/sdk": "9.12.2",
     "modern-normalize": "1.1.0",
-    "next": "12.1.0",
+    "next": "12.1.6",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   },

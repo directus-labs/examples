@@ -8,10 +8,12 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "@directus/sdk": "9.10.0"
+    "@directus/sdk": "9.12.2"
   },
   "devDependencies": {
-    "astro": "0.23.0",
-    "modern-normalize": "1.1.0"
+    "@astrojs/vue": "0.1.5",
+    "astro": "1.0.0-beta.44",
+    "modern-normalize": "1.1.0",
+    "vue": "3.2.37"
   }
 }
