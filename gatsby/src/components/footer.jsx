@@ -1,8 +1,8 @@
 import * as React from "react";
-import IconGithub from "./icons/Github";
-import IconLinkedin from "./icons/Linkedin";
-import IconTwitter from "./icons/Twitter";
-import IconYoutube from "./icons/Youtube";
+import IconGithub from "./icons/github";
+import IconLinkedin from "./icons/linkedin";
+import IconTwitter from "./icons/twitter";
+import IconYoutube from "./icons/youtube";
 
 export default function Footer() {
   return (
