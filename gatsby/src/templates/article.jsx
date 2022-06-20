@@ -1,13 +1,13 @@
 import * as React from "react";
 import { Link } from "gatsby";
 import DefaultLayout from "../layouts/default";
-import MoreArticles from "../components/MoreArticles";
-import IconBack from "../components/icons/Back";
-import IconLink from "../components/icons/Link";
-import IconGithub from "../components/icons/Github";
-import IconYoutube from "../components/icons/Youtube";
-import IconLinkedin from "../components/icons/Linkedin";
-import IconTwitter from "../components/icons/Twitter";
+import MoreArticles from "../components/moreArticles";
+import IconBack from "../components/icons/back";
+import IconLink from "../components/icons/link";
+import IconGithub from "../components/icons/github";
+import IconYoutube from "../components/icons/youtube";
+import IconLinkedin from "../components/icons/linkedin";
+import IconTwitter from "../components/icons/twitter";
 import { getAssetURL } from "../utils/get-asset-url";
 
 export default function ArticleTemplate({ pageContext }) {

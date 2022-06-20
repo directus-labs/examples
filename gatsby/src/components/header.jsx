@@ -1,5 +1,5 @@
 import * as React from "react";
-import IconMonospace from "./icons/Monospace";
+import IconMonospace from "./icons/monospace";
 
 export default function Header() {
   return (

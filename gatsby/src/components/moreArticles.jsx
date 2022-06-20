@@ -1,5 +1,5 @@
 import * as React from "react";
-import Article from "./Article";
+import Article from "./article";
 
 export default function MoreArticles({ articles }) {
   return (
