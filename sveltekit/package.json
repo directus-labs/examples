@@ -23,6 +23,6 @@
 		"eslint-plugin-svelte3": "4.0.0",
 		"prettier": "2.5.1",
 		"prettier-plugin-svelte": "2.7.0",
-		"svelte": "3.48.0"
+		"svelte": "3.49.0"
 	}
 }
