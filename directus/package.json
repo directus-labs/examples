@@ -7,7 +7,7 @@
     "postinstall": "npm run assume-unchanged"
   },
   "dependencies": {
-    "directus": "9.12.2",
+    "directus": "9.15.0",
     "sqlite3": "^5.0.8"
   }
 }
