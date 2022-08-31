@@ -1,13 +1,11 @@
 {
-  "name": "directus-example",
-  "private": true,
-  "scripts": {
-    "start": "npx directus start",
-    "assume-unchanged": "git update-index --assume-unchanged data.db",
-    "postinstall": "npm run assume-unchanged"
-  },
-  "dependencies": {
-    "directus": "9.12.2",
-    "sqlite3": "^5.0.8"
-  }
+	"name": "directus-example",
+	"private": true,
+	"scripts": {
+		"start": "npx directus start"
+	},
+	"dependencies": {
+		"directus": "9.16.1",
+		"sqlite3": "^5.0.8"
+	}
 }
