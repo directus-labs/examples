@@ -2,7 +2,7 @@ import { getDirectusClient } from '$lib/client';
 import { formatRelativeTime } from '../../../shared/utils/format-relative-time';
 
 /** @type {import('@sveltejs/kit').RequestHandler} */
-export async function get() {
+export async function GET() {
 	const directus = await getDirectusClient();
 
 	let response;

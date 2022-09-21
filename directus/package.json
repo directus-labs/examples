@@ -6,6 +6,6 @@
 	},
 	"dependencies": {
 		"directus": "9.16.1",
-		"sqlite3": "^5.0.8"
+		"sqlite3": "^5.1.1"
 	}
 }
