@@ -3,7 +3,7 @@ import DefaultLayout from '../layouts/DefaultLayout.astro'
 import Hero from '../components/Hero.astro'
 import Article from '../components/Article.astro'
 import { getDirectusClient } from '../utils/get-directus-client'
-import { formatRelativeTime } from '../../../shared/utils/format-relative-time'
+import { formatRelativeTime } from '../utils/format-relative-time'
 
 const directus = await getDirectusClient()
 const response = await directus.items("articles").readByQuery({
