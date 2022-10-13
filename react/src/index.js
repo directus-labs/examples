@@ -3,7 +3,7 @@ import { render } from "react-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
 import "modern-normalize";
-import "../../shared/stylesheet/main.css";
+import "./stylesheet/main.css";
 
 import DefaultLayout from "./layouts/Default";
 import Home from "./routes/Home";
