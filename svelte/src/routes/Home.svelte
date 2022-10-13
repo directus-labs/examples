@@ -3,7 +3,7 @@
   import Hero from "../components/Hero.svelte";
   import Article from "../components/Article.svelte";
   import { directus } from "../services/directus";
-  import { formatRelativeTime } from "../../../shared/utils/format-relative-time";
+  import { formatRelativeTime } from "../utils/format-relative-time";
 
   let hero, articles;
 

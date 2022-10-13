@@ -2,7 +2,7 @@
   import { Link, navigate, useLocation, useParams } from "svelte-navigator";
   import { directus } from "../services/directus";
   import { getAssetURL } from "../utils/get-asset-url";
-  import { formatRelativeTime } from "../../../shared/utils/format-relative-time";
+  import { formatRelativeTime } from "../utils/format-relative-time";
 
   import BackIcon from "../components/icons/Back.svelte";
   import LinkIcon from "../components/icons/Link.svelte";
