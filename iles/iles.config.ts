@@ -6,8 +6,6 @@ export default defineConfig({
     resolve: {
       alias: {
         // Example: define convenient aliases.
-        '@utils': resolve(__dirname, '../shared/utils'),
-        '@stylesheet': resolve(__dirname, '../shared/stylesheet'),
       },
     },
   },
