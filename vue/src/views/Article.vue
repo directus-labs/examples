@@ -2,7 +2,7 @@
 import { ref } from "vue";
 import { RouterLink, useRoute, useRouter } from "vue-router";
 import { directus } from "@/services/directus";
-import { formatRelativeTime } from "../../../shared/utils/format-relative-time";
+import { formatRelativeTime } from "@/utils/format-relative-time";
 import { getAssetURL } from "@/utils/get-asset-url";
 import IconBack from "@/components/icons/Back.vue";
 import IconLink from "@/components/icons/Link.vue";

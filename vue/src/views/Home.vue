@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from "vue";
 import { directus } from "@/services/directus";
-import { formatRelativeTime } from "../../../shared/utils/format-relative-time";
+import { formatRelativeTime } from "@/utils/format-relative-time";
 import Hero from "@/components/Hero.vue";
 import Article from "@/components/Article.vue";
 
