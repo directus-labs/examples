@@ -1,7 +1,7 @@
 const path = require(`path`);
 const {
   formatRelativeTime,
-} = require("../shared/utils/format-relative-time.cjs");
+} = require("src/utils/format-relative-time.cjs");
 
 exports.createPages = async ({ actions, graphql }) => {
   const { data } = await graphql(
