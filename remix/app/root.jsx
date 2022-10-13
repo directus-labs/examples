@@ -8,7 +8,7 @@ import {
   useLoaderData,
 } from "@remix-run/react";
 import modernNormalizeStyle from "modern-normalize/modern-normalize.css";
-import mainStyle from "../../shared/stylesheet/main.css";
+import mainStyle from "./stylesheet/main.css";
 
 import DefaultLayout from "./layouts/default";
 
