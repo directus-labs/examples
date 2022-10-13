@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ID } from '@directus/sdk';
 import { directus } from 'src/app/services/directus';
-import { formatRelativeTime } from '../../../../../shared/utils/format-relative-time';
+import { formatRelativeTime } from 'src/app/utils/format-relative-time';
 
 @Component({
   selector: 'page-article',
