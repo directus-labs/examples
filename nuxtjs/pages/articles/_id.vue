@@ -119,7 +119,7 @@
 </template>
 
 <script>
-import { formatRelativeTime } from "../../../shared/utils/format-relative-time";
+import { formatRelativeTime } from "~/utils/format-relative-time";
 
 export default {
   async asyncData({ $directus, params, error }) {
