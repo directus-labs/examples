@@ -2,6 +2,9 @@
 
 This is an [Astro](https://astro.build) project bootstrapped with [`create-astro`](https://github.com/withastro/astro/tree/main/packages/create-astro).
 
+[![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/directus/examples/tree/main/astro)
+
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/directus/examples/tree/main/astro)
 ## 📌 Prerequisites
 
 You will need to have the provided [Directus project](../directus) running first before proceeding with this example.

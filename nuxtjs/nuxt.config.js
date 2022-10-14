@@ -25,7 +25,7 @@ export default {
 
   css: [
     'modern-normalize',
-    '../shared/stylesheet/main.css'
+    '~/stylesheet/main.css'
   ],
 
   components: true,
@@ -35,7 +35,7 @@ export default {
   },
 
   plugins: [
-    '~/plugins/asset-url.js'
+    '~/plugins/asset-url.js',
   ],
 
   modules: [

@@ -10,7 +10,7 @@ import GithubIcon from '../../components/icons/Github.astro'
 
 import { getDirectusClient } from '../../utils/get-directus-client'
 import { getAssetURL } from '../../utils/get-asset-url'
-import { formatRelativeTime } from '../../../../shared/utils/format-relative-time'
+import { formatRelativeTime } from '../../utils/format-relative-time'
 
 export async function getStaticPaths() {
   const directus = await getDirectusClient();

@@ -1,7 +1,7 @@
 import Hero from "app/components/Hero"
 import Article from "app/components/Article"
 import { getDirectusClient } from "app/services/directus"
-import { formatRelativeTime } from "../../../shared/utils/format-relative-time"
+import { formatRelativeTime } from "app/utils/format-relative-time"
 
 const Home = ({ hero, articles }) => {
   return (

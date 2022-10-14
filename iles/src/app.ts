@@ -1,5 +1,5 @@
 import 'modern-normalize'
-import '@stylesheet/main.css'
+import '~/stylesheet/main.css'
 
 import { defineApp } from 'iles'
 

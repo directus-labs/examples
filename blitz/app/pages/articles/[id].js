@@ -7,7 +7,7 @@ import IconGithub from "app/components/icons/Github"
 import IconYoutube from "app/components/icons/Youtube"
 import IconLinkedin from "app/components/icons/Linkedin"
 import IconTwitter from "app/components/icons/Twitter"
-import { formatRelativeTime } from "../../../../shared/utils/format-relative-time"
+import { formatRelativeTime } from "app/utils/format-relative-time"
 import { getAssetURL } from "app/utils/get-asset-url"
 
 export default function ArticlePage({ article, moreArticles }) {

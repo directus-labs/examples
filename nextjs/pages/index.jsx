@@ -3,7 +3,7 @@ import Image from "next/image";
 import Hero from "../components/Hero";
 import Article from "../components/Article";
 import { getDirectusClient } from "../lib/directus";
-import { formatRelativeTime } from "../../shared/utils/format-relative-time";
+import { formatRelativeTime } from "../utils/format-relative-time";
 
 export default function Home({ hero, articles }) {
   return (

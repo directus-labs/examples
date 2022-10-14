@@ -2,6 +2,10 @@
 
 This is a [Remix](https://remix.run) project bootstrapped with [`create-remix`](https://github.com/remix-run/remix/tree/main/packages/create-remix).
 
+[![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/directus/examples/tree/main/remix)
+
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/directus/examples/tree/main/remix)
+
 ## 📌 Prerequisites
 
 You will need to have the provided [Directus project](../directus) running first before proceeding with this example.

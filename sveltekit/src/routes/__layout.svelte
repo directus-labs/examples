@@ -1,6 +1,6 @@
 <script>
 	import 'modern-normalize';
-	import '../../../shared/stylesheet/main.css';
+	import '../stylesheet/main.css';
 
 	import Notice from '$lib/components/Notice.svelte';
 	import Header from '$lib/components/Header.svelte';

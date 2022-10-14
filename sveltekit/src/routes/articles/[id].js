@@ -1,5 +1,5 @@
 import { getDirectusClient } from '$lib/client';
-import { formatRelativeTime } from '../../../../shared/utils/format-relative-time';
+import { formatRelativeTime } from '$lib/format-relative-time';
 
 /** @type {import('@sveltejs/kit').RequestHandler} */
 export async function get({ params }) {

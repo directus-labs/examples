@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Hero from "../components/Hero";
 import Article from "../components/Article";
 import { directus } from "../services/directus";
-import { formatRelativeTime } from "../../../shared/utils/format-relative-time";
+import { formatRelativeTime } from "../utils/format-relative-time";
 
 export default function Home() {
   const [hero, setHero] = useState(null);

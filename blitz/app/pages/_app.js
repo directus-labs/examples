@@ -1,7 +1,7 @@
 import { ErrorBoundary, ErrorComponent, Head, useQueryErrorResetBoundary } from "blitz"
 import DefaultLayout from "app/layouts/Default"
 import "modern-normalize"
-import "../../../shared/stylesheet/main.css"
+import "app/stylesheet/main.css"
 
 export default function App({ Component, pageProps }) {
   const getLayout = Component.getLayout || ((page) => <DefaultLayout>{page}</DefaultLayout>)

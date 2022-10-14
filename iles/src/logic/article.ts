@@ -1,5 +1,5 @@
 import { getAssetURL } from '~/logic/assets'
-import { formatRelativeTime } from '@utils/format-relative-time'
+import { formatRelativeTime } from '~/utils/format-relative-time'
 import { useDirectus, QueryMany } from '~/logic/directus'
 
 export interface Author {

@@ -4,6 +4,9 @@ This is a [Nuxt.js](https://nuxtjs.org) project bootstrapped with [`create-nuxt-
 
 **NOTE:** This is an example for Nuxt 2.
 
+[![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/directus/examples/tree/main/nuxtjs)
+
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/directus/examples/tree/main/nuxtjs)
 ## 📌 Prerequisites
 
 You will need to have the provided [Directus project](../directus) running first before proceeding with this example.

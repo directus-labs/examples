@@ -26,7 +26,7 @@ module.exports = function (eleventyConfig) {
       "css/modern-normalize.css",
   });
   eleventyConfig.addPassthroughCopy({
-    "../shared/stylesheet/main.css": "css/main.css",
+    "src/stylesheet/main.css": "css/main.css",
   });
 
   eleventyConfig.setLiquidOptions({
