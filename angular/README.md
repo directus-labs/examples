@@ -2,6 +2,9 @@
 
 This is an [Angular 13](https://angular.io) project bootstrapped with [Angular CLI](https://github.com/angular/angular-cli).
 
+[![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/directus/examples/tree/main/angular)
+
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/directus/examples/tree/main/angular)
 ## 📌 Prerequisites
 
 You will need to have the provided [Directus project](../directus) running first before proceeding with this example.

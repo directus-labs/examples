@@ -2,6 +2,9 @@
 
 This is a [Vue 3](https://v3.vuejs.org) project bootstrapped with [`create-vue`](https://github.com/vuejs/create-vue).
 
+[![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/directus/examples/tree/main/vue)
+
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/directus/examples/tree/main/vue)
 ## 📌 Prerequisites
 
 You will need to have the provided [Directus project](../directus) running first before proceeding with this example.

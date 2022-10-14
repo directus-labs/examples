@@ -2,11 +2,12 @@
 
 This is a [Nuxt.js](https://nuxtjs.org) project bootstrapped with [`create-nuxt-app`](https://github.com/nuxt/create-nuxt-app).
 
-**NOTE:** This is an example for Nuxt 2.
+**NOTE:** This is an example for Nuxt 3.
 
-[![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/directus/examples/tree/main/nuxtjs)
+[![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/directus/examples/tree/main/nuxt3/nuxt3-directus-blog)
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/directus/examples/tree/main/nuxtjs)
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/directus/examples/tree/main/nuxt3/nuxt3-directus-blog)
+
 ## 📌 Prerequisites
 
 You will need to have the provided [Directus project](../directus) running first before proceeding with this example.
@@ -18,7 +19,7 @@ You will need to have the provided [Directus project](../directus) running first
 2. Install dependencies for this example.
 
    ```shell
-   cd nuxtjs
+   cd nuxtjs3/nuxt3-directus-blog
    npm install
    ```
 

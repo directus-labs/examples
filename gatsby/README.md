@@ -2,6 +2,9 @@
 
 💡 This is a [Gatsby 4](https://www.gatsbyjs.com) project bootstrapped with [`create-gatsby`](https://github.com/gatsbyjs/gatsby/tree/master/packages/create-gatsby) and uses the official [@directus/gatsby-source-directus](https://github.com/directus/directus/tree/main/packages/gatsby-source-directus) plugin.
 
+[![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/directus/examples/tree/main/gatsby)
+
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/directus/examples/tree/main/gatsby)
 ## 📌 Prerequisites
 
 You will need to have the provided [Directus project](../directus) running first before proceeding with this example.

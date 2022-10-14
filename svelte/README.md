@@ -2,6 +2,9 @@
 
 This is a [Svelte 3](https://svelte.dev) project bootstrapped with [`create-vite`](https://github.com/vitejs/vite/tree/main/packages/create-vite)'s Svelte template preset.
 
+[![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/directus/examples/tree/main/sveltekit)
+
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/directus/examples/tree/main/sveltekit)
 ## 📌 Prerequisites
 
 You will need to have the provided [Directus project](../directus) running first before proceeding with this example.
