@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@directus/sdk": "9.12.2",
-    "blitz": "0.45.4",
+    "blitz": "2.0.0-beta.12",
     "modern-normalize": "1.1.0",
     "react": "18.0.0-beta-149b420f6-20211119",
     "react-dom": "18.0.0-alpha-5ca4b0433-20211020"
