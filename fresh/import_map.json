@@ -1,5 +1,6 @@
 {
   "imports": {
+    "~/": "./",
     "$fresh/": "https://deno.land/x/fresh@1.1.2/",
     "$std/": "https://deno.land/std@0.152.0/",
     "preact": "https://esm.sh/preact@10.11.0",
@@ -10,6 +11,8 @@
     "twind": "https://esm.sh/twind@0.16.17",
     "twind/": "https://esm.sh/twind@0.16.17/",
     "envalid": "https://deno.land/x/envalid@0.1.2/mod.ts",
-    "directus-lite": "https://deno.land/x/directus_lite_sdk/lite-sdk.ts"
+    "directus-lite": "https://deno.land/x/directus_lite_sdk/lite-sdk.ts",
+    "queryString": "https://deno.land/x/querystring@v1.0.2/mod.js"
+
   }
 }

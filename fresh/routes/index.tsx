@@ -1,6 +1,6 @@
 import { Head } from "$fresh/runtime.ts";
-import Counter from "../islands/Counter.tsx";
-import { DENO_ENV } from "../utils/config.js";
+import Counter from "~/islands/Counter.tsx";
+import { DENO_ENV } from "~/utils/env.ts";
 
 export default function Home() {
   return (
