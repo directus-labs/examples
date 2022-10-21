@@ -1,8 +1,22 @@
 import { Head } from "$fresh/runtime.ts";
+import { Handlers, PageProps } from "$fresh/server.ts";
 import Counter from "~/islands/Counter.tsx";
 import { DENO_ENV } from "~/utils/env.ts";
 
-export default function Home() {
+type Post {
+  title: string;
+  content: string;
+}
+
+type Posts = Post[];
+
+export const handler: Handlers<Posts | null> = {
+  async GET(_, ctx) {
+    return ctx.render(posts);
+  },
+};
+
+export default function Home({ data }: PageProps<Posts | null>) {
   return (
     <>
       <Head>
