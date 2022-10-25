@@ -11,6 +11,6 @@
     "@preact/signals-core": "https://esm.sh/*@preact/signals-core@1.0.1",
     "twind": "https://esm.sh/twind@0.16.17",
     "twind/": "https://esm.sh/twind@0.16.17/",
-    "envalid": "https://deno.land/x/envalid@0.1.2/mod.ts",
+    "envalid": "https://deno.land/x/envalid@0.1.2/mod.ts"
   }
 }

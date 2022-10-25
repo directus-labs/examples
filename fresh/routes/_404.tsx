@@ -1,11 +1,14 @@
-import { Layout } from "~/routes/index.tsx";
-
 export default function Page404({ data }) {
-    return (
-      <Layout data={data}>
-        <div class="p-4 mx-auto max-w-screen-md">
-          <p>Oh no! 404</p>
+  return (
+    <main class="error">
+      <section>
+        <div class="container">
+          <h1>Uh-oh, we can't seem to find the page you're looking for.</h1>
+          <p>
+            <a href="/">Click here</a> to head back to the safety of the homepage.
+          </p>
         </div>
-      </Layout>
-    );
-  }
+      </section>
+    </main>
+  );
+}
