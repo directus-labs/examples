@@ -10,10 +10,10 @@ export default function Info() {
             <div class="info_wrapperInner">
               <span class="info__subtitle">Documentation</span>
               <a
-                href="https://directus.io/guides/get-started-building-a-next-website-with-directus/"
+                href="https://docs.directus.io"
                 class="info__title"
               >
-                Read the Tutorial
+                Read the Docs
               </a>
             </div>
           </div>
