@@ -8,6 +8,33 @@ This is a [Fresh](https://www.fresh.deno.dev) project.
 
 ## 📌 Prerequisites
 
+This project is based on [Fresh](https://fresh.deno.dev/) and requires Deno to run. To install Deno via homebrew on macOS:
+
+```sh
+# macOS
+brew bundle --no-lock
+```
+
+Or the installer which also works on Linux:
+
+```sh
+# macOS or Linux
+curl -fsSL https://deno.land/x/install/install.sh | sh
+```
+
+Or using PowerShell on Windows:
+
+```shell
+irm https://deno.land/install.ps1 | iex
+```
+
+Add Deno to your path:
+
+```sh
+export DENO_INSTALL="$HOME/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+```
+
 You will need to have the provided [Directus project](../directus) running first before proceeding with this example.
 
 ## 🚀 Getting Started
