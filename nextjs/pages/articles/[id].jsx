@@ -7,7 +7,7 @@ import IconGithub from "../../components/icons/Github";
 import IconYoutube from "../../components/icons/Youtube";
 import IconLinkedin from "../../components/icons/Linkedin";
 import IconTwitter from "../../components/icons/Twitter";
-import { formatRelativeTime } from "../utils/format-relative-time";
+import { formatRelativeTime } from "../../utils/format-relative-time";
 import { getAssetURL } from "../../utils/get-asset-url";
 
 export default function ArticlePage({ article, moreArticles }) {
@@ -15,11 +15,11 @@ export default function ArticlePage({ article, moreArticles }) {
     <div className="current-article">
       <section>
         <div className="container">
-          <Link href="/">
-            <a className="current-article__backlink">
-              <IconBack className="icon" />
-              <span>Back to Articles</span>
-            </a>
+          <Link href="/" className="current-article__backlink">
+
+            <IconBack className="icon" />
+            <span>Back to Articles</span>
+
           </Link>
           <h1 className="current-article__title">{article.title}</h1>
           <div className="current-article__detail">
