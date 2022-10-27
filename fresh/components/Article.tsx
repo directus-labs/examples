@@ -17,7 +17,7 @@ export default function Article({ article, bordered }) {
       </div>
       <div class="article__bottomWrapper">
         <h1 class="article__title">
-          <a href={`/article/${article.id}`}>{article.title}</a>
+          <a href={`/articles/${article.id}`}>{article.title}</a>
         </h1>
         <div class="article__detail">
           <div class="article__detailAuthor">

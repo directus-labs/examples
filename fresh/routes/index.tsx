@@ -2,8 +2,9 @@ import { Head } from "$fresh/runtime.ts";
 import { CSS, render } from "gfm";
 import { Handlers, PageProps } from "$fresh/server.ts";
 import Counter from "~/islands/Counter.tsx";
-import { DENO_ENV } from "~/utils/env.ts";
+import { BASE_URL, DENO_ENV } from "~/utils/env.ts";
 import Article from "~/components/Article.tsx";
+import { HeadElement } from "~/components/Head.tsx";
 import { directusFetch } from '~/utils/directus.ts';
 
 type Post = {
@@ -72,9 +73,13 @@ export default function Home({ data }: PageProps<HomePage | null>) {
   return (
     <>
       <Head>
-        <title>Fresh App - {DENO_ENV}</title>
         <style>{CSS}</style>
       </Head>
+      <HeadElement
+        description="Fresh Directus"
+        title="Directus on Fresh"
+        url={`${BASE_URL}/`}
+      />
       <div>
         <main>
           <section class="main-content">

@@ -3,6 +3,8 @@ import { Handlers, PageProps } from "$fresh/server.ts";
 import { CSS, render } from "gfm";
 import { directusFetch, getAssetURL } from '~/utils/directus.ts';
 import { formatRelativeTime } from "~/utils/format-relative-time.ts";
+import { BASE_URL, DENO_ENV } from "~/utils/env.ts";
+import { HeadElement } from "~/components/Head.tsx";
 
 import IconBack from "~/components/icons/Back.tsx";
 import IconLink from "~/components/icons/Link.tsx";
@@ -14,6 +16,7 @@ import IconTwitter from "~/components/icons/Twitter.tsx";
 type Post = {
     id: number;
     title: string;
+    excerpt: string;
     body: string;
     publish_date: Date;
     cover_image?: {
@@ -48,6 +51,7 @@ type Post = {
               id
               title
               body
+              excerpt
               publish_date
               cover_image {
                 id
@@ -80,9 +84,13 @@ export default function Article({ data }: PageProps<Page | null>) {
   return (
     <>
       <Head>
-          <title>{post.title}</title>
           <style>{CSS}</style>
       </Head>
+      <HeadElement
+        description={post.excerpt}
+        title={post.title}
+        url={`${BASE_URL}/articles/${post.id}`}
+      />
       <div class="current-article">
         <section>
           <div class="container">
@@ -108,7 +116,7 @@ export default function Article({ data }: PageProps<Page | null>) {
                       {`${post.author.first_name} ${post.author.last_name}`}
                     </div>
                     <div class="current-article__time">
-                      {post.publish_date}
+                      {formatRelativeTime(new Date(post.publish_date))} 
                     </div>
                   </div>
                 </div>
