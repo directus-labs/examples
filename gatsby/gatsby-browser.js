@@ -1,2 +1,2 @@
 import "modern-normalize"
-import "src/stylesheet/main.css"
+import "./src/stylesheet/main.css"

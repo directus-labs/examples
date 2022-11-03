@@ -1,7 +1,7 @@
 const path = require(`path`);
 const {
   formatRelativeTime,
-} = require("src/utils/format-relative-time.cjs");
+} = require("./src/utils/format-relative-time.cjs");
 
 exports.createPages = async ({ actions, graphql }) => {
   const { data } = await graphql(
@@ -29,7 +29,7 @@ exports.createPages = async ({ actions, graphql }) => {
       }
     `
   );
-
+  console.log(data);
   for (const article of data.directus.articles) {
     const formattedArticle = {
       ...article,
