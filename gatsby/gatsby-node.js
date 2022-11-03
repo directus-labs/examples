@@ -29,7 +29,7 @@ exports.createPages = async ({ actions, graphql }) => {
       }
     `
   );
-  console.log(data);
+
   for (const article of data.directus.articles) {
     const formattedArticle = {
       ...article,
