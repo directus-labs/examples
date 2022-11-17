@@ -22,7 +22,7 @@
 		"@types/lodash-es": "^4.17.6",
 		"@types/node": "^18.7.14",
 		"cross-env": "^7.0.3",
-		"directus": "9.16.1",
+		"directus": "^9.20.4",
 		"execa": "^6.1.0",
 		"form-data": "^4.0.0",
 		"fs-jetpack": "^4.3.1",
