@@ -116,7 +116,7 @@ async function start() {
 								task: async (ctx, task) => {
 									task.output =
 										"Waiting for Directus instance to start...";
-									await sleep(3500);
+									await sleep(5000);
 
 									if (!ctx.directusProcess?.pid) {
 										throw new Error(
