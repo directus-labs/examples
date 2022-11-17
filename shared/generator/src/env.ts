@@ -11,7 +11,7 @@ export const env = {
 	RATE_LIMITER_ENABLED: "false",
 	SERVE_APP: "false",
 	MAX_PAYLOAD_SIZE: "10mb",
-	PUBLIC_URL: "http://localhost:8055",
+	PUBLIC_URL: "http://127.0.0.1:8055",
 
 	// admin
 	ADMIN_EMAIL: "admin@example.com",
