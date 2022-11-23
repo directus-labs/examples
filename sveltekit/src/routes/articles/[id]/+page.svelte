@@ -8,7 +8,10 @@
 	import GithubIcon from '$lib/components/icons/Github.svelte';
 	import MoreArticles from '$lib/components/MoreArticles.svelte';
 
-	export let article, moreArticles;
+	export let data;
+
+	const article = data.article;
+	const moreArticles = data.moreArticles;
 </script>
 
 <div class="current-article">

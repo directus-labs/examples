@@ -1,8 +1,8 @@
 import { getDirectusClient } from '$lib/client';
 import { formatRelativeTime } from '$lib/format-relative-time';
 
-/** @type {import('@sveltejs/kit').RequestHandler} */
-export async function get({ params }) {
+/** @type {import('./$types').PageServerLoad} */
+export async function load({ params }) {
 	const { id } = params;
 
 	const directus = await getDirectusClient();
@@ -38,6 +38,7 @@ export async function get({ params }) {
 	});
 
 	return {
-		body: { article: formattedArticle, moreArticles: formattedMoreArticles }
+		article: formattedArticle, 
+		moreArticles: formattedMoreArticles
 	};
 }

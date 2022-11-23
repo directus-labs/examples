@@ -1,4 +1,6 @@
+import { PUBLIC_DIRECTUS_URL } from '$env/static/public';
+
 export function getAssetURL(id) {
 	if (!id) return null;
-	return `${import.meta.env.VITE_DIRECTUS_URL}/assets/${id}`;
+	return `${PUBLIC_DIRECTUS_URL}/assets/${id}`;
 }

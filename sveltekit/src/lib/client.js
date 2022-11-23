@@ -1,22 +1,24 @@
 import { Directus } from '@directus/sdk';
-import 'dotenv/config';
+import { DIRECTUS_EMAIL, DIRECTUS_PASSWORD, DIRECTUS_STATIC_TOKEN } from '$env/static/private';
+import { PUBLIC_DIRECTUS_URL } from '$env/static/public';
 
-const directus = new Directus(process.env.VITE_DIRECTUS_URL);
+const directus = new Directus(PUBLIC_DIRECTUS_URL);
 
 async function getDirectusClient() {
+
 	if (directus.auth.token) return directus;
 
 	try {
-		if (process.env.DIRECTUS_EMAIL && process.env.DIRECTUS_PASSWORD) {
+		if (DIRECTUS_EMAIL && DIRECTUS_PASSWORD) {
 			await directus.auth.login({
-				email: process.env.DIRECTUS_EMAIL,
-				password: process.env.DIRECTUS_PASSWORD
+				email: DIRECTUS_EMAIL,
+				password: DIRECTUS_PASSWORD
 			});
-		} else if (process.env.DIRECTUS_STATIC_TOKEN) {
-			await directus.auth.static(process.env.DIRECTUS_STATIC_TOKEN);
+		} else if (DIRECTUS_STATIC_TOKEN) {
+			await directus.auth.static(DIRECTUS_STATIC_TOKEN);
 		}
 	} catch (err) {
-		if (err.parent.code === 'ECONNREFUSED') {
+		if (err.parent?.code === 'ECONNREFUSED') {
 			console.error(
 				'Unable to connect to the Directus instance. Make sure the .env file is present and the VITE_DIRECTUS_URL variable is pointing the correct URL.'
 			);

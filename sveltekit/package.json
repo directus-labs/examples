@@ -3,26 +3,25 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
-		"dev": "svelte-kit dev",
-		"build": "svelte-kit build",
-		"package": "svelte-kit package",
-		"preview": "svelte-kit preview",
-		"lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
-		"format": "prettier --ignore-path .gitignore --write --plugin-search-dir=. ."
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"lint": "prettier --plugin-search-dir . --check . && eslint .",
+		"format": "prettier --plugin-search-dir . --write ."
 	},
 	"dependencies": {
 		"@directus/sdk": "9.12.2",
 		"modern-normalize": "1.1.0"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-auto": "1.0.0-next.50",
-		"@sveltejs/kit": "1.0.0-next.350",
-		"dotenv": "14.3.2",
-		"eslint": "8.11.0",
+		"@sveltejs/adapter-auto": "1.0.0-next.89",
+		"@sveltejs/kit": "1.0.0-next.560",
+		"eslint": "8.16.0",
 		"eslint-config-prettier": "8.5.0",
 		"eslint-plugin-svelte3": "4.0.0",
-		"prettier": "2.5.1",
+		"prettier": "2.6.2",
 		"prettier-plugin-svelte": "2.7.0",
-		"svelte": "3.49.0"
+		"svelte": "3.44.0",
+		"vite": "^3.1.0"
 	}
 }
