@@ -14,8 +14,6 @@ export async function load() {
 			sort: '-publish_date'
 		});
 	} catch (err) {
-		console.error("AKAARN")
-		// console.log(err);
 		throw error(404, 'Not found');
 	}
 
