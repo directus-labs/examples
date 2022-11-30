@@ -9,9 +9,9 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
-    "@directus/gatsby-source-directus": "9.14.4",
-    "gatsby": "4.24.7",
-    "gatsby-plugin-react-helmet": "5.24.0",
+    "@directus/gatsby-source-directus": "9.14.8",
+    "gatsby": "5.2.0",
+    "gatsby-plugin-react-helmet": "6.2.0",
     "modern-normalize": "1.1.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
