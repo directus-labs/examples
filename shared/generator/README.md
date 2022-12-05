@@ -43,4 +43,4 @@ To test the newly generated sqlite database locally, you can run the following c
 npm run local
 ```
 
-The local demo will run at `http://localhost:8055`. Refer to the `ADMIN_EMAIL` and `ADMIN_PASSWORD` variables in `config.json` for the admin credentials.
+The local demo will run at `http://127.0.0.1:8055`. Refer to the `ADMIN_EMAIL` and `ADMIN_PASSWORD` variables in `config.json` for the admin credentials.
