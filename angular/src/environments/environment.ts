@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  directusBaseUrl: 'http://localhost:8055',
+  directusBaseUrl: 'http://127.0.0.1:8055',
 };
 
 /*

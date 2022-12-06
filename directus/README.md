@@ -28,7 +28,7 @@ Admin credentials for this Directus instance:
    npx directus start
    ```
 
-   Your Directus example is now running at <http://localhost:8055>.
+   Your Directus example is now running at <http://127.0.0.1:8055>.
 
 4. You can login with the admin credentials shown above to explore this Directus example project.
 
