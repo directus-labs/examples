@@ -6,7 +6,7 @@
 <article class={bordered ? 'article bordered' : 'article'}>
 	<div class="article__topWrapper">
 		<div class="article__imageWrapper">
-			<img src={getAssetURL(article.cover_image)} alt="" loading="lazy" />
+			<img src={getAssetURL(article.image)} alt="" loading="lazy" />
 		</div>
 		<span aria-hidden="true" class="tag">Writing</span>
 	</div>

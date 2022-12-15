@@ -2,7 +2,9 @@
 	import Hero from '$lib/components/Hero.svelte';
 	import Article from '$lib/components/Article.svelte';
 
-	export let hero, articles;
+	export let data;
+	const hero = data.hero;
+	const articles = data.articles;
 </script>
 
 <main>

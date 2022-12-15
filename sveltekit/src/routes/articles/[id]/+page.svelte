@@ -8,7 +8,9 @@
 	import GithubIcon from '$lib/components/icons/Github.svelte';
 	import MoreArticles from '$lib/components/MoreArticles.svelte';
 
-	export let article, moreArticles;
+	export let data;
+	const article = data.article;
+	const moreArticles = data.moreArticles;
 </script>
 
 <div class="current-article">
@@ -66,7 +68,7 @@
 					</ul>
 				</div>
 				<div class="current-article_coverImage">
-					<img src={getAssetURL(article.cover_image)} alt="" />
+					<img src={getAssetURL(article.image)} alt="" />
 				</div>
 			</div>
 			<div class="current-article__body">

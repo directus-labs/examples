@@ -1,8 +1,9 @@
 import { getDirectusClient } from '$lib/client';
 import { formatRelativeTime } from '$lib/format-relative-time';
+import { error } from '@sveltejs/kit';
 
-/** @type {import('@sveltejs/kit').RequestHandler} */
-export async function get() {
+/** @type {import('@sveltejs/kit').PageServerLoad} */
+export async function load() {
 	const directus = await getDirectusClient();
 
 	let response;
@@ -12,9 +13,7 @@ export async function get() {
 			sort: '-publish_date'
 		});
 	} catch (err) {
-		return {
-			status: 404
-		};
+		throw error(400, 'not found');
 	}
 
 	const formattedArticles = response.data.map((article) => {
@@ -25,17 +24,13 @@ export async function get() {
 	});
 
 	if (!formattedArticles) {
-		return {
-			status: 404
-		};
+		throw error(400, 'not found');
 	}
 
 	const [hero, ...articles] = formattedArticles;
 
 	return {
-		body: {
-			hero,
-			articles
-		}
+		hero,
+		articles
 	};
 }
