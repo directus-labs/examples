@@ -10,12 +10,12 @@
   "dependencies": {
     "@directus/sdk": "10.3.0",
     "modern-normalize": "1.1.0",
-    "next": "^13.0.6",
+    "next": "^13.0.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "eslint": "8.29.0",
-    "eslint-config-next": "^13.0.6"
+    "eslint-config-next": "^13.0.7"
   }
 }

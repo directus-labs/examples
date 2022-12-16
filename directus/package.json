@@ -5,7 +5,7 @@
 		"start": "npx directus start"
 	},
 	"dependencies": {
-		"directus": "9.20.4",
-		"sqlite3": "^5.1.2"
+		"directus": "9.21.2",
+		"sqlite3": "^5.1.4"
 	}
 }
