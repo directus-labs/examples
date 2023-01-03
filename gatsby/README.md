@@ -5,6 +5,8 @@
 [![Open in CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/directus/examples/tree/main/gatsby)
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/directus/examples/tree/main/gatsby)
+
+Note: This example folder is a standalone frontend, which is why it will still need Directus running to work, the CodeSandbox and StackBlitz links only pull the example folder as is, you will still need Directus running somewhere to make it work, such as a [Cloud](https://directus.cloud/) instance, or self hosted.
 ## 📌 Prerequisites
 
 You will need to have the provided [Directus project](../directus) running first before proceeding with this example.

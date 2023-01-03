@@ -6,6 +6,7 @@ This is a [Fresh](https://www.fresh.deno.dev) project.
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/directus/examples/tree/main/fresh)
 
+Note: This example folder is a standalone frontend, which is why it will still need Directus running to work, the CodeSandbox and StackBlitz links only pull the example folder as is, you will still need Directus running somewhere to make it work, such as a [Cloud](https://directus.cloud/) instance, or self hosted.
 ## 📌 Prerequisites
 
 This project is based on [Fresh](https://fresh.deno.dev/) and requires Deno to run. To install Deno via homebrew on macOS:
