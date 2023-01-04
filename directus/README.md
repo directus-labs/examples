@@ -9,23 +9,18 @@ Admin credentials for this Directus instance:
   
 ## 📌 Prerequisites
 
-- [Node.js](https://nodejs.dev) v12.20 and above
+- [Docker](https://docs.docker.com/get-docker/)
+- [Docker Compose](https://docs.docker.com/compose/install/) (often included with newer Docker installations)
 
 ## 🚀 Getting Started
 
 1. Clone this repo.
 
-2. Install dependencies for this example Directus project.
+2. Start the docker container.
 
    ```shell
    cd directus
-   npm install
-   ```
-
-3. Start the project locally.
-
-   ```shell
-   npx directus start
+   docker compose up -d
    ```
 
    Your Directus example is now running at <http://127.0.0.1:8055>.

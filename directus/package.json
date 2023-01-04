@@ -2,10 +2,8 @@
 	"name": "directus-example",
 	"private": true,
 	"scripts": {
-		"start": "npx directus start"
+		"start": "docker compose up -d"
 	},
 	"dependencies": {
-		"directus": "9.21.2",
-		"sqlite3": "^5.1.4"
 	}
 }
