@@ -1,4 +1,4 @@
-import { getDirectusClient } from '$lib/client';
+import { getDirectusClient } from '$lib/server/client';
 import { formatRelativeTime } from '$lib/format-relative-time';
 import { error } from '@sveltejs/kit';
 
