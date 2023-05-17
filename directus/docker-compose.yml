@@ -18,3 +18,5 @@ services:
 
       ADMIN_EMAIL: "admin@example.com"
       ADMIN_PASSWORD: "d1r3ctu5"
+
+      CORS_ENABLED: true
