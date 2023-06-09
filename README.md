@@ -13,7 +13,7 @@ These frontend examples showcase how to integrate [Directus JavaScript SDK](http
 
 ## 📌 Prerequisites
 
-These examples are frontend only, you will still need a Directus instance running to use them, this can be a [Cloud](https://directus.cloud/) instance, self hosted, or locally by first running the provided [Directus project](./directus) running first before proceeding with examples.
+These examples are frontend only. You will still need a Directus instance running to use them. This can be a [Cloud](https://directus.cloud/) instance, self hosted, or locally by first running the provided [Directus project](./directus) before proceeding with the examples.
 
 ## 🔌 Integrations
 
