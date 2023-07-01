@@ -5,7 +5,7 @@ const { Directus } = require("@directus/sdk");
 const getDirectusClient = async () => {
   const directus = new Directus(process.env.DIRECTUS_URL);
 
-  if (directus.auth.token) return directus;
+  if (await directus.auth.token) return directus;
 
   if (process.env.DIRECTUS_EMAIL && process.env.DIRECTUS_PASSWORD) {
     await directus.auth.login({
