@@ -1,11 +1,11 @@
 <template>
-  <h1>{{global.data.title}}</h1>
-  <p>{{global.data.description}}</p>
+	<h1>{{global.title}}</h1>
+	<p>{{global.description}}</p>
 </template>
 
 <script setup>
-  const { $directus } = useNuxtApp()
-  const { data: global } = await useAsyncData('global', () => {
-    return $directus.items('global').readByQuery()
-  })
+const { $directus, $readItems } = useNuxtApp()
+const { data: global } = await useAsyncData('global', () => {
+  return $directus.request($readItems('global'))
+})
 </script>
