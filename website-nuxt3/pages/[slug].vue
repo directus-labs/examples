@@ -4,13 +4,15 @@
 </template>
 
 <script setup>
-  const { $directus } = useNuxtApp()
+  const { $directus, $readItem } = useNuxtApp()
   const route = useRoute()
+
   const { data: page } = await useAsyncData('page', () => {
-    return $directus.items('pages').readOne(route.params.slug)
+    return $directus.request($readItem('pages', route.params.slug))
   })
-  if (!page.value) throw createError({ 
-    statusCode: 404, 
-    statusMessage: 'Page Not Found' 
+
+  if (!page.value) throw createError({
+    statusCode: 404,
+    statusMessage: 'Page Not Found'
   })
 </script>

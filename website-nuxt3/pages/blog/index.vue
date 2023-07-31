@@ -1,7 +1,7 @@
 <template>
   <h1>Blog</h1>
   <ul>
-    <li v-for="post in posts.data">
+    <li v-for="post in posts">
       <NuxtLink :href="`/blog/${post.slug}`">
         <h2>{{post.title}}</h2>
       </NuxtLink>
@@ -12,11 +12,14 @@
 
 
 <script setup>
-  const { $directus } = useNuxtApp()
-  const { data: posts } = await useAsyncData('posts', () => {
-    return $directus.items('posts').readByQuery({
-      fields: ['slug', 'title', 'publish_date', 'author.name'],
+const { $directus, $readItems } = useNuxtApp()
+
+const { data: posts } = await useAsyncData('posts', () => {
+  return $directus.request(
+    readItems('posts', {
+      fields: ['slug', 'title', 'publish_date', { 'author': [ 'name' ] }],
       sort: ['-publish_date']
     })
-  })
+  )
+})
 </script>

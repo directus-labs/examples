@@ -5,15 +5,18 @@
 </template>
 
 <script setup>
-  const { $directus } = useNuxtApp()
-  const route = useRoute()
-  const { data: post, error } = await useAsyncData('post', () => {
-    return $directus.items('posts').readOne(route.params.slug, {
-      fields: ['*.*']
+const { $directus, $readItem } = useNuxtApp()
+const route = useRoute()
+
+const { data: post } = await useAsyncData('post', () => {
+  return $directus.request(
+    $readItem('posts', route.params.slug, {
+      fields: ['*', { '*': ['*'] }]
     })
-  })
-  if (!post.value) throw createError({ 
-    statusCode: 404, 
-    statusMessage: 'Post Not Found' 
-  })
+  )
+})
+if (!post.value) throw createError({
+  statusCode: 404,
+  statusMessage: 'Post Not Found'
+})
 </script>
