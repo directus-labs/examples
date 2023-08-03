@@ -1,20 +1,21 @@
 import { component$, useSignal, useTask$, useVisibleTask$ } from '@builder.io/qwik';
 import { Link, useNavigate, useLocation, routeLoader$ } from '@builder.io/qwik-city';
 
-import MoreArticles from "../../../components/MoreArticles";
 import IconBack from "../../../components/icons/Back";
 import IconLink from "../../../components/icons/Link";
 import IconGithub from "../../../components/icons/Github";
 import IconYoutube from "../../../components/icons/Youtube";
 import IconLinkedin from "../../../components/icons/Linkedin";
 import IconTwitter from "../../../components/icons/Twitter";
+import MoreArticles from "../../../components/MoreArticles";
+import NotFound from "../../404";
 
 import { directus } from "../../../services/directus";
 import { formatRelativeTime } from "../../../utils/format-relative-time";
 import { getAssetURL } from "../../../utils/get-asset-url";
 
  
-export const useArticleLoader = routeLoader$(async ({ params, status }) => {
+export const useArticleLoader = routeLoader$(async ({ params, status, redirect }) => {
   try {
     const articleResponse = await directus.items("articles").readOne(params.id, {
       fields: [
@@ -33,8 +34,9 @@ export const useArticleLoader = routeLoader$(async ({ params, status }) => {
     };
 
     return formattedArticle;
-  } catch (err) {
-    return status(404);
+  } catch(error) {
+    status(404);
+    // redirect('/404');
   }
 });
  
@@ -81,6 +83,10 @@ export default component$(() => {
   useVisibleTask$(() => {
     document.documentElement.scrollTo(0, 0);
   });
+
+  if (!article.value) {
+    return <NotFound />;
+  }
 
   return (
     <div class="current-article">
