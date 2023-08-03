@@ -1,9 +1,10 @@
+import { component$ } from '@builder.io/qwik';
 import IconGithub from "./icons/Github";
 import IconLinkedin from "./icons/Linkedin";
 import IconTwitter from "./icons/Twitter";
 import IconYoutube from "./icons/Youtube";
 
-export default function Footer() {
+export default component$(() => {
   return (
     <footer>
       <div class="container footer__topWrapper">
@@ -61,4 +62,4 @@ export default function Footer() {
       </div>
     </footer>
   );
-}
+});

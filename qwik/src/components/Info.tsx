@@ -1,4 +1,6 @@
-export default function Info() {
+import { component$ } from '@builder.io/qwik';
+
+export default component$(() => {
   return (
     <section class="info">
       <div class="info__background">
@@ -33,4 +35,4 @@ export default function Info() {
       </div>
     </section>
   );
-}
+});

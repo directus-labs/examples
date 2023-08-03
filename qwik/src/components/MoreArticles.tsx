@@ -1,10 +1,11 @@
+import { component$ } from '@builder.io/qwik';
 import Article from "./Article";
 
 interface MoreArticlesProps {
   articles: object[]
 }
 
-export default function MoreArticles<MoreArticlesProps>({ articles }) {
+export default component$<MoreArticlesProps>(({ articles }) => {
   return (
     <section class="more-articles">
       <div class="container">
@@ -23,4 +24,4 @@ export default function MoreArticles<MoreArticlesProps>({ articles }) {
       </div>
     </section>
   );
-}
+});

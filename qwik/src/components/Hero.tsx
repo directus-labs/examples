@@ -1,3 +1,4 @@
+import { component$ } from '@builder.io/qwik';
 import { Link } from '@builder.io/qwik-city';
 import { getAssetURL } from "../utils/get-asset-url";
 
@@ -5,7 +6,7 @@ interface HeroProps {
   article: object
 }
 
-export default function Hero<HeroProps>({ article }) {
+export default component$<HeroProps>(({ article }) => {
   return (
     <article class="hero">
       <div class="hero__topWrapper">
@@ -46,4 +47,4 @@ export default function Hero<HeroProps>({ article }) {
       </div>
     </article>
   );
-}
+});

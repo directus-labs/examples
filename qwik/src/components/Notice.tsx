@@ -1,4 +1,6 @@
-export default function Notice() {
+import { component$ } from '@builder.io/qwik';
+
+export default component$(() => {
   return (
     <div class="notice">
       <div class="container">
@@ -16,4 +18,4 @@ export default function Notice() {
       </div>
     </div>
   );
-}
+});
