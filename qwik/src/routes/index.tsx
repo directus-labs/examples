@@ -1,4 +1,5 @@
 import { component$, useSignal, useTask$ } from "@builder.io/qwik";
+import { routeLoader$ } from "@builder.io/qwik-city";
 import type { DocumentHead } from "@builder.io/qwik-city";
 
 import Hero from "../components/Hero";
@@ -17,40 +18,39 @@ export const head: DocumentHead = {
   ],
 };
 
-export default component$(() => {
-  const hero = useSignal(null);
-  const articles = useSignal([]);
-
-  useTask$(async () => {
-    async function fetchData() {
-      const response = await directus.items("articles").readByQuery({
-        fields: ["*", "author.avatar", "author.first_name", "author.last_name"],
-        sort: "-publish_date",
-      });
-
-      const formattedArticles = response.data.map((article) => {
-        return {
-          ...article,
-          publish_date: formatRelativeTime(new Date(article.publish_date)),
-        };
-      });
-
-      const [first, ...rest] = formattedArticles;
-      hero.value = first;
-      articles.value = rest;
-    }
-    await fetchData();
+export const useArticlesAndHero = routeLoader$(async () => {
+  const response = await directus.items("articles").readByQuery({
+    fields: ["*", "author.avatar", "author.first_name", "author.last_name"],
+    sort: "-publish_date",
   });
+
+  const formattedArticles = response.data.map((article) => {
+    return {
+      ...article,
+      publish_date: formatRelativeTime(new Date(article.publish_date)),
+    };
+  });
+
+  const [first, ...rest] = formattedArticles;
+  return {
+    hero: first,
+    articles: rest
+  }
+});
+
+
+export default component$(() => {
+  const { hero, articles } = useArticlesAndHero().value;
 
   return (
     <main>
       <section class="main-content">
         <div class="container">
-          {hero.value && <Hero article={hero} />}
+          {hero && <Hero article={hero} />}
 
-          {articles.value && (
+          {articles && (
             <div class="articles-grid">
-              {articles.value.map((article, index) => (
+              {articles.map((article, index) => (
                 <Article
                   key={index}
                   article={article}
