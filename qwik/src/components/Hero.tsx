@@ -13,6 +13,8 @@ export default function Hero<HeroProps>({ article }) {
           <img
             src={getAssetURL(article.value.cover_image)}
             alt=""
+            width="1920"
+            height="1281"
             loading="lazy"
           />
         </div>
@@ -29,6 +31,8 @@ export default function Hero<HeroProps>({ article }) {
           <img
             src={getAssetURL(article.value.author.avatar)}
             alt=""
+            width="500"
+            height="500"
             loading="lazy"
           />
         </div>

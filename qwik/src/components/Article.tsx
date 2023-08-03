@@ -15,6 +15,8 @@ export default component$<ArticleProps>(({ article, bordered }) => {
           <img
             src={getAssetURL(article.cover_image)}
             alt=""
+            width="500"
+            height="500"
             loading="lazy"
           />
         </div>
@@ -31,6 +33,8 @@ export default component$<ArticleProps>(({ article, bordered }) => {
             <img
               src={getAssetURL(article.author.avatar)}
               alt=""
+              width="1920"
+              height="1280"
               loading="lazy"
             />
           </div>

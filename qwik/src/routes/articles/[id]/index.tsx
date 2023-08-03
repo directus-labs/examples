@@ -105,6 +105,8 @@ export default component$(() => {
                     <img
                       src={getAssetURL(article.value.author.avatar)}
                       alt=""
+                      width="500"
+                      height="500"
                       loading="lazy"
                     />
                   </div>
@@ -157,7 +159,7 @@ export default component$(() => {
                 </ul>
               </div>
               <div class="current-article_coverImage">
-                <img src={getAssetURL(article.value.cover_image)} alt="" />
+                <img src={getAssetURL(article.value.cover_image)} alt="" width="1920" height="1280" />
               </div>
             </div>
             <div class="current-article__body">
