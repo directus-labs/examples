@@ -73,8 +73,8 @@ export const useMoreArticlesLoader = routeLoader$(async ({ params, status }) => 
 
 
 export default component$(() => {
-  const article = useArticleLoader();
-  const moreArticles = useMoreArticlesLoader();
+  const article = useArticleLoader().value;
+  const moreArticles = useMoreArticlesLoader().value;
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -84,26 +84,26 @@ export default component$(() => {
     document.documentElement.scrollTo(0, 0);
   });
 
-  if (!article.value) {
+  if (!article) {
     return <NotFound />;
   }
 
   return (
     <div class="current-article">
-      {article.value && (
+      {article && (
         <section>
           <div class="container">
             <Link href="/" class="current-article__backlink">
               <IconBack className="icon" />
               <span>Back to Articles</span>
             </Link>
-            <h1 class="current-article__title">{article.value.title}</h1>
+            <h1 class="current-article__title">{article.title}</h1>
             <div class="current-article__detail">
               <div class="current-article__wrapperOuter">
                 <div class="current-article__wrapperInner">
                   <div class="current-article__authorImage">
                     <img
-                      src={getAssetURL(article.value.author.avatar)}
+                      src={getAssetURL(article.author.avatar)}
                       alt=""
                       width="500"
                       height="500"
@@ -112,17 +112,17 @@ export default component$(() => {
                   </div>
                   <div>
                     <div class="current-article__authorName">
-                      {`${article.value.author.first_name} ${article.value.author.last_name}`}
+                      {`${article.author.first_name} ${article.author.last_name}`}
                     </div>
                     <div class="current-article__time">
-                      {article.value.publish_date}
+                      {article.publish_date}
                     </div>
                   </div>
                 </div>
                 <ul class="current-article__socials">
                   <li>
                     <a
-                      href={`/articles/${article.value.id}`}
+                      href={`/articles/${article.id}`}
                       target="_blank"
                       rel="noreferrer noopener"
                     >
@@ -159,13 +159,13 @@ export default component$(() => {
                 </ul>
               </div>
               <div class="current-article_coverImage">
-                <img src={getAssetURL(article.value.cover_image)} alt="" width="1920" height="1280" />
+                <img src={getAssetURL(article.cover_image)} alt="" width="1920" height="1280" />
               </div>
             </div>
             <div class="current-article__body">
               <div
                 class="current-article__bodyContent"
-                dangerouslySetInnerHTML={article.value.body}
+                dangerouslySetInnerHTML={article.body}
               ></div>
               <ul class="current-article__bodySocials">
                 <li>
@@ -210,7 +210,7 @@ export default component$(() => {
         </section>
       )}
 
-      {moreArticles.value && <MoreArticles articles={moreArticles} />}
+      {moreArticles && <MoreArticles articles={moreArticles} />}
     </div>
   );
 });

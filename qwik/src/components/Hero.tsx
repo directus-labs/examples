@@ -12,7 +12,7 @@ export default component$<HeroProps>(({ article }) => {
       <div class="hero__topWrapper">
         <div class="hero__imageWrapper">
           <img
-            src={getAssetURL(article.value.cover_image)}
+            src={getAssetURL(article.cover_image)}
             alt=""
             width="1920"
             height="1281"
@@ -24,13 +24,13 @@ export default component$<HeroProps>(({ article }) => {
         </span>
       </div>
       <h1 class="hero__title">
-        <Link href={`/articles/${article.value.id}`}>{article.value.title}</Link>
+        <Link href={`/articles/${article.id}`}>{article.title}</Link>
       </h1>
-      <p class="hero__excerpt">{article.value.excerpt}</p>
+      <p class="hero__excerpt">{article.excerpt}</p>
       <div class="hero__detail">
         <div class="hero__detailAuthorImage">
           <img
-            src={getAssetURL(article.value.author.avatar)}
+            src={getAssetURL(article.author.avatar)}
             alt=""
             width="500"
             height="500"
@@ -39,9 +39,9 @@ export default component$<HeroProps>(({ article }) => {
         </div>
         <div>
           <div class="hero__detailAuthorName">
-            {`${article.value.author.first_name} ${article.value.author.last_name}`}
+            {`${article.author.first_name} ${article.author.last_name}`}
           </div>
-          <div>{article.value.publish_date}</div>
+          <div>{article.publish_date}</div>
           <div class="hero__detailCategory">Writing</div>
         </div>
       </div>
