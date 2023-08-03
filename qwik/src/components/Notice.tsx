@@ -1,6 +1,12 @@
-import { component$ } from '@builder.io/qwik';
+import { component$, useSignal } from '@builder.io/qwik';
 
 export default component$(() => {
+  const closed = useSignal(false);
+
+  if (closed.value) {
+    return <></>;
+  }
+
   return (
     <div class="notice">
       <div class="container">
@@ -14,7 +20,7 @@ export default component$(() => {
             available on GitHub.
           </a>
         </span>
-        <i class="material-icons-outlined">close</i>
+        <i class="material-icons-outlined notice__close" onClick$={() => closed.value = true}>close</i>
       </div>
     </div>
   );
