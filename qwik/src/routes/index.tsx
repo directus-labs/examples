@@ -17,7 +17,6 @@ export const head: DocumentHead = {
   ],
 };
 
-
 export default component$(() => {
   const hero = useSignal(null);
   const articles = useSignal([]);
