@@ -14,7 +14,6 @@ import { directus } from "../../../services/directus";
 import { formatRelativeTime } from "../../../utils/format-relative-time";
 import { getAssetURL } from "../../../utils/get-asset-url";
 
- 
 export const useArticleLoader = routeLoader$(async ({ params, status, redirect }) => {
   try {
     const articleResponse = await directus.items("articles").readOne(params.id, {
@@ -39,7 +38,7 @@ export const useArticleLoader = routeLoader$(async ({ params, status, redirect }
     // redirect('/404');
   }
 });
- 
+
 export const useMoreArticlesLoader = routeLoader$(async ({ params, status }) => {
   const moreArticlesResponse = await directus.items("articles").readByQuery({
     fields: [
@@ -70,7 +69,6 @@ export const useMoreArticlesLoader = routeLoader$(async ({ params, status }) => 
 
   return formattedMoreArticles;
 });
-
 
 export default component$(() => {
   const article = useArticleLoader().value;

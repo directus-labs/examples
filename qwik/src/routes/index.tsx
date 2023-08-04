@@ -38,7 +38,6 @@ export const useArticlesAndHero = routeLoader$(async () => {
   }
 });
 
-
 export default component$(() => {
   const { hero, articles } = useArticlesAndHero().value;
 
