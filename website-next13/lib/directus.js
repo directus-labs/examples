@@ -1,8 +1,6 @@
 import { createDirectus } from '@directus/sdk';
-import { rest } from '@directus/sdk/rest';
+import { rest } from '@directus/sdk';
 
-const directus = createDirectus('https://CHANGE-THIS.directus.app/').with(
-  rest()
-);
+const directus = createDirectus('http://localhost:8080/admin/').with(rest());
 
 export default directus;

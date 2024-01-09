@@ -1,5 +1,5 @@
 import directus from 'lib/directus';
-import { readItems } from '@directus/sdk/rest';
+import { readItems } from '@directus/sdk';
 
 async function getGlobals() {
   const { data } = await directus.request(readItems('global'));

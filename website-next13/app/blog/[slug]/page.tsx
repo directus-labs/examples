@@ -1,6 +1,6 @@
 import directus from 'lib/directus';
 import { notFound } from 'next/navigation';
-import { readItem } from '@directus/sdk/rest';
+import { readItem } from '@directus/sdk';
 
 async function getPost(slug) {
   try {
