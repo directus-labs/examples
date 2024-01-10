@@ -1,4 +1,4 @@
-import directus from 'lib/directus';
+import directus from '../../lib/directus';
 import { readItems } from '@directus/sdk';
 
 async function getPosts() {
