@@ -1,3 +1,7 @@
+> [!WARNING]
+> This repository is unmaintained and without support.
+> Please take a look at the [framework guides](https://docs.directus.io/guides/frameworks) in our documentation for step-by-step tutorials on combining Directus and your favorite frameworks.
+
 <h1 align="center">Directus Examples</h1>
 
 <p align="center">
