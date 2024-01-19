@@ -1,5 +1,5 @@
-import directus from 'lib/directus';
-import { readItems } from '@directus/sdk/rest';
+import directus from '../../lib/directus';
+import { readItems } from '@directus/sdk';
 
 async function getPosts() {
   const posts = await directus.request(
